@@ -1,0 +1,47 @@
+<Structure DataType="P_PERMISSIVE">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_InitializeReq" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Perm00" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm01" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm02" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm03" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm04" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm05" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm06" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm07" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm08" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm09" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm10" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm11" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm12" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm13" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm14" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm15" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm16" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm17" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm18" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm19" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm20" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm21" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm22" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm23" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm24" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm25" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm26" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm27" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm28" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm29" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm30" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Perm31" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_BypActive" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_OKState" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+<DataValueMember Name="Cfg_Bypassable" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="Cfg_HasMoreObj" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasNav" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="Sts_Initialized" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_PermOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_NBPermOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_BypActive" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Perm" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+</Structure>

@@ -1,0 +1,2366 @@
+Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 579
+  Public Input Members
+ Data Type
+ FBD Default 
+Visibil
+ity
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Inp_AlarmData
+ BOOL
+ Not 
+Visible
+ Not Required
+ Input
+ 1=Intelligent motor controller has a Warning or Alarm. 
+See controller display or manual.
+ Default is false.
+ Inp_FaultedData
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1=Intelligent motor contro
+ller has Faulted. See controller 
+display or manual.
+ Default is false.
+ Inp_DvcNotify
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Related device object alarm priority and 
+
+acknowledgement status. 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or 
+reset required, 
+ 2 = Low severity
+ alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknow
+ledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = Urgent severity alarm, unacknowledged. 
+ Inp_IOFault
+ BOOL
+ Visible
+ Not Required
+ Input
+ Indicates the IO data are inaccurate. 
+ 0 = The IO data are good, 
+ 1 = The IO data are bad, causing fault. 
+ If the Mo
+tor is not virtual, this input sets Sts_IOFault, 
+which raises IOFault Alarm.
+ Default is false.
+ Inp_1PermOK
+ BOOL
+ Visible
+ Not Required
+ Input
+ 1 = Permissives OK, motor can start or 
+jog Forward / 
+
+Slow.
+ Default is true.
+ Inp_1NBPermOK
+ BOOL
+ Visible
+ Not Required
+ Input
+ 1 = Non
+-Bypassable Permissives OK, motor can start or 
+jog Forward / Slow.
+ Default is true.
+ Inp_2PermOK
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Permissives
+ OK, motor can start or jog Reverse / 
+
+Fast.
+ Default is true.
+ Inp_2NBPermOK
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Non
+-Bypassable Permissives OK, motor can start or 
+jog Reverse / Fast.
+ Default is true.
+ Inp_IntlkOK
+ BOOL
+ Visible
+ Not Required
+ Input
+ 1 = 
+Interlocks OK, motor can start or jog and keep 
+running.
+ Default is true.
+ Inp_NBIntlkOK
+ BOOL
+ Visib
+le Not Required
+ Input
+ 1 = Non
+-bypassable interlocks OK, motor can start or jog 
+and keep running.
+ Default is true.
+ Inp_IntlkAvailable
+ BOOL
+ Visible
+ Not 
+Required
+ Input
+ 1 = Interlock Availibility OK.
+ Default is false.
+ Inp_IntlkTripInh
+ BOOL
+ Visible
+ Not Requir
+ed Input
+ 1 = Inhibit Interlock Trip Status
+ Default is false.
+ Inp_RdyReset
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Related object, reset by this 
+object, is ready to be 
+reset.
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Input Members
+ Data Type
+ FBD Default 
+Visibil
+ity
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Inp_Hand
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Acquire Hand 
+(typically hardwired local), 0 = Release 
+Hand.
+ Default is false.
+ Inp_Ovrd
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Acquire Override 
+(higher priority program logic), 0 = 
+Release Override.
+ Default is false.
+ Inp_OvrdCmd
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Override Command: 
+ 0 = None, 
+ 1 = Stop, 
+ 2 = Start 1 (Forward / Slow), 
+ 3 = Start2 (Reverse / Fast).
+ Default is 0.
+ Inp_ExtInh
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Inhibit External acquisition, 0 = Allow External 
+
+acquisition.
+ Default is false.
+ Inp_HornIn
+h BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Inhibit audible alert, 0 = Alllow audible alert.
+ Default is false.
+ Inp_Reset
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Reset Shed Latches and Cleared Alarms.
+ Default is false.
+ Cfg_AllowDisable
+ BOOL
+ Not Visible
+ Not 
+Required
+ Input
+ 1 = Allow Maintenance to disable alarms.
+ Default is true.
+ Cfg_AllowShelve
+ BOOL
+ Not 
+Visible
+ Not Required
+ Input
+ 1 = Allow Operator to shelve alarms.
+ Default is true.
+ Cfg_eObjType
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Type of Motor: 
+ 0 = single
+-speed, 
+ 1 = reversing, 
+ 2 = 2-speed (enumeration).
+ Default is 0.
+ Cfg_HasStart1
+ BOOL
+ Not 
+Visible
+ Not Required
+ Input
+ 1 = Motor Start1 (Forward / Slow) Command enabled and 
+
+visible, 0 = Motor Start1 Command not allowed.
+ Default is false.
+ Cfg_HasStart2
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Motor Start2 (Reverse / Fast) Command enabled and 
+
+visible, 0 = Motor Start2 Command not allowed.
+ Default is false.
+ Cfg_HasJog1
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Motor Jog1 (Forward / Slow) Command enabled and 
+
+visib
+le, 0 = Motor Jog1 Command not allowed.
+ Default is false.
+ Cfg_HasJog2
+ BOOL
+ Not 
+Visible
+ Not Required
+ Input
+ 1 = Motor Jog2 (Reverse / Fast) Command enabled and 
+
+visible, 0 = Motor Jog2 Command not allowed.
+ Default is false.
+ Cfg_HasStop
+ BOOL
+ Not Visible
+ Not 
+Required
+ Input
+ 1 = Motor Stop Command enabled and visible, 0 = 
+
+Instruction has no control, only monitors Motor.
+ Default is true.
+ Cfg_AllowLocal
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Allow Local Start/Stop without alarm, 0 = Start/Stop 
+
+by command only.
+ Default is false.
+ Cfg_HasRunFdbk
+ BOOL
+ Not Visible
+ Not 
+Required
+ Input
+ 1 = Motor provides feedback signal when running.
+ Default is false.
+ Cfg_UseRunFdbk
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Motor run feedback should be used for failure 
+
+checking.
+ Default 
+is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 581
+  Public Input Members
+ Data Type
+ FBD Default 
+Visibil
+ity
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Cfg_HasDvcObj
+ BOOL
+ Not Visible
+ Not 
+Required
+ Input
+ 1 = Tells HMI a Device (e.g., overload relay) object is 
+connected.
+ Default is false.
+ Cfg_Has1PermObj
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Tells HMI an object is connected to Inp_1Perm inputs.
+ Default is false.
+ Cfg_Has2PermObj
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Tells HMI an object is connected to Inp_2Perm 
+
+inputs.
+ Default is false.
+ Cfg_HasIntlkObj
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Tells HMI an object is connected to Inp_Intlk input
+s. Default is false.
+ Cfg_HasResInhObj
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Tells HMI a Restart Inhibit object is connected.
+ Default is false.
+ Cfg_HasRunTimeObj
+ BOOL
+ Not Visible
+ Not 
+Required
+ Input
+ 1 = Tells HMI a Run Time / Starts object is connected.
+ Default is false.
+ Cfg_HasMoreObj
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Tells HMI an object with more info is available.
+ Default is false.
+ Cfg_OperStopPrio
+ BOOL
+ Not Visible
+ Not 
+Required
+ Input
+ 1 = OCmd_Stop accepted any time; 
+ 0 = OCmd_Stop accepted only
+ when Oper is selected.
+ Default is false.
+ Cfg_ExtStopPrio
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = XCmd_Stop accepted any time; 0 = XCmd_Stop
+ 
+accepted only when Ext is selected.
+ Default is false.
+ Cfg_OCmdResets
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Any 
+Motor OCmd resets shed latches and cleared 
+
+alarms; 0 = OCmdReset is required.
+ Default is false.
+ Cfg_XCmdResets
+ BOOL
+ Not Visible
+ Not 
+Required
+ Input
+ 1 = Any Motor XCmd resets shed latches and cleared 
+
+alarms; 0 = XCmdReset is required.
+ Default is false.
+ Cfg
+_OvrdPermIntlk
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Override ignores Bypassable Perm/ Intlk; 0 = 
+
+Override uses all Perm/Intlk.
+ Default is false.
+ Cfg_ShedOnFailToStart
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Stop Motor and Alarm on Fail to Start; 0 = Al
+arm only 
+on Fail to Start.
+ Default is true.
+ Cfg_ShedOnIOFault
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Stop Motor and Alarm on 
+I/O Fault; 0 = Alarm only on 
+
+I/O Fault.
+ Default is true.
+ Cfg_HasOper
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Operator (unlocked)
+ exists, can be selected.
+ Default is true.
+ Cfg_HasOperLocked
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Operator Locked 
+exists, can be selected.
+ Default is true.
+ Cfg_HasProg
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Program (unlocked) exists, can be selected.
+ Default is true.
+ Cfg_HasProgLocked
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Program Locked exists, can be 
+selected.
+ Default is true.
+ Cfg_HasExt
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = External exists, can be selected.
+ Default is false.
+ Cfg_HasMaint
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Maintenance exists, can be selected.
+ Default is true.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Input Members
+ Data Type
+ FBD Default 
+Visibil
+ity
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Cfg_HasMaintOoS
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Maintenance Out of Service exists, can be selected.
+ Default is true.
+ Cfg_OvrdOverLock
+ BOOL
+ Not Visible
+ Not R
+equired
+ Input
+ 1 = Override supersedes Program/Operator Lock, 0 = 
+Don't override Lock.
+ Default is true.
+ Cfg_ExtOverLock
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = External supersedes Program/Operator Lock, 0 = 
+
+Don't override Lock.
+ Default is false.
+ Cfg_ProgP
+wrUp
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Power up to Program, 0 = Power up to 
+Operator.
+ Default is false.
+ Cfg_ProgNormal
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Normal Source: 1 = Program if no requests; 0 = Operator 
+
+if no requests.
+ Default is false.
+ Cfg
+_PCmdPriority
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Command priority. 1 = 
+Program commands win, 0 = 
+
+Operator commands win.
+ Default is false.
+ Cfg_PCmdProgAsLevel
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = PCmd_Prog used as Level (1 = Acquire, 0 = Release).
+ Defa
+ult is false.
+ Cfg_PCmdLockAsLevel
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = PCmd_Lock used as a Level (1 = Lock, 0 = Unlock).
+ Default is false.
+ Cfg_ExtAcqAsLevel
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = XCmd_Acq used as Level (1 = Acquire, 0 = Release).
+ Def
+ault is false.
+ Cfg_PauseTime
+ REAL
+ Not Visible
+ Not 
+Required
+ Input
+ Delay in seconds with contactors open when changing 
+
+speed or direction. Valid = 0.0 to 2147483.0 seconds.
+ Default is 3.0.
+ Cfg_StartHornTime
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Time in secon
+ds to sound audible on commanded start. 
+Valid = 
+0.0 to 1000.0 seconds, 0.0 = disabled.
+ Default is 0.0.
+ Cfg_VirtualFdbkTime
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Time in seconds to echo run feedback when Virtualized. 
+
+Valid = 0.0 to 2147483.0 seconds.
+ Default
+ is 10.0.
+ Cfg_FailToStartTime
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Time in seconds after Start to receive Run Feedback 
+
+before Fault. Valid = 0.0 to 2147483.0 seconds.
+ Default is 15.0.
+ Cfg_FailToStopTime
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Time in seconds 
+after 
+Stop to drop Run Feedback 
+
+before Fault. Valid = 0.0 to 2147483,0 seconds.
+ Default is 15.0.
+ Cfg_ResetPulseTime
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Time in seconds to pulse Out_Reset
+ to clear Motor fault. 
+Valid = 0.0 to 2147483.0 seconds.
+ Default is 2
+.0.
+ Cfg_MaxJogTime
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Maximum jog time in seconds. Valid = 0.0 to 2147483.0 
+seconds, 0.0 = unlimited).
+ Default is 0.0.
+ Cfg_eKeepStart
+ SINT
+ Not 
+Visible
+ Not Required
+ Input
+ Ownership of Start commands (enumeration): 
+ 0 = fol
+lows CmdSrc, 
+ 1 = Operator, 
+ 2 = Program, 
+ 3 = External.
+ Default is 0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 583
+  Public Input Members
+ Data Type
+ FBD Default 
+Visibil
+ity
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Cfg_eKeepJog
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Ownership of Jog commands (enumeration): 
+ 0 = follows CmdSrc, 
+ 1 = Operator, 
+ 3 = External.
+ Default is 0.
+ Cfg_CnfrmReqd
+ SINT
+ Not Visib
+le Not Required
+ Input
+ Operator Command Confirmation Required. Represents 
+the type of command confirmation required. 
+ 0 = None, 
+ 1 = Command confirmation required, 
+ 2 = Performer e
+-signature required, 
+ 3 = Performer and approver e
+-signature required.
+ Defaul
+t is 0.
+ Cfg_HasHistTr
+end
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Has Historical Trend. This enables navigation to the 
+
+Device Historical Trend Faceplate from the HMI. 
+ 0 =  No external historical trend, 
+ 1 = Datalog historical trend, 
+ 2 = Historian historical 
+trend.
+ Default is 0.
+ PSet_Owner
+ DINT
+ Not Visible
+ Not Required
+ Input
+ Program owner request ID (non
+-zero) or release (zero).
+ Default is 0.
+ PCmd_Virtual
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to select Virtual (simulated) device 
+
+operation. The 
+instruction clears this operand 
+
+automatically.
+ Default is false.
+ PCmd_Physical
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to select Physical device operation 
+
+(not simulated). The instruction clears this operand 
+automatically.
+ Default is 
+false.
+ PCmd_Start1
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to Start Motor Forward / Slow. The 
+instruction clears this operand automatically.
+ Default is false.
+ PCmd_Start2
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to Start Motor 
+Reverse / Fas
+t. The 
+instruction clears this operand automatically.
+ Default is false.
+ PCmd_Stop
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to Stop Motor. The instruction clears 
+
+this operand automatically.
+ Default is false.
+ PCmd_Prog
+ BOOL
+ Not 
+Visible
+ Not Requi
+red
+ Input
+ Program command to select Program (Operator to 
+
+Program). The instruction clears this operand 
+automatically if Cfg_PCmdProgAsLevel = 0.
+ Default is false.
+ PCmd_Oper
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to 
+select Operator (Program to
+ Operator). The instruction clears this operand 
+automatically.
+ Default is false.
+ PCmd_Lock
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to lock Program (disallow Operator). 
+The instruction clears this operand automaticall
+y if 
+Cfg_PCmdLockAsLevel = 
+0. Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Input Members
+ Data Type
+ FBD Default 
+Visibil
+ity
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ PCmd_Unlock
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to unlock Program (allow Operator 
+to acquire). The instruction clears this operand 
+
+automatically.
+ Default is false.
+ PCmd_Normal
+ BOOL
+ Not 
+Visible
+ Not Required
+ Input
+ Progr
+am command to select Normal command source 
+(Operator or Program). The instruction clears this 
+
+operand automatically.
+ Default is false.
+ PCmd_Reset
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to reset all alarms 
+and latched shed 
+
+conditions requiring
+ reset. The instruction clears this 
+operand automatically.
+ Default is false.
+ MCmd_Rel
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Maintenance command to release ownership 
+
+(Maintenance to 
+Operator/Program/External/Override). 
+
+The instruction clears this operand aut
+omatically.
+ Default is false.
+ OCmd_Unlock
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Operator command to unlock / release (allow Program 
+
+to acquire) ownership. The instruction clears thi
+s 
+operand automatically.
+ Default is false.
+ XCmd_Start1
+ BOOL
+ Not Visible
+ Not
+ Required
+ Input
+ External command to Start Motor Forward / Slow. The 
+
+instruction clears this operand automatically.
+ Default is false.
+ XCmd_Start2
+ BOOL
+ Not Visible
+ Not 
+Required
+ Input
+ External command to Start Motor Reverse / Fast. The 
+
+instruction clears thi
+s operand automatically.
+ Default is false.
+ XCmd_Stop
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command to Stop Motor. The instruction clears 
+
+this operand 
+automatically.
+ Default is false.
+ XCmd_Jog1
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command t
+o Jog Motor Forward / Slow. The 
+
+instruction clears this operand automatically if max jog 
+time is reached.
+ Default is false.
+ XCmd_Jog2
+ BOOL
+ Not Visible
+ Not 
+Required
+ Input
+ External command to Jog Motor Reverse / Fast. The 
+instruction clears this operand aut
+omatically if max jog 
+time is reached.
+ Default is false.
+ XCmd_Acq
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command to acquire ownership 
+
+(Operator/Program/Override/Maintenance to External). 
+The instruction clears this operand automatically if 
+Cfg_ExtAc
+qAsLevel = 0.
+ Default is false.
+ XCmd_Rel
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command to release ownership if 
+
+Cfg_ExtAcqAsLevel = 0 (External to 
+
+Operator/Program/Override/Maintenance). The 
+instruction clears this operand automatically.
+ Default is 
+false.
+ XCmd_Reset
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command to 
+clear shed latches and cleared 
+alarms. The instruction clears this operand 
+automatically.
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 585
+  Public Input Members
+ Data Type
+ FBD Default 
+Visibil
+ity
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ XCmd_ResetAckAll
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command to
+ acknowledge and reset all alarms 
+and latched shed conditions. The instruct
+ion clears this 
+operand automatically.
+ Default is false.
+  Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+required
+ Usage
+ Description
+ EnableOut
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ Enable Output 
+- System Defined Parameter
+ Out_Run1Data
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1=Start/Run Motor Forward or Slow, 0=Stop Motor 
+
+(for held starter type).
+ Out_Run2Data
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1=Start/Run Motor Rev
+erse or Fast, 0=Stop Motor 
+(for held starter type).
+ Out_Start1Data
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1=Start Motor Forward or Slow, 0=Motor left in 
+current state.
+ Out_Start2Data
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1=Start Motor Reverse or Fast, 0=Mot
+or left in 
+current state.
+ Out_StopData
+ BOOL
+ Not 
+Visible
+ Not Required
+ Output
+ 1=Stop Motor, 0=Motor left in current state.
+ Out_ClearFaultData
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1=Attempt to clear Fault on intelligent motor 
+controller.
+ Out_HornData
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Sound 
+audible prior to commanded motor 
+start.
+ Out_Reset
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Reset command has been received and 
+accepted.
+ Out_OwnerSts
+ DINT
+ Not Visible
+ Not Required
+ Output
+ Status of command source,
+ owner command 
+handshake and ready status. 
+ 0 = None,
+ .10 = Operator Lock,
+ .11 = Operator Unlock,
+ .12 = Program Lock,
+ .13 = Program Unlock,
+ .14 = Acquire Maintenance,
+ .15 = Release Maintenance,
+ .16 = Acquire External,
+ .17 = Release
+ External,
+ .18 = Has Main
+tenance,
+ .19 = External Override Lock, 
+ .20 = Has External,
+ .21 = Has Operator, 
+ .22 = Has Operator Locked, 
+ .23 = Has Program, 
+ .24 = Has Program Locked, 
+ .29 = Echo, 
+ .30 = Not Ready.
+ Sts_Initialized
+ BOOL
+ Not Visible
+ Not 
+Required
+ Output
+ 1 = Instruction 
+is initialized. Use Inp_InitializeReq 
+to reinitialize.
+ Sts_Stopped
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Motor requested to stop and is confirmed 
+stopped.
+ Sts_Starting1
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Motor 
+requested to run forward and awaiting 
+run f
+eedback.
+ Sts_Starting2
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Motor requested to run reverse and awaiting 
+run feedback.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Sts_Running1
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Motor requested to run and is 
+confirmed 
+running forward.
+ Sts_Running2
+ BOOL
+ Not Vi
+sible
+ Not Required
+ Output
+ 1 = Motor requested to run and is confirmed 
+running reverse.
+ Sts_Stopping
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Motor running / jogging requested to stop and 
+awaiting 
+stopped feedback.
+ Sts_Jogging1
+ BOOL
+ Visible
+ Not Required
+ Outpu
+t 1 = Motor requested to Jog Forward.
+ Sts_Jogging2
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Motor requested to Jog Reverse.
+ Sts_Horn
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Motor 
+Audible Alert (Horn) is Active.
+ Sts_NotReady
+ BOOL
+ Not Visible
+ Not Require
+d Output
+ 1 = Motor is Not Ready (cannot be started) Check 
+
+alarms, stops, faults.
+ Sts_Alarm
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Intelligent motor controller has an Alarm 
+(see 
+
+controller display or manual).
+ Sts_Virtual
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = The instruction treats the Motor as virtual. 
+
+The instruction acts as normal but the output is 
+kept de
+-energized; 0 = The instruction operates 
+the Motor normally. Sts_
+Virtual is a copy of 
+Sts_Virtual.
+ SrcQ_IO
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Source and quality of primary input or output 
+(enumerated): 
+ 0=Good, live, confirmed good 
+ 1=Good, live, assumed good 
+ 2=Good, no feedback, assumed good 
+ 8=Test, virtualized 
+ 9=Test, loopback 
+ 10=Test, manually entered 
+ 16=Uncertain, live, off
+-spec 
+ 17=Unce
+rtain, substituted at device or bus 
+ 18=Uncertain, substituted at instruction 
+ 19=Uncertain, using last known good 
+ 20=Uncertain, using replacement value 
+ 32=Bad, signal failure 
+ 33=Bad, channel fault 
+ 34=Bad, module or communication fault 
+ 35=Bad, invalid
+ configuration
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 587
+  Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ SrcQ
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Source and quality of primary value or status 
+(enumerated): 
+ 0=Good, live, confirmed good 
+ 1=Good, live, assumed good 
+ 2=Good, no feedback, assumed good 
+ 8=Test, virtualized 
+ 9=Test, loopback 
+ 10=Te
+st, manually entered 
+ 16=Uncertain, live, off
+-spec 
+ 17=Uncertain, substituted at device or bus 
+ 18=Uncertain, substituted at instruction 
+ 19=Uncertain, using last known good 
+ 20=Uncertain, using replacement value 
+ 32=Bad, signal failure 
+ 33=Bad, chann
+el fa
+ult 
+ 34=Bad, module or communication fault 
+ 35=Bad, invalid configuration
+ Sts_eCmd
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Motor Command: 
+ 0 = None, 
+ 1 = Stop, 
+ 2 = Start 1, 
+ 3 = Start 2, 
+ 4 = Jog 1, 
+ 5 = Jog 2.
+ Sts_eFdbk
+ SINT
+ Not Visible
+ Not 
+Required
+ Outpu
+t Motor Feedback: 
+ 0 = Stopped, 
+ 1 = Running Forward, 
+ 2 = Running Reverse, 
+ 3 = Running Slow, 
+ 4 = Running Fast.
+ Sts_eSts
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Motor Status: 
+ 0 = Unknown, 
+ 1 = Stopped, 
+ 2 = Running 1, 
+ 3 = Running 2, 
+ 4 = Starting 1, 
+ 5 = Starting 2, 
+ 6 = Jogging 1, 
+ 7 = Jogging 2, 
+ 8 = Stopping, 
+ 14 = Horn, 
+ 15 = Out of Service.
+ Sts_eFault
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Motor Fault Status: 
+ 0 = None, 
+ 15 = Interlock Trip, 
+ 16 = Fail to Start, 
+ 17 = Fail to Stop, 
+ 18 = Motor Fault, 
+ 32 = I/O Fault, 
+ 34 = Config Error.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Sts_eNotify
+ SINT
+ Not Visible
+ Not Required
+ Output
+ All alarm status enumerated values: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low
+ severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = Urgent s
+everity alarm, unacknowledged.
+ Sts_eNotifyAll
+ SINT
+ Not Visible
+ Not 
+Required
+ Output
+ All alarm status enumerated values including 
+
+related objects: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+
+required, 
+ 2 = Low severity alarm,
+ acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm, ackn
+owledged, 
+ 9 = U
+rgent severity alarm, unacknowledged.
+ Sts_eNotifyIOFault
+ SINT
+ Not Visible
+ Not Required
+ Output
+ IOFault alarm status enumerated values: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+
+required, 
+ 2 = Low severity a
+larm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged
+,  7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm,
+ acknowledged, 
+ 9 = Urgent severity alarm, unacknowledged.
+ Sts_eNotifyFailToStart
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Fail to Start alarm status enumerated values: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknowledged, 
+ 8 = Urgent 
+severity alarm, acknowledged, 
+ 9 = Urgent severity alarm, unacknowledged.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 589
+  Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Sts_eNotifyFailToStop
+ SINT
+ Not Visible
+ Not 
+Required
+ Output
+ Fail to Stop alarm status enumerated values: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknowledged,
+  8 = Urgent severity alarm, acknowledged, 
+ 9 = U
+rgent severity alarm, unacknowledged.
+ Sts_eNotifyIntlkTrip
+ SINT
+ Not Visible
+ Not Required
+ Output
+ IntlkTrip alarm status enumerated values: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged o
+r reset 
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged
+,  7 = High severity alarm, unackn
+owledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = Urgent severity alarm, unacknowledged.
+ Sts_eNotifyMotorFault
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Motor Fault alarm status enumerated values: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unac
+knowledged or reset 
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity a
+larm, unacknowledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = Urgent severity alarm, unacknowledged
+ Sts_UnackAlmCount
+ DINT
+ Not Visible
+ Not 
+Required
+ Output
+ Count of unacknowledged alarms.
+ Sts_eFaultCode
+ DINT
+ Not Visible
+ Not Required
+ Output
+ First Tr
+ip Code after reset. See Motor manual or 
+Power Discrete Object for description.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Sts_eSrc
+ INT
+ Not Visible
+ Not Required
+ Output
+ The current command source enumerated 
+values: 
+ 0 = Logic not in use, 
+ 4 = Hand, 
+ 8 = Maintenance, 
+ 16 = Override, 
+ 32 = Program, 
+ 33 = Program locked, 
+ 34 = Program by default (Normal), 
+ 64 = Operator, 
+ 65 = Operator locked, 
+ 66 = Operator by default (Normal), 
+ 128 = Maintenance Out of Service, 
+ 129 = Programmed Out of Service (rung false), 
+ 256 = External.
+ Sts_bSrc
+ INT
+ Not Visible
+ Not Required
+ Output
+ Active selection bitmap (for HMI totem pole with 
+
+command source request selection): 
+ Sts_bSrc.0: Hand, 
+ Sts_bSrc.1: Programmed Out of Service (rung 
+
+false), 
+ Sts_bSrc.2: Maintenance Out of Service, 
+ Sts_bSrc.3: Maintenance, 
+ Sts_bSrc.4: 
+Override, 
+ Sts_bSrc.
+5: External, 
+ Sts_bSrc.6: Program locked, 
+ Sts_bSrc.7: Program, 
+ Sts_bSrc.8: Operator locked, 
+ Sts_bSrc.9: Operator.
+ Sts_Available
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Motor has been acquired by Program and is 
+now available for sta
+rt/stop 
+control.
+ Sts_IntlkAvailable
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Motor can be acquired by Program and is 
+
+available for start/stop control when interlocks 
+are OK.
+ Sts_Bypass
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Bypassable
+ interlocks are by
+passed.
+ Sts_BypActive
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Interlock bypassing active (bypassed or 
+
+maintenance).
+ Sts_MaintByp
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Device has a maintenance bypass function 
+active.
+ Sts_NotRdy
+ BOOL
+ Not Visible
+ Not Requi
+red
+ Output
+ 1 = Device is not ready, see detail bits 
+(Sts_Nrdyxxx) for reason.
+ Sts_NrdyCfgErr
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Device is not ready: Configuration error.
+ Sts_NrdyDvcNotReady
+ BOOL
+ Not 
+Visible
+ Not Required
+ Output
+ 1 = Device is not rea
+dy: Intelligent motor 
+controller Not Ready.
+ Sts_NrdyFail
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Device is not ready: Device failure (Shed 
+requires Reset).
+ Sts_NrdyIntlk
+ BOOL
+ Not Visible
+ Not 
+Required
+ Output
+ 1 = Device is not ready: Interlock not OK.
+ Sts_NrdyIOFault
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Device is not ready: IO Fault (Shed requires 
+Reset).
+ Sts_NrdyOoS
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Device is not ready: 
+Device disabled by 
+
+Maintenance.
+ Sts_Nrdy1Perm
+ BOOL
+ Not Visible
+ Not Requi
+red
+ Output
+ 1 = Device is not ready: Permissive 1 not OK.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 591
+  Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Sts_Nrdy2Perm
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Device is not ready: Permissive 2 not OK.
+ Sts_NrdyPrioStop
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Device is not ready: Operator or External 
+priority Stop command requires reset.
+ Sts_NrdyTrip
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Device is not ready: Device Tripped, intelligent 
+motor 
+controller fault requires Reset.
+ Sts_Err
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Error in configuration: See d
+etail bits 
+(Sts_Errxxx) for reason.
+ Sts_ErrAlm
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error in Logix tag
+-based alarm settings.
+ Sts_ErrPauseTime
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error in Config: Invalid Pause time: use 0 to 
+2147483.
+ Sts_ErrVirt
+ualFdbkTime
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error in Config: Virtual feedback echo time: 
+use 0 to 2147483.
+ Sts_ErrFailToStartTime
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error in Config: Fail to Start timer preset: use 
+0 to 2147483.
+ Sts_ErrFail
+ToStopTime
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error in Config: Fail to Stop timer preset: use 
+0 to 
+2147483.
+ Sts_ErrResetPulseTime
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error in Config: Reset Pulse timer preset: use 
+0 to 2147483.
+ Sts_ErrMaxJogTim
+e BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error in Config: Maximum Jog Time timer 
+preset: use 0 to 
+2147483.
+ Sts_Hand
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Hand is selected (supersedes OoS, 
+
+Maintenance, Override, External, Program, 
+Operator).
+ Sts_OoS
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Out of Service is selected (supersedes 
+
+Maintenance, 
+Override, External, Program, 
+Operator).
+ Sts_Maint
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Maintenance is selected (supersedes 
+
+Override, External, Program, Operator).
+ Sts_Ov
+rd BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Override is selected (supersedes 
+External, 
+Program, Operator).
+ Sts_Ext
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = External is selected (supersedes Program and 
+Operator).
+ Sts_Prog
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Prog
+ram is selected.
+ Sts_ProgLocked
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Program is selected and Locked.
+ Sts_Oper
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Operator is selected.
+ Sts_OperLocked
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Operator is selected and
+ Locked.
+ Sts_ProgOperSel
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ Program/Operator selection (latch) state: 1 = 
+
+Program, 0 = Operator.
+ Sts_ProgOperLock
+ BOOL
+ Visible
+ Not Required
+ Output
+ Program/Operator lock (latch) state, 1 = Locked, 0 
+= Unlocked.
+ Sts_Norma
+l BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = 
+Selection equals the Normal (Program or 
+Operator).
+ Sts_ExtReqInh
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = External request inhibited, cannot get to 
+External from current state.
+ Sts_ProgReqInh
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Program 
+request inhibited, cannot get to 
+
+Program from current state.
+ Sts_MAcqRcvd
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Program request inhibited, cannot get to 
+Program from current state.
+ Sts_CmdConflict
+ BOOL
+ Not Visible
+ Not Req
+uired
+ Output
+ 1 = 
+Conflicting commands received this scan.
+ Sts_Alm
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = An alarm is active.
+ Sts_AlmInh
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = An alarm is shelved or disabled.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Sts_IOFault
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ I/O Fault status: 1 = Bad, 0 = OK. There is a 
+predefined default discrete Logix tag
+-based 
+alarm for the status. Set standard configuration 
+members of the discrete Logix tag
+-based alarm. 
+Alarm elements can be accessed as follows: 
+PMTRTag.@Alarms.Alm
+_IOFault
+.AlarmElement.
+ Sts_FailToStart
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Motor failed to Start. There is a predefined 
+
+default discrete Logix tag
+-based alarm for the 
+
+status. Set standard configuration members of 
+the discrete Logix tag
+-based alarm. A
+larm 
+elements can be accessed as follows: 
+
+PMTRTag.@Alarms.Alm_FailToStart.Ala
+rmElement
+. Sts_FailToStop
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Motor failed to Stop. There is a predefined 
+
+default discrete Logix tag
+-based alarm for the 
+status. Set standard
+ configuration members of 
+the discrete Logix tag
+-based alarm. Alarm 
+elements can be accessed as follows: 
+PMTRTag.@Alarms.Alm_FailToStop.Alarm
+Element.
+ Sts_IntlkTrip
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Motor stopped by an interlock Not OK. There is 
+a predefined default discrete Logix tag
+-based 
+alarm for the status. Set standard configuration 
+
+members of the discrete Logix tag
+-based alarm. 
+Alarm elements can be accessed as follows: 
+PMTRTag.@Alarms.Alm_IntlkTrip.AlarmElement.
+ Sts_MotorFault
+ BOOL
+ Not Visib
+le Not Required
+ Output
+ 1 = Intelligent Motor Control Fault. See control 
+device display or user manual.
+ Sts_RdyAck
+ BOOL
+ Not Visible
+ Not 
+Required
+ Output
+ 1 = An alarm is ready to be acknowledged.
+ Sts_RdyReset
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = A latch
+ed alarm or shed condition is ready to 
+be reset.
+ XRdy_Acq
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Ready for XCmd_Acq, enable HMI 
+button.
+ XRdy_Rel
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Ready for XCmd_Rel, enable HMI button.
+ XRdy_Start1
+ BOOL
+ Not Visib
+le Not Required
+ Output
+ 1 = Ready for XCmd_Start1, enable button.
+ XRdy_Start2
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Ready for 
+XCmd_Start2, enable button.
+ XRdy_Jog1
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Ready for XCmd_Jog1, enable button.
+ XRdy_Jog2
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Ready for XCmd_Jog2, enable button.
+ XRdy_Stop
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Ready for XCmd_Stop, enable button.
+ XRdy_Reset
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Ready for XCmd_Reset, enable button.
+ XRdy
+_ResetAckAll
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Ready for XCmd_ResetAckAll, enable button.
+ Val_Owner
+ DINT
+ Not 
+Visible
+ Not Required
+ Output
+ Current object owner ID (0 = not owned).
+  Private Input Members
+ Data Type
+ Description
+ HMI_BusObjIndex
+ DINT
+ This object's index in the bus array, for use by HMI display.
+ Default is 0.
+ MCmd_Acq
+ BOOL
+ Maintenance command to 
+acquire ownership (Operator/Program/External/Override to 
+Maintenance). The instruction clears this operand automatically.
+ Default is false.
+ MCm
+d_Bypass
+ BOOL
+ Maintenance command to bypass all bypassable interlocks and permissives. The 
+
+instruction clears th
+is operand automatically.
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 593
+  Private Input Members
+ Data Type
+ Description
+ MCmd_Check
+ BOOL
+ Maintenance command to check (not bypass) all interlocks and permissives. The 
+instr
+uction clears this operand automatically.
+ Default is false.
+ MCmd_IS
+ BOOL
+ Maintenance command to select In 
+Service. The instruction clears this operand 
+
+automatically.
+ Default is false.
+ MCmd_OoS
+ BOOL
+ Maintenance command to select Out of Service. The instru
+ction clears this operand 
+automatically.
+ Default is false.
+ MCmd_Physical
+ BOOL
+ Maintenance command to 
+select Physical device operation (not simulated). The 
+
+instruction clears this operand automatically.
+ Default is false.
+ MCmd_Virtual
+ BOOL
+ Maintenance comm
+and to select Virtual (simulated) device operation. The instruction 
+clears this operand 
+automatically.
+ Default is false.
+ OCmd_Jog1
+ BOOL
+ Operator command to Jog Motor Forward / Slow. The instruction clears this operand 
+
+automatically if max jog time is reac
+hed.
+ Default is false.
+ OCmd_Jog2
+ BOOL
+ Operator command to Jog Motor Reverse / Fast. The
+ instruction clears this operand 
+
+automatically if max jog time is reached.
+ Default is false.
+ OCmd_Lock
+ BOOL
+ Operator command to lock Operator (disallow Program). The i
+nstruction clears this 
+operand automatically.
+ Default is false.
+ OCmd_Normal
+ BOOL
+ Operator command to select Normal (Operator or Program). The instruction clears this 
+
+operand automatically.
+ Default is false.
+ OCmd_Oper
+ BOOL
+ Operator command to select Opera
+tor (Program to Operator). The instruction clears this 
+operand automatically.
+ Defa
+ult is false.
+ OCmd_Prog
+ BOOL
+ Operator command to select Program (Operator to Program). The instruction clears this 
+
+operand automatically.
+ Default is false.
+ OCmd_Reset
+ BOOL
+ Operator command to reset all alarms and latched shed conditions. The 
+instruction 
+clears this operand automatically.
+ Default is false.
+ OCmd_ResetAckAll
+ BOOL
+ Operator command to acknowledge and reset all alarms and latched shed conditions. 
+
+The use of OCmd_
+ResetAckAll is restricted to HMI. The instruction clears this operand 
+automatically.
+ Default is false.
+ OCmd_Start1
+ BOOL
+ Operator command to Start Motor Forward / Slow. The instruction clears this operand 
+automatically.
+ Default is false.
+ OCmd_Start2
+ BOOL
+ Operator command to Start Motor Reverse / Fast. The 
+instruction clears this operand 
+
+automatically.
+ Default is false.
+ OCmd_Stop
+ BOOL
+ Operator command to Stop Motor. The instruction clears this operand automatically.
+ Default is false.
+  Private Output Membe
+rs Data Type
+ Description
+ MRdy_Acq
+ BOOL
+ 1 = Ready for MCmd_Acq, enable HMI button.
+ MRdy_Bypass
+ BOOL
+ 1 = Ready for MCmd_Bypass, enable HMI button.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Private Output Membe
+rs Data Type
+ Description
+ MRdy_Check
+ BOOL
+ 1 = Ready for MCmd_Check, enable HMI button.
+ MRdy_IS
+ BOOL
+ 1 = Ready for MCmd_IS, enable HMI
+ button.
+ MRdy_OoS
+ BOOL
+ 1 = Ready for MCmd_OoS, enable HMI button.
+ MRdy_Physical
+ BOOL
+ 1 = Ready for MCmd_Physical, enable HMI button.
+ MRdy_Rel
+ BOOL
+ 1 = Ready for MCmd_Rel, enable HMI button.
+ MRdy_Virtual
+ BOOL
+ 1 = Ready for MCmd_Virtual, enable HMI butto
+n. ORdy_Jog1
+ BOOL
+ 1 = 
+Ready for OCmd_Jog1, enable HMI button.
+ ORdy_Jog2
+ BOOL
+ 1 = Ready for OCmd_Jog2, enable HMI button.
+ ORdy_Lock
+ BOOL
+ 1 = Ready for OCmd_Lock, enable HMI button.
+ ORdy_Normal
+ BOOL
+ 1 = Ready for OCmd_Normal, enable HMI button.
+ ORdy_Ope
+r BOOL
+ 1 = Ready for OCmd_Oper, enable HMI button.
+ ORdy_Prog
+ BOOL
+ 1 = Ready for OCmd_Prog, enable HMI button.
+ ORdy_Reset
+ BOOL
+ 1 = A latched alarm or shed condition is ready to be reset.
+ ORdy_ResetAckAll
+ BOOL
+ 1 = A latched alarm or shed condition is read
+y to 
+be reset or acknowledged.
+ ORdy_Start1
+ BOOL
+ 1 = Ready for OCmd_Start1, enable HMI button.
+ ORdy_Start2
+ BOOL
+ 1 = Ready for OCmd_Start2, enable HMI button.
+ ORdy_Stop
+ BOOL
+ 1 = Ready for OCmd_Stop, enable HMI button.
+ ORdy_Unlock
+ BOOL
+ 1 = Ready for OCmd_
+Unlock, enable HMI button.
+ Sts_FaultDesc
+ STRING
+ Description of intelligent motor controller fault, lookup from last fault code.
+  Public InOut Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+required
+ Usage
+ Description
+ Ref_Ctrl_Set
+ RAC_ITF_DVC_PW
+RDISC
+RETE_SET
+ Visible
+ Required
+ InOut
+ Discrete Power Automation Device Object 
+Settings Interface.
+ Ref_Ctrl_Cmd
+ RAC_ITF_DVC_PW
+RDISCRETE_CMD
+ Visible
+ Required
+ InOut
+ Discrete Power Automation Device Object 
+Command 
+Interface.
+ Ref_Ctrl_Sts
+ RAC_ITF_DVC_PW
+RDISCRETE_ST
+S Visible
+ Required
+ InOut
+ Discrete Power Automation Device Object 
+Status Interface.
+ BusObj
+ BUS_OBJ
+ Visible
+ Required
+ InOut
+ Bus component
+ Ref_FaultCodeList
+ RAC_CODE_DESCR
+IPTION[1]
+ Visible
+ Required
+ InOut
+ Fault Code to Fault Description lookup table for 
+intel
+ligent motor controller.
+  RAC_ITF_DVC_PWRDISCRETE_SET Structure
+ The RAC_ITF_DVC_PWRDISCRETE_SET structure is the first of three 
+structures exchanged with the associated Power Discrete Device Obje
+ct to 
+interface with the intelligent motor control device. T
+his structure handles 
+settings, such as the Command Inhibit, sent to the motor controller.  
+ This parameter is used to link the instruction to an external tag that contains 
+necessary data for the 
+instruction to operate. The external tag must be of the 
+data
+ type shown, or may be NULL. If NULL, other pins on the instruction are 
+used to link the necessary data.
+ Members
+ Data Type
+ Description
+ InhibitCmd
+ BOOL
+ 1=Inhibit user Commands from 
+external sources; 0=AllowControl
+ InhibitSet
+ BOOL
+ 1=Inhibit user Settings f
+rom external sources; 0=Allow
+  

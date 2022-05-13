@@ -1,0 +1,109 @@
+<Structure DataType="P_INTERLOCK">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_InitializeReq" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk00" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk01" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk02" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk03" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk04" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk05" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk06" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk07" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk08" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk09" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk10" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk11" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk12" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk13" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk14" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk15" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk16" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk17" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk18" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk19" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk20" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk21" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk22" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk23" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk24" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk25" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk26" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk27" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk28" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk29" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk30" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Intlk31" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_IOFault" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="Inp_Available" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_BypActive" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_LatchDefeat" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_OKState" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="Cfg_Latched" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="Cfg_StopOnly" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="Cfg_Bypassable" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="Cfg_HasNav" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="Cfg_eType00" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType01" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType02" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType03" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType04" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType05" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType06" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType07" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType08" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType09" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType10" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType11" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType12" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType13" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType14" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType15" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType16" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType17" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType18" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType19" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType20" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType21" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType22" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType23" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType24" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType25" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType26" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType27" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType28" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType29" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType30" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_eType31" DataType="SINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="Cfg_HasType" DataType="SINT" Radix="Binary" Value="2#1111_1111"/>
+<DataValueMember Name="Cfg_TypeDesc00" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_TypeDesc01" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_TypeDesc02" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_TypeDesc03" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_TypeDesc04" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_TypeDesc05" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_TypeDesc06" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_TypeDesc07" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_BankID" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Cfg_HasMoreObj" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_CnfrmReqd" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="PCmd_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Val_FirstUpBankID" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Val_FirstUpIndex" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_Initialized" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_IntlkOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_NBIntlkOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_Available" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_IntlkTripInh" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_BypActive" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_FirstUpDetect" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_BankIDError" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_LatchDefeat" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_RdyReset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_LatchMask" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="Sts_BypassMask" DataType="DINT" Radix="Binary" Value="2#1111_1111_1111_1111_1111_1111_1111_1111"/>
+<DataValueMember Name="Sts_Intlk" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+<DataValueMember Name="Sts_FirstOut" DataType="DINT" Radix="Binary" Value="2#0000_0000_0000_0000_0000_0000_0000_0000"/>
+</Structure>

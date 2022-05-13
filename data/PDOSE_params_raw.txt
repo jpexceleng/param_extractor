@@ -1,0 +1,217 @@
+<Structure DataType="P_DOSING">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_InitializeReq" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_OwnerCmd" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Inp_RatePVBad" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_RatePVUncertain" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_QtyPVBad" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_QtyPVUncertain" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_RunFdbk" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_DribbleFdbk" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_StopFdbk" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_CtrldEqpFault" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_eRatePVSrcQ" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Inp_eRatePVNotify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Inp_eQtyPVSrcQ" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Inp_eQtyPVNotify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Inp_ExtInh" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_AllowDisable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_AllowShelve" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasEqpFdbk" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_UseEqpFdbk" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasDribble" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasRatePVNav" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_HasMonitoring" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasMoreObj" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasQtyPVNav" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_AutoAdjPreact" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_LossInQty" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_SetTrack" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_ShedOnEqpFault" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_HasOper" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_HasOperLocked" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasProg" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_HasProgLocked" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_HasExt" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasMaint" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasMaintOoS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_OvrdOverLock" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_ExtOverLock" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_ProgPwrUp" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_ProgNormal" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_PCmdPriority" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_PCmdProgAsLevel" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_PCmdLockAsLevel" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_ExtAcqAsLevel" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_AutoAdjPercent" DataType="REAL" Radix="Float" Value="10.0"/>
+<DataValueMember Name="Cfg_CountsPerEU" DataType="REAL" Radix="Float" Value="1.0"/>
+<DataValueMember Name="Cfg_EUQtyMult" DataType="REAL" Radix="Float" Value="1.0"/>
+<DataValueMember Name="Cfg_BumpTime" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Cfg_ClearPulseTime" DataType="REAL" Radix="Float" Value="1.0"/>
+<DataValueMember Name="Cfg_FaultTime" DataType="REAL" Radix="Float" Value="10.0"/>
+<DataValueMember Name="Cfg_HiFlowRateLim" DataType="REAL" Radix="Float" Value="1.50000000e+038"/>
+<DataValueMember Name="Cfg_LoFlowRateLim" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Cfg_LoRateCutoff" DataType="REAL" Radix="Float" Value="0.1"/>
+<DataValueMember Name="Cfg_MaxQty" DataType="REAL" Radix="Float" Value="500.0"/>
+<DataValueMember Name="Cfg_RateFiltTimeConst" DataType="REAL" Radix="Float" Value="0.1"/>
+<DataValueMember Name="Cfg_RateTime" DataType="REAL" Radix="Float" Value="60.0"/>
+<DataValueMember Name="Cfg_Rollover" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Cfg_SettleTime" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Cfg_VirtualRate" DataType="REAL" Radix="Float" Value="5.0"/>
+<DataValueMember Name="Cfg_VirtualDribbleRate" DataType="REAL" Radix="Float" Value="0.1"/>
+<DataValueMember Name="Cfg_eKeepSP" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Cfg_eKeepStart" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Cfg_eKeepTol" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Cfg_eKeepDribblePreact" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Cfg_HasHistTrend" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Cfg_QtyDecPlcs" DataType="SINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Cfg_RateDecPlcs" DataType="SINT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="Cfg_CnfrmReqd" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="PCmd_Bump" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_ClearTot" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_StartTot" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_StopTot" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_StartFlow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_StopFlow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_CheckTol" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Lock" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Normal" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Oper" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Prog" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Unlock" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Virtual" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Physical" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PSet_Owner" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="PSet_DribbleQty" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="PSet_Preact" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="PSet_SP" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="PSet_TolHi" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="PSet_TolLo" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="XCmd_Bump" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_ClearTot" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_StartTot" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_StopTot" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_StartFlow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_StopFlow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_CheckTol" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_Acq" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_Rel" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_ResetAckAll" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XSet_DribbleQty" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="XSet_Preact" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="XSet_SP" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="XSet_TolHi" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="XSet_TolLo" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Out_ClearTot" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_RunTot" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_RunFlow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_StopFlow" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Out_DribbleFlow" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_OwnerSts" DataType="DINT" Radix="Decimal" Value="564134016"/>
+<DataValueMember Name="Sts_Initialized" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_CalcQty" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_CalcRate" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Cleared" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_TotRunning" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_FlowStarting" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_FlowRunning" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_FlowStopping" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_FlowStopped" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_DribbleStarting" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_FlowDribble" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Bumping" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_InTol" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Complete" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_Virtual" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_bSrc" DataType="INT" Radix="Decimal" Value="128"/>
+<DataValueMember Name="Sts_eCmd" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eFdbk" DataType="SINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Sts_eFault" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotifyAll" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotifyEqpFault" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotifyHiFlowRate" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotifyLoFlowRate" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotifyOverTol" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotifyUnderTol" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotifyZeroFault" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eSrc" DataType="INT" Radix="Decimal" Value="34"/>
+<DataValueMember Name="Sts_eSts" DataType="SINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Sts_UnackAlmCount" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_Available" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_MaintByp" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NotRdy" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NrdyCfgErr" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NrdyEqpFault" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NrdyOoS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NrdyPVBad" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Err" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrAlm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrBumpTime" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrClearPulseTime" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrCountsPerEU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrCutoff" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrEUQtyMult" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrFaultTime" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrInpSrc" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrRateTime" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrLim" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrRollover" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrRateFiltTimeConst" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrSettleTime" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrVirtual" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Hand" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_OoS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Maint" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Ovrd" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Ext" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Prog" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_ProgLocked" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Oper" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_OperLocked" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ProgOperSel" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_ProgOperLock" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Normal" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_ExtReqInh" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_ProgReqInh" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_MAcqRcvd" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_CmdConflict" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Alm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_AlmInh" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_EqpFault" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_HiFlowRate" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_LoFlowRate" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_LoRateCutoff" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_OverTol" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_UnderTol" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ZeroFault" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_QtyBad" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_QtyUncertain" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_RateBad" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_RateUncertain" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_RdyAck" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_RdyReset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Val_SP" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Val_Remain" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Val_PercentComplete" DataType="REAL" Radix="Float" Value="100.0"/>
+<DataValueMember Name="Val_QtyPV" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Val_Qty" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Val_RatePV" DataType="REAL" Radix="Float" Value="25.0"/>
+<DataValueMember Name="Val_Rate" DataType="REAL" Radix="Float" Value="25.0"/>
+<DataValueMember Name="Val_DribbleQty" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Val_Preact" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Val_TolHi" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Val_TolLo" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Val_Owner" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="SrcQ" DataType="SINT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="SrcQ_IO" DataType="SINT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="XRdy_Acq" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XRdy_Rel" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XRdy_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XRdy_ResetAckAll" DataType="BOOL" Value="0"/>
+</Structure>

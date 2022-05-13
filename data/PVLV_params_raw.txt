@@ -1,0 +1,222 @@
+<Structure DataType="P_VALVE_DISCRETE">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_InitializeReq" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_OvrdCmd" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Inp_Pos1FdbkData" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Pos2FdbkData" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_ActuatorFault" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_IOFault" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Pos1PermOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Pos1NBPermOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Pos2PermOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Pos2NBPermOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_IntlkOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_NBIntlkOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_IntlkAvailable" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_IntlkTripInh" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_RdyReset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Hand" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Ovrd" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_OwnerCmd" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Inp_ExtInh" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_HornInh" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_VirtualPos1HO" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_VirtualPos2HO" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_AllowDisable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_AllowShelve" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_eObjType" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Cfg_HasPos1Fdbk" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasPos2Fdbk" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_UsePos1Fdbk" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_UsePos2Fdbk" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasPos1PermObj" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasPos2PermObj" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasIntlkObj" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_FailPos2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_FdbkFail" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_HasStop" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_MntnOut" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_MntnOutAlm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_MntnStop" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasTrip" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_TripPos2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasPulse" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_CompletePulse" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasPulseToState" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasMoreObj" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasStatsObj" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_CoastToLS" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_OperPos1Prio" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_OCmdResets" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_XCmdResets" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_OvrdPermIntlk" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_PCmdPos2AsLevel" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_ShedOnActuatorFault" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_ShedOnIOFault" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_ShedOnFailToTrip" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_ShedOnFullStall" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_ShedOnLossPos1" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_ShedOnLossPos2" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_ShedOnTransitStall" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_HasOper" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_HasOperLocked" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_HasProg" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_HasProgLocked" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_HasExt" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_HasMaint" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_HasMaintOoS" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_OvrdOverLock" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_ExtOverLock" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_ProgPwrUp" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_ProgNormal" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_PCmdPriority" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_PCmdProgAsLevel" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_PCmdLockAsLevel" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_ExtAcqAsLevel" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_Pos1Dly" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Cfg_Pos2Dly" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Cfg_Pos1PulseTime" DataType="REAL" Radix="Float" Value="5.0"/>
+<DataValueMember Name="Cfg_Pos2PulseTime" DataType="REAL" Radix="Float" Value="5.0"/>
+<DataValueMember Name="Cfg_OutPulseTime" DataType="REAL" Radix="Float" Value="5.0"/>
+<DataValueMember Name="Cfg_StartHornTime" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Cfg_FullStallTime" DataType="REAL" Radix="Float" Value="15.0"/>
+<DataValueMember Name="Cfg_TransitStallTime" DataType="REAL" Radix="Float" Value="60.0"/>
+<DataValueMember Name="Cfg_TripFailTime" DataType="REAL" Radix="Float" Value="10.0"/>
+<DataValueMember Name="Cfg_VirtualFdbkTime" DataType="REAL" Radix="Float" Value="3.0"/>
+<DataValueMember Name="Cfg_CnfrmReqd" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="PCmd_Pos1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Pos2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Pos1Pulse" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Pos2Pulse" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_ContPulse" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Trip" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Stop" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PSet_Owner" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="PCmd_Lock" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Normal" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Oper" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Prog" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Unlock" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Virtual" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Physical" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_Pos1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_Pos2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_Pos1Pulse" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_Pos2Pulse" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_ContPulse" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_Trip" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_Stop" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_ResetAckAll" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_Acq" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_Rel" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_Pos1Data" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_Pos2Data" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_StopData" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_TripData" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_HornData" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_OwnerSts" DataType="DINT" Radix="Decimal" Value="1642332288"/>
+<DataValueMember Name="Sts_Initialized" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_Available" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_IntlkAvailable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Bypass" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_BypActive" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_MaintByp" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NotRdy" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_NrdyCfgErr" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NrdyIntlk" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NrdyOoS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NrdyPos1Perm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NrdyPos2Perm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NrdyPerm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NrdyStopPerm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Err" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrAlm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrFullStallTime" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrHas" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrOutPulseTime" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrPos1Dly" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrPos1PulseTime" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrPos2Dly" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrPos2PulseTime" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrTransitStallTime" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrTripFailTime" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Hand" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_OoS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Maint" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Ovrd" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Ext" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Prog" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_ProgLocked" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Oper" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_OperLocked" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ProgOperSel" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_ProgOperLock" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Normal" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_ExtReqInh" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_ProgReqInh" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_MAcqRcvd" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_CmdConflict" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Alm" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_AlmInh" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ActuatorFault" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_CmdToPos1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_CmdToPos2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrUse" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrVirtualFdbkTime" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_FdbkPos1" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_FdbkPos2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_FdbkFail" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_FullStall" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Horn" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_LossPos1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_LossPos2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_IOFault" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_Moving" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_MovingToPos1" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_MovingToPos2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Pos1" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_Pos2" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Pulsing" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Stopped" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_TransitStall" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_TripFail" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Tripping" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_UnackAlmCount" DataType="DINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Sts_NrdyTrip" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NrdyIOFault" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_NrdyActuatorFault" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_IntlkTrip" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_NrdyFail" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_RdyAck" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_RdyReset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Virtual" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_bSrc" DataType="INT" Radix="Decimal" Value="128"/>
+<DataValueMember Name="Sts_eSrc" DataType="INT" Radix="Decimal" Value="34"/>
+<DataValueMember Name="Sts_eCmd" DataType="SINT" Radix="Decimal" Value="4"/>
+<DataValueMember Name="Sts_eFdbk" DataType="SINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Sts_eFault" DataType="SINT" Radix="Decimal" Value="32"/>
+<DataValueMember Name="Sts_eNotify" DataType="SINT" Radix="Decimal" Value="9"/>
+<DataValueMember Name="Sts_eNotifyAll" DataType="SINT" Radix="Decimal" Value="9"/>
+<DataValueMember Name="Sts_eState" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eSts" DataType="SINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Sts_eNotifyActuatorFault" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotifyFullStall" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotifyIntlkTrip" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotifyIOFault" DataType="SINT" Radix="Decimal" Value="9"/>
+<DataValueMember Name="Sts_eNotifyLossPos1" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotifyLossPos2" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotifyTransitStall" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotifyTripFail" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="SrcQ" DataType="SINT" Radix="Decimal" Value="34"/>
+<DataValueMember Name="SrcQ_IO" DataType="SINT" Radix="Decimal" Value="34"/>
+<DataValueMember Name="Val_Owner" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="XRdy_Acq" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XRdy_Rel" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XRdy_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XRdy_ResetAckAll" DataType="BOOL" Value="1"/>
+</Structure>

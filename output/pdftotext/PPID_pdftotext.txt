@@ -1,0 +1,2632 @@
+Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public inpu
+t member
+ Data 
+Type
+ Default Value
+ Description
+ Inp_UseFFPrev
+ BOOL
+ False
+ 1 = Use Inp_FFPrev 
+as previous FF value, 
+ 0 = Use last scan Inp_FF
+ value as previous FF value.
+ Default is false.
+ Inp_UseCVInitialVal
+ BOOL
+ False
+ 1 = Initialize CV to Inp_CVInitialVal.
+ Default is false.
+ Inp_UseCVPrev
+ BOOL
+ False
+ 1 = Use Inp_CVPrev as previous CV value, 
+ 0 = U
+se last scan value.
+ Default is false.
+ Inp_WindupHi
+ BOOL
+ False
+ Windup high signal. When true, the CV cannot integrate in a positive direction. The 
+
+signal is typically obtained from the Windup hi output from a inner loop.
+ Default is false.
+ Inp_WindupLo
+ BOO
+L False
+ Windup low signal. When true, the CV cannot integrate in a negative direction. The 
+signal is typically obtained from the Windup low output from a inner loop.
+ Default is false.
+ Inp_InnerAvailable
+ BOOL
+ True
+ 1 = Inner loop (slave object) is available
+.  0 = I
+nner loop is not available, PPID tracks Inp_CVTrack, typically inner loop SP or 
+actuator position.
+ Default is true.
+ Inp_IntlkOK
+ BOOL
+ True
+ 1 = Bypassable interlocks OK, CV can be set.
+ Default is true.
+ Inp_NBIntlkOK
+ BOOL
+ True
+ 1 = Non
+-Bypassable
+ int
+erlocks OK, CV can be set.
+ Default is true.
+ Inp_IntlkAvailable
+ BOOL
+ False
+ 1 = Interlock availability OK.
+ Default is false.
+ Inp_IntlkTripInh
+ BOOL
+ False
+ 1 = Inhibit interlock trip status.
+ Default is false.
+ Inp_RdyReset
+ BOOL
+ False
+ 1 = Related object, reset
+ by this object, is ready to be reset. Ready for ORdy_Reset, 
+
+enables HMI button. 
+ Default is false.
+ Inp_CVIOFault
+ BOOL
+ False
+ 1 = CV I/O communications status bad, 
+ 0 = OK.
+ Default is false.
+ Inp_PVBad
+ BOOL
+ False
+ 1 = PV quality or PV I/O communications sta
+tus bad, 
+ 0 = OK.
+ Default is false.
+ Inp_PVUncertain
+ BOOL
+ False
+ 1 = PV value not reliable, 
+ 0 = OK.
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 627
+  Public inpu
+t member
+ Data 
+Type
+ Default Value
+ Description
+ Inp_PVSrcQ
+ SINT
+ 0 Inp_PV source status and quality: 
+ 0 = Good, live, confirmed good, 
+ 1 = Good, live, assumed good, 
+ 2 = Good, no feedbac
+k, assumed good, 
+ 8 = Test, simulated, 
+ 9 = Test, loopback, 
+ 10 = Test, manually entered, 
+ 16 = Uncertain, live, off
+-spec, 
+ 17 = Uncertain, substituted at device, 
+ 18 = Unc
+ertain, substituted at instruction, 
+ 19 = Uncertain, using last known good, 
+ 20 = Un
+certain, using replacement value, 
+ 32 = Bad, signal failure, 
+ 33 = Bad, channel fault, 
+ 34 = Bad, module/communications fault, 
+ 35 = Bad, invalid configuration.
+ Default is 
+0. Inp_PVNotify
+ SINT
+ 0 Related PV object alarm priority and acknowledgement status:
+  0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = Urgent severity alarm, unacknowledged.
+ Default
+ is 0.
+ Inp_CVNotify
+ SINT
+ 0 Related CV object alarm priority and acknowledgement sta
+tus: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged,
+  6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = U
+rgent severity alarm, unacknowledged.
+ Default is 0.
+ Inp_CascSPNotify
+ SINT
+ 0 Related Cascade SP object alarm priority and ack
+nowledgement status: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset required, 
+ 2 = Low severity alarm,
+ acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm,
+ unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm, ackn
+owledged, 
+ 9 = Urgent severity alarm, unacknowledged.
+ Default is 0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public inpu
+t member
+ Data 
+Type
+ Default Value
+ Description
+ Inp_HiHiDevGate
+ BOOL
+ True
+ The gate input used for HiHi d
+eviation status detection: 
+ 1 = The corresponding analog input threshold monitoring is enabled, 
+ 0 = Detection is disabled and the corresponding status output is forced off.
+ Default is true.
+ Inp_HiDevGate
+ BOOL
+ True
+ The gate input used for Hi deviation sta
+tus detection: 
+ 1 = The corresponding analog input threshold monitoring is enabled, 
+ 0 = Detection is disabled and the corresponding status output is forced off.
+ Default is true.
+ Inp_LoDevGate
+ BOOL
+ True
+ The gate input used for Lo deviation status detectio
+n: 
+ 1 = The corresponding analog input threshold monitoring is enabled, 
+ 0 = Detection is disabled and the corresponding status output is forced off.
+ Default is true.
+ Inp_LoLoDevGate
+ BOOL
+ True
+ The gate i
+nput used for LoLo deviation status detection: 
+ 1 = 
+The corresponding analog input threshold monitoring is enabled, 
+ 0 = Detection is disabled and the corresponding status output is forced off.
+ Default is true.
+ Inp_Hand
+ BOOL
+ False
+ 1 = Acquire Hand, 
+ 0 = Release Hand.
+ Default is false.
+ Inp_HandFdbk
+ REAL
+ 0.0 CV feedback used when owner is Hand (CVEU). 
+ Valid any float.
+ Default is 0.0.
+ Default is false.
+ Inp_HandFdbkBad
+ BOOL
+ False
+ 1 = CV hand feedback quality or CV hand feedback I/O communications status bad, 
+ 0 = OK.
+ Default is false.
+ Inp_Ovrd
+ BOOL
+ False
+ 1 = Acquire Override (higher priority program logic), 
+ 0 = Release Override.
+ Default is false.
+ Inp_OvrdCmd
+ SINT
+ 0 Loop mode command in Override: 
+ 0 = None, 
+ 1 = Manual, 
+ 2 = Auto, 
+ 3 = Cascade, 
+ 4 = Normal, 
+ 5 = Start SP ramp, 
+ 6 = Stop SP ramp.
+ Default is 
+0. Inp_OvrdSP
+ REAL
+ 0.0 Loop Auto SP in Override (PVEU).
+ Valid any float.
+ Default is 0.0.
+ Inp_OvrdSPTarget
+ REAL
+ 0.0 Override setting for SP target in ramp wizard (PVEU). 
+ Valid any float.
+ Default is 0.0.
+ Inp_OvrdSPRampTime
+ REAL
+ 0.0 Override setting for t
+ime to reach SP target in ramp wizard (second). 
+ Valid = 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Inp_OvrdRatio
+ REAL
+ 1.0
+ Loop Ratio in Override (unitless). 
+ Valid = 0.0 to maximum positive float.
+ Default is 1.0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 629
+  Public inpu
+t member
+ Data 
+Type
+ Default Value
+ Description
+ Inp_OvrdCV
+ REAL
+ 0.0 Loop Manual CV in Ove
+rride (CVEU). 
+ Valid any float.
+ Default is 0.0.
+ Inp_ExtInh
+ BOOL
+ False
+ 1 = Inhibit External acquisition, 
+ 0 = Allow External acquisition.
+ Default is false.
+ Inp_Reset
+ BOOL
+ False
+ 1 = Reset shed latches and 
+latched alarms whose conditions have returned to 
+
+normal.
+ Default is false.
+ Cfg_AllowDisable
+ BOOL
+ True
+ 1 = Allow Maintenance to disable alarms.
+ Default is true.
+ Cfg_AllowShelve
+ BOOL
+ True
+ 1 = Allow Operator to shelve alarms.
+ Cfg_HasRatio
+ BOOL
+ False
+ 1 = Cascade loop mode is Ratio, 
+ 0 = Cascade loop mode is
+ Cascade.
+ Default is false.
+ Cfg_HasCasc
+ BOOL
+ False
+ 1 = Enable the loop to be placed into Cascade/Ratio mode.
+ Default is false.
+ Cfg_HasAuto
+ BOOL
+ True
+ 1 = Enable the loop to be placed into Auto 
+mode.
+ Default is true.
+ Cfg_HasMan
+ BOOL
+ True
+ 1 = Enable the lo
+op to be placed into Manual mode.
+ Default is true.
+ Cfg_HasSPRamp
+ BOOL
+ False
+ 1 = Enable the SP ramp wizard function.
+ Default is false.
+ Cfg_ExecTime
+ REAL
+ 0.0 Execution period for PID algorithm (second). 
+ Configuring the instruction for execution period = 0
+.0 (default) or period shorter than 
+instruction scan time has no effect and the PID algorithm executes every scan. For 
+
+the real execution period check Val_Exe
+cTime.
+ Valid = 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Cfg_PGain
+ REAL
+ 0.0 Proportional gain Kp 
+for independent gains or loop gain Kc for dependent gains 
+(unitless). 
+ Valid = 0.0 to maximum positive float.
+ Default is 0.0.
+ Cfg_IGain
+ REAL
+ 0.0 Integral gain Ki (1/minute) for independent or reset time Ti (minutes/repeat) for 
+
+dependent gains. 
+ Valid = 0.
+0 to maximum positive float.
+ Default is 0.0.
+ Cfg_DGain
+ REAL
+ 0.0 Derivative gain Kd (minute) for independent or rate time Td (minute) for dependen
+t gains. 
+ Valid = 0.0 to maximum positive float.
+ Default is 0.0.
+ Cfg_CVTrackGain
+ REAL
+ 0.0 Tracking gain Kt (1
+/minute) for independent or tracking time constant Tt (minutes) 
+for dependent gains for CV to track Inp_CVTrack if Cfg_UseCVTrack = 1.
+ Valid = 0.0
+ to maximum positive float.
+ Default is 0.0.
+ Cfg_UseCVTrack
+ BOOL
+ False
+ 1 = Use Inp_CVTrack
+ reset feedback in t
+racking, e.g. if PPID output is significantly 
+faster than actuator or inner loop or in override select control.
+ Cfg_PSPWeight
+ REAL
+ 1.0
+ Weight on SP in proportional term in 2DOF PID, beta gain. 
+ Valid = 0.0 to 1.5.
+ Default is 1.0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public inpu
+t member
+ Data 
+Type
+ Default Value
+ Description
+ Cfg_
+DSPWeight
+ REAL
+ 0.0 Weight on SP in derivative term in 2DOF PID, gamma gain. 
+ Valid = 0.0 to 1.5.
+ Default is 0.0.
+ Cfg_PVTrack
+ BOOL
+ False
+ 1 = SP tracks PV in Manual, 
+ 0 = No PV tracking.
+ Default is false.
+ Cfg_GainBumpless
+ BOOL
+ True
+ 1 = CV response to PGain and DGain change is
+ bumpless,
+ 0 = CV response to PGain and DGain change is not bumpless (like in position 
+algorithm).
+ Default is true.
+ Cfg_PositionBump
+ BOOL
+ False
+ 1 = Position form of PD algorithm without bumpless transfer from Manual to Auto or 
+
+Cascade. Enabled only when C
+fg_IGain = 0. Change of proportional gain is not 
+bumpless.
+ 0 = Velocity form of PID algorithm with bumpless transfer from Manual to Auto or 
+
+Casca
+de.
+ Default is false.
+ Cfg_UseESquared
+ BOOL
+ False
+ 1 = Use error squared for proportional action.
+ Default is fal
+se.
+ Cfg_CtrlAction
+ BOOL
+ False
+ 1 = Control action on E = PV
+-SP, direct action
+ 0 = Control action on E = SP
+-PV, reverse action.
+ Default is 
+false.
+ Cfg_Dependent
+ BOOL
+ False
+ 1 = Dependent gains equation, 
+ 0 = Independent gains equation.
+ Default is false.
+ Cfg
+_UseDSmoothing
+ BOOL
+ False
+ 1 = Use derivative smoothing.
+ Default is false.
+ Cfg_DevDB
+ REAL
+ 0.0 PV deviation deadband
+ for PV going away from SP (PVEU). 
+ Valid = 0.0 to maximum positive float.
+ Cfg_DevDBEnter
+ REAL
+ 0.0 PV deviation deadband for PV approaching 
+SP (PVEU). 
+ Valid = 0.0 to Cfg_DevDB.
+ Cfg_UseIntegDevDB
+ BOOL
+ False
+ 1 = Only integral term is suspended when PV deviation deadband status is active, 
+
+proportional and derivative terms remain operational, 
+ 0 = All PID terms are suspended and CV does not move
+ when PV deviation deadband 
+status is active.
+ Default is false.
+ Cfg
+_SkipCVManLim
+ BOOL
+ True
+ 1 = Skip CV clamping in Manual loop mode and for CV from shed, 
+ 0 = Always apply CV clamping.
+ Cfg_SkipCVManRoC
+ BOOL
+ True
+ 1 = Skip CV rate
+-of-change limiting in Man
+ual loop mode and for CV from shed, 
+ 0 = Always apply CV rate
+-of-change limiting.
+ Cfg_InitializeToMan
+ BOOL
+ False
+ 1 = Go to Manual loop mode when initialization is requested (Inp_UseCVInitialVal=1).
+ Default is fals
+e. Cfg_SetTrack
+ BOOL
+ True
+ 1 = Program/Ope
+rator/External settings tracking, 
+ 0 = No settings tracking.
+ Default is true.
+ Cfg_SetTrackOvrdHand
+ BOOL
+ False
+ 1 = Program/Operator/External settings track Override/Hand inputs (CV, SP, Ratio).
+ Default is 
+false.
+ Cfg_HasIntlkObj
+ BOOL
+ False
+ 1 = Tells HMI an
+ interlock object (PINTLK) is connected to Inp_IntlkOK, InpNBIntlkOK, 
+Inp_IntlkAvailable, Inp_IntlkTripInh and Inp_RdyReset.
+ Default is false.
+ Cfg_HasMoreObj
+ BOOL
+ False
+ 1 = Tells HMI an object with 
+more info is available.
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 631
+  Public inpu
+t member
+ Data 
+Type
+ Default Value
+ Description
+ Cfg_HasHistTre
+nd SINT
+ 0 Has historical trend. This enables navigation to the device historical trend faceplate 
+
+from the HMI. 
+ 0 = No external historical trend, 
+ 1 = Datalog historical trend, 
+ 2 = Historian histori
+cal trend.
+ Default is 0.
+ Cfg_HasCascSPNav
+ BOOL
+ False
+ 1 = Tells HMI to enable navigation to a connected cascade SP object.
+ Default is false.
+ Cfg_HasPVNav
+ BOOL
+ False
+ 1 = Tells HMI to enable navigation to a connected PV object.
+ Default is false.
+ Cfg_HasCVNav
+ BOOL
+ False
+ 1 = Tells HMI to enable navigation to a con
+nected CV object.
+ Default is false.
+ Cfg_HasOper
+ BOOL
+ True
+ 1 = Operator (unlocked) exists, can be selected.
+ Default is true.
+ Cfg_HasOperLocked
+ BOOL
+ True
+ 1 = Operator Locked exists, can 
+be selected.
+ Default is true.
+ Cfg_HasProg
+ BOOL
+ True
+ 1 = Program (unlo
+cked) exists, can be selected.
+ Default is true.
+ Cfg_HasProgLocked
+ BOOL
+ True
+ 1 = Program Locked exists, can be selected.
+ Default is true.
+ Cfg_HasExt
+ BOOL
+ False
+ 1 = External 
+exists, can be selected.
+ Default is false.
+ Cfg_HasMaint
+ BOOL
+ True
+ 1 = Maintenance
+ exists, can be selected.
+ Default is true.
+ Cfg_HasMaintOoS
+ BOOL
+ True
+ 1 = Maintenance Out of Service exists, can be selected.
+ Default is true.
+ Cfg_OvrdOverLock
+ BOOL
+ True
+ 1 = Override supersedes Program/Operator Lock, 
+ 0 = Do not override Lock.
+ Default is 
+true.
+ Cfg_ExtOverLock
+ BOOL
+ False
+ 1 = External supersedes Program/Operator Lock, 
+ 0 = Do not override Lock.
+ Default is false.
+ Cfg_eKeepLM
+ SINT
+ 0 Loop mode ownership: 
+ 0 = Follows command source, 
+ 1 = Operator, 
+ 2 = Program, 
+ 3 = External.
+ Default is 0.
+ Cfg_eKeepCV
+ SINT
+ 0 CV ownership: 
+ 0 = Follows command source, 
+ 1 = Operator, 
+ 2 = Program, 
+ 3 = External.
+ Default is 0.
+ Cfg_eKeepSP
+ SINT
+ 0 SP ownership: 
+ 0 = Follows command source, 
+ 1 = Operator, 
+ 2 = Program, 
+ 3 = External.
+ Default is 0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public inpu
+t member
+ Data 
+Type
+ Default Value
+ Description
+ Cfg_eKeepRatio
+ SINT
+ 0 Ratio ownership: 
+ 0 = Follows command source, 
+ 1 = Operator, 
+ 2 = Program, 
+ 3 = External.
+ Default is 0.
+ Cfg_ProgPwrUp
+ BOOL
+ False
+ 1 = Power up to Program, 
+ 0 = Power up to Operator.
+ Default is false.
+ Cfg_ProgNormal
+ BOOL
+ False
+ Normal source: 
+ 1 = Pr
+ogram if no requests, 
+ 0 = Operator if no requests.
+ Default is false.
+ Cfg_PCmdPriority
+ BOOL
+ False
+ Command priority: 
+ 1 = Program commands win, 
+ 0 = Operator commands win.
+ Default is false.
+ Cfg_PCmdProgAsLevel
+ BOOL
+ False
+ 1 = PCmd_Prog used as Level (1 = P
+rog, 0 = Oper).
+ Default is false.
+ Cfg_PCmdLockAsLevel
+ BOOL
+ False
+ 1 = PCmd_Lock
+ used as Level (1 = Lock, 0 = Unlock).
+ Default is false.
+ Cfg_ExtAcqAsLevel
+ BOOL
+ False
+ 1 = XCmd_Acq used as Level (XCmd_Acq = 1 acquire external command, XCmd_Acq = 
+
+0 release ex
+ternal command).
+ Default is false.
+ Cfg_OvrdIntlk
+ BOOL
+ False
+ 1 = Override bypasses (ignores) bypassable interlocks. 
+ 0 = Override abides by all interlock conditions.
+ Default is false.
+ Cfg_SPFailLatch
+ BOOL
+ False
+ 1 = Latch in SP fail shed action until Reset
+,  0 = Return when SP is good.
+ Default is false.
+ Cfg_PVFailLatch
+ BOOL
+ False
+ 1 = Latch in PV fail shed action until Reset, 
+ 0 = Return when PV is good.
+ Default is false.
+ Cfg_CVFailLatch
+ BOOL
+ False
+ 1 = Latch in CV fail shed action until Reset, 
+ 0 = Return 
+when CV is good.
+ Default is false.
+ Cfg_LockLM
+ BOOL
+ False
+ Lock loop mode: 
+ 1 = Locked in loop mode configured as Normal (see Cfg_NormLM), 
+ 0 = Not locked.
+ Default is false.
+ Cfg_NormLM
+ SINT
+ 1 Loop mode defined as Normal: 
+ 0 = Disable Normal selection, 
+ 1 = Manual, 
+ 2 = Auto, 
+ 3 = 
+Cascade.
+ Default is 1.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 633
+  Public inpu
+t member
+ Data 
+Type
+ Default Value
+ Description
+ Cfg_PwrUpLM
+ SINT
+ 4 Loop mode defined for Powerup: 
+ 0 = No change 
+-  loop mode, CV and SP are initialized using last (powerdown) 
+values,
+ 1 = Manual, 
+ 2 = Auto, 
+ 3 = Cascade, 
+ 4 = Normal.
+ Default is 4.
+ Cfg_PV
+FailTrigger
+ SINT
+ 1 PV fail status response on PV quality: 
+ 0 = PV fail response on Inp_PVBad OR Inp_PVSrcQ >= 32 (PV bad), 
+ 1 = PV fail response on Inp_PVBad OR Inp_PVSrcQ >= 17 AND Inp_PVSrcQ <> 18, 
+ 2 = PV fail response on Inp_PVBad OR Inp_PVUncert
+ain OR
+ Inp_PVSrcQ >= 16 AND 
+Inp_PVSrcQ <> 18.
+ Default is 1.
+ Cfg_IntlkTripSPAction
+ SINT
+ 0 Interlock Trip SP action: 
+ 0 = None, 
+ 1 = Hold last good, 
+ 2 = Use Cfg_SPIntlk, 
+ 3 = Set SP to current PV.
+ Default is 0.
+ Cfg_SPFailSPAction
+ SINT
+ 1 SP Fail SP action: 
+ 1 = 
+Hold last good, 
+ 2 = Use Cfg_SPIntlk, 
+ 3 = Set SP to current PV.
+ Default is 1.
+ Cfg_PVFailSPAction
+ SINT
+ 0 PV Fail SP action: 
+ 0 = None, 
+ 1 = Hold last good, 
+ 2 = Use Cfg_SPIntlk.
+ Default is 0.
+ Cfg_CVFailSPAction
+ SINT
+ 0 CV Fail SP action: 
+ 0 = None, 
+ 1 = H
+old last good, 
+ 2 = Use Cfg_SPIntlk, 
+ 3 = Set SP to current PV.
+ Default is 0.
+ Cfg_IntlkTripCVAction
+ SINT
+ 2 Interlock trip CV action: 
+ 0 = None, 
+ 1 = Hold last good, 
+ 2 = Use Cfg_CVIntlk.
+ Default is 2.
+ Cfg_SPFailCVActio
+n SINT
+ 1 SP Fail CV action: 
+ 0 = Non
+e, 
+ 1 = Hold last good, 
+ 2 = Use Cfg_CVIntlk.
+ Default is 1.
+ Cfg_PVFailCVAction
+ SINT
+ 1 PV Fail CV action: 
+ 1 = Hold last CV, 
+ 2 = Use Cfg_CVIntlk.
+ Default is 1.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public inpu
+t member
+ Data 
+Type
+ Default Value
+ Description
+ Cfg_CVFailCVAction
+ SINT
+ 1 CV Fail CV action: 
+ 1 = Hold last good, 
+ 2 = Use Cfg_CVIntlk.
+ Defaul
+t is 1.
+ Cfg_IntlkTripLMAction
+ SINT
+ 0 Interlock trip loop mode action: 
+ 0 = None, 
+ 1 = Manual only, 
+ 2 = Auto or Manual only.
+ Default is 0.
+ Cfg_SPFailLMAction
+ SINT
+ 0 SP Fail loop mode action: 
+ 0 = None, 
+ 1 = Manual only, 
+ 2 = Auto or Manual only.
+ Default 
+is 0.
+ Cfg_PVFailLMAction
+ SINT
+ 0 PV Fail loop mode action: 
+ 0 = none, 
+ 1 = Manual only, 
+ 2 =Auto or Manual only.
+ Default is 0.
+ Cfg_CVFailLMAction
+ SINT
+ 0 CV Fail loop mode action: 
+ 0 = None, 
+ 1 = Manual only, 
+ 2 = Auto or Manual only.
+ Default is 0.
+ Cfg_PV
+DecPlcs
+ SINT
+ 2 Number of decimal places for display of PV / SP (up to six).
+ Default is 2.
+ Cfg_CVDecPlcs
+ SINT
+ 2 Number of decimal places for 
+display of CV (up to six).
+ Default is 2.
+ Cfg_RatioDecPlcs
+ SINT
+ 2 Number of decimal places for display of Ratio (up
+ to six).
+ Default is 2.
+ Cfg_RatioLoLim
+ REAL
+ 0.0 Minimum allowed Ratio value (unitless). 
+ Valid any float less than or equal to Cfg_RatioHiLim.
+ Default is 0.0.
+ Cfg_RatioHiLim
+ REAL
+ 1.0
+ Maximum allowed Ratio value (unitless). 
+ Valid any float greater than o
+r equal to Cfg_RatioLoLim.
+ Default is 1.0.
+ Cfg_SPLoLim
+ REAL
+ 0.0 Minimum allowed SP value (PVEU). 
+ Valid any float less than or equal to Cfg_SPHiLim and greater than or equal to 
+Cfg_PVEUMin.
+ Default is 0.0.
+ Cfg_SPHiLim
+ REAL
+ 100.0
+ Maximum allowed SP value 
+(PVEU). 
+ Valid any float greater than or equal to Cfg_SPLoLim and
+ less than or equal to 
+Cfg_PVEUMax.
+ Default is 100.0.
+ Cfg_SPRoCIncrLim
+ REAL
+ 0.0 Maximum allowed SP rate of change increasing value (PVEU/second). The SP rate of 
+change is unlimited when incr
+easing if Cfg_SPRoCIncrLim = 0.0. 
+ Valid = 0.0 to maximum positive float.
+ Default is 0.0.
+ Cfg_SPRoCDecrLim
+ REAL
+ 0.0 Maximum allowed SP rate of ch
+ange decreasing value (PVEU/second). The SP rate of 
+change is unlimited when decreasing if Cfg_SPRoCDecrLim = 
+0.0. 
+ Valid = 0.0 to maximum positive float.
+ Default is 0.0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 635
+  Public inpu
+t member
+ Data 
+Type
+ Default Value
+ Description
+ Cfg_SkipSPRoCLim
+ BOOL
+ False
+ 1 = Skip setpoint RoC
+ limiting in interlock, maintenance and override.
+ Default is false.
+ Cfg_SPRampMaxDev
+ REAL
+ 100.0
+ If absolute value of deviation exceeds this valu
+e, pause SP ramp, 0.0 = Never pause 
+(PVEU). 
+ Valid any nonnegative float.
+ Default is 100.0.
+ Cfg_PVEUMin
+ REAL
+ 0.0 PV minimum value for scaling from engineering units to %, PV at 0% (PVEU). 
+ Valid any float less than Cfg_PVEUMax.
+ Default is 0.0.
+ Cfg_PVEUMa
+x REAL
+ 100.0
+ PV maximum value for scaling from engineering units to %, PV at 100% (PVEU). 
+ Valid any float greater than Cfg_PVEUMin.
+ Default is 100.0.
+ Cfg_CVEUMin
+ REAL
+ 0.0 CV minimum value for scaling from % to engineering units (CVEU). 
+ Valid any float l
+ess than Cfg_
+CVEUMax.
+ Default is 0.0.
+ Cfg_CVEUMax
+ REAL
+ 100.0
+ CV maximum value for scaling from % to engineering units (CVEU). 
+ Valid any float greater than Cfg_CVEUMin.
+ Cfg_CVLoLim
+ REAL
+ 0.0 Minimum allowed CV value (CVEU). 
+ Valid any float less than or e
+qual to Cfg_CVHiLim and greater than or equal to 
+Cfg_CVEUMin.
+ Default is 0.0.
+ Cfg_CVHiLim
+ REAL
+ 100.0
+ Maximum allowed CV value (CVEU).
+ Valid any float greater than or equal to Cfg_CVLoLim
+ and less than or equal to 
+Cfg_CVEUMax.
+ Default is 100.0.
+ Cfg_CVRoCI
+ncrLim
+ REAL
+ 0.0 Maximum allowed CV rate of change increasing value (CVEU/second). The CV rate of 
+
+change is unlimited when increasing if Cfg_CVRoCIncrLim = 0.0
+ Valid = 0.0 to maximum posit
+ive float.
+ Default is 0.0.
+ Cfg_CVRoCDecrLim
+ REAL
+ 0.0 Maximum allowed
+ CV rate of change decreasing value (CVEU/second). The CV rate of 
+change is unlimited when decreasing if Cfg_CVRoCDecrLim = 0.0. 
+ Valid = 0.0 to maximum positive float.
+ Default is 
+0.0.
+ Cfg_MaxInactiveCV
+ REAL
+ 0.0 When Val_CVOut is greater than this value, 
+set Sts_Active for HMI (CVEU). 
+ Valid any float.
+ Default is 0.0.
+ Cfg_SPIntlk
+ REAL
+ 0.0 SP value to use with interlock / bad value SP action (PVEU). Valid any float between 
+Cfg_PVEU
+Min and Cfg_PVEUMax.
+ Cfg_CVIntlk
+ REAL
+ 0.0 CV value to use with interlock / 
+bad value CV action (CVEU). Valid any float between 
+Cfg_CVEUMin and Cfg_CVEUMax.
+ Cfg_SPPwrUp
+ REAL
+ 0.0 Loop SP on Powerup (PVEU) used when Cfg_PwrUpLM
+ is not 0. The value is clamped 
+to the SP range (Cfg_SPLoLim, Cfg_SPHiLim).
+ Valid any float between Cfg_PV
+EUMin and Cfg_PVEUMax.
+ Cfg_CVPwrUp
+ REAL
+ 0.0 Loop CV on Powerup (CVEU) used when Cfg_PwrUpLM is not 0. Value may be clamped 
+
+to the configured limits (
+Cfg_CVLoLim, CfgHiLim) in cascade or auto, and in manual if 
+so configured.
+ Valid any float between Cfg_CVE
+UMin and Cfg_CVEUMax.
+ Cfg_CVPwrUpSel
+ SINT
+ 0 Selection of Powerup (first run) CV in Auto or Cascade.
+ 0 = Ignore Inp_InnerAvailable
+ and always use Cfg_CVPwrUp or last (Powerdown) CV 
+(if Cfg_PwrpUpLM = 0),
+ 1 = Process Inp_InnerAvailable.
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public inpu
+t member
+ Data 
+Type
+ Default Value
+ Description
+ Cfg_HiHiDevLim
+ REAL
+ 1.5e+38
+ High
+-High PV deviation status threshold (PVEU). 
+ Valid = 0.0 to maximum positive float.
+ Default is 
+1.5e+38.
+ Cfg_HiHiDevDB
+ REAL
+ 0.0 High
+-High PV deviation status deadband (PVEU). 
+ Valid = 0.0 to Cfg_HiHiDevLim.
+ Default is 0.0.
+ Cfg_HiHiDevGateDly
+ REAL
+ 0.0 High
+-High PV deviation status gate delay (second). 
+ Valid = 0.0 to 2147483.0 seconds.
+ Default is 0.
+0. Cfg_HiDevLim
+ REAL
+ 1.5e+38
+ High PV deviation status threshold (PVEU). 
+ Valid = 0.0 to maximum positive float.
+ Default is 1.5e+3
+8. Cfg_HiDevDB
+ REAL
+ 0.0 High PV deviation status deadband (PVEU). 
+ Valid = 0.0 to Cfg_HiDevLim.
+ Default is 0.0.
+ Cfg_HiDevGateDly
+ REAL
+ 0.0 High PV deviation status gate delay (second). 
+ Valid = 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Cfg_LoDevLim
+ REAL
+  -1.5e+38
+ Low PV deviation status threshold (PVEU). 
+ Valid = 
+-maximum positive float to 0.0.
+ Default is 
+-1.5e+38.
+ Cfg_LoDevDB
+ REAL
+ 0.0 Low PV deviation status deadband (PVEU). 
+ Valid = 0.0 to abs(Cfg_LoDevLim).
+ Default is 0.0.
+ Cfg_LoDevGateDly
+ REAL
+ 0.0 Low PV deviation status gate delay (second). 
+ Valid = 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Cfg_LoLoDevLim
+ REAL
+  -1.5e+38
+ Low
+-Low PV deviation status threshold (PVEU). 
+ Valid = 
+-maximum positive float to 0.0.
+ Default is 
+-1.5e+38.
+ Cfg_LoLoDevDB
+ REAL
+ 0.0 Low
+-Low PV deviation status deadband (PVEU). 
+ Valid = 0.0 to abs(Cfg_LoLoDevLim).
+ Default is 0.0.
+ Cfg_LoLoDevGateDly
+ REAL
+ 0.0 Low
+-Low PV deviation status gate delay (second). 
+ Valid = 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Cfg_CnfrmReqd
+ SINT
+ 0 Opera
+tor command confirmation required. Represents the type of command 
+confirmation required. 
+ 0 = None, 
+ 1 = Command confirmation required, 
+ 2 = Performer e
+-signature required, 
+ 3 = Performer and approver e
+-signature required.
+ Default is 0.
+ PSet_Ratio
+ REAL 1.0 Program setting for Ratio, loop mode Cascade/Ratio and Ratio enabled (unitless). 
+ Valid = 0.0 to maximum positive float.
+ Default is 1.0.
+ PSet_SP
+ REAL
+ 0.0 Program setting for SP, loop mode Auto (PVEU). 
+ Valid any float.
+ Default is 0.0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 637
+  Public inpu
+t member
+ Data 
+Type
+ Default Value
+ Description
+ PSet_SPTarget
+ REA
+L 0.0 Program setting for SP target in ramp wizard (PVEU). 
+ Valid any float.
+ Default is 0.0.
+ PSet_SPRampTime
+ REAL
+ 0.0 Program setting for time to reach SP target in ramp wizard (second). 
+ Valid = 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ PSet_CV
+ REAL
+ 0.0 Program setting for CV when loop mode is Manual (CVEU). 
+ Valid any float.
+ Default is 0.0.
+ PSet_Owner
+ DINT
+ 0 Program owner request ID (non
+-zero) or release (zero).
+ Default is 0.
+ XSet_Ratio
+ REAL
+ 1.0
+ External setting for Ratio, loop mode Cascade/Ratio and 
+Ratio enabled (unitless). 
+ Valid = 0.0 to maximum positive float.
+ Default is 1.0.
+ XSet_SP
+ REAL
+ 0.0 External setting for SP, loop mode Auto (PVEU). 
+ Valid any float.
+ Default is 0.0.
+ XSet_SPTarget
+ REAL
+ 0.0 External setting for SP target in ramp wizard (PVE
+U). 
+ Valid any float.
+ Default is 0.0.
+ XSet_SPRampTime
+ REAL
+ 0.0 External setting for time to reach SP target in ramp wizard (second). 
+ Valid = 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ XSet_CV
+ REAL
+ 0.0 External setting for CV, loop mode Manual (CVEU). 
+ Valid any float.
+ Default is 0.0.
+ PCmd_Casc
+ BOOL
+ False
+ Program command to select Cascade/Ratio loop mode. The instruction clears this 
+operand automatically.
+ Default is false.
+ PCmd_Auto
+ BOOL
+ False
+ Program command to select Auto loop mode. The instruction cle
+ars this operand 
+automatically.
+ Default is false.
+ PCmd_Man
+ BOOL
+ False
+ Program command to select Manual loop mode. The instruction clears this operand 
+automatically.
+ Default is false.
+ PCmd_NormLM
+ BOOL
+ False
+ Program command to select loop mode defined as N
+ormal, see Cfg_NormLM. The 
+instruction clears this operand automatically.
+ Default is false.
+ PCmd_SPRampStart
+ BOOL
+ False
+ Program command to initiate SP ramping. The instruction clears this operand 
+
+automatical
+ly. Default is false.
+ PCmd_SPRampStop
+ BOOL
+ Fals
+e Program command to stop SP ramping. The instruction clears this operand 
+automatically.
+ Default is false.
+ PCmd_Oper
+ BOOL
+ False
+ Program command to select Operator (Program to Operator). The 
+instruction clears 
+this operand automatically.
+ Default is false.
+ PCmd_Prog
+ BOOL
+ False
+ Program command to select Program (Operator to Program). The instruction clears 
+
+this operand automatically.
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public inpu
+t member
+ Data 
+Type
+ Default Value
+ Description
+ PCmd_Lock
+ BOOL
+ False
+ Program command to lock Program (disallow Operator). The instruction clears this 
+
+opera
+nd automatically if Cfg_PCmdLockAsLevel = 0.
+ Default is false.
+ PCmd_Unlock
+ BOOL
+ False
+ Program command to unlock Program (allow Operator to acquire). The instruction 
+
+clea
+rs this operand automatically.
+ Default is false.
+ PCmd_Normal
+ BOOL
+ False
+ Program comma
+nd to select Normal command source (Operator or Program). The 
+instruction clears this operand automatically.
+ Default is false.
+ PCmd_Reset
+ BOOL
+ False
+ Program 
+command to reset all alarms and latched shed conditions requiring reset. 
+
+The instruction clears th
+is operand automatically.
+ Default is false.
+ XCmd_Casc
+ BOOL
+ False
+ External command to select Cascade/Ratio loop mode. The instruction clears this 
+
+operand automatically.
+ Default is false.
+ XCmd_Auto
+ BOOL
+ False
+ External command to select Auto loop mode. The 
+instruction clears this operand 
+
+automatically.
+ Default is false.
+ XCmd_Man
+ BOOL
+ False
+ External command to select Manual loop mode. The 
+instruction clears this operand 
+
+automatically.
+ Default is false.
+ XCmd_NormLM
+ BOOL
+ False
+ External command to select loop 
+mode defined as Normal, see Cfg_NormLM. The 
+
+instruction clears this operand automatically.
+ Default is false.
+ XCmd_SPRampStart
+ BOOL
+ Fal
+se External command to initiate SP ramping. The instruction clears this operand 
+
+automatically.
+ Default is false.
+ XCmd_SP
+RampStop
+ BOOL
+ False
+ External command to stop SP ramping. The instruction clears this operand 
+
+automatically.
+ Default is false.
+ XCmd_Acq
+ BOOL
+ False
+ External command to acquire ownership (Operator/Program/Override/Maintenance 
+
+to External). The instruction cl
+ears this operand automatically if Cfg_ExtAcqAsLevel 
+= 0.
+ Default is false.
+ XCmd_Rel
+ BOOL
+ False
+ External command to release ownership if Cfg_ExtAcqAsLevel = 0 (External to 
+
+Operator/Program/Override/Maintenance). The instruction clears this operand 
+automat
+ically.
+ Default is false.
+ XCmd_Reset
+ BOOL
+ False
+ External command to reset all alarms and latched
+ shed conditions. The instruction 
+clears this operand automatically.
+ Default is false.
+ XCmd_ResetAckAll
+ BOOL
+ False
+ External command to acknowledge and reset a
+ll alarms and latched shed conditions. 
+The instruction clears this operand 
+automatically.
+ Default is false.
+  Public output member
+ Data Type
+ Description
+ EnableOut
+ BOOL
+ Enable output. This output state always reflects EnableIn input state.
+ Val_PV
+ REAL
+ Val
+ue of loop PV (PVEU).
+ Val_Ratio
+ REAL
+ Value of loop Ratio 
+(unitless).
+ Val_SPSet
+ REAL
+ Value of selected SP after clamping and before ramping (PVEU).
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 639
+  Public output member
+ Data Type
+ Description
+ Val_SP
+ REAL
+ Value of SP being used after clamping and ramping (PVEU).
+ Val_SPTarget
+ REAL
+ Accepted setting 
+for SP ramp target, endpoint for ramp wizard 
+(PVEU).
+ Val_SPRampTime
+ REAL
+ Accepted setting for SP ramp time, time to reach target for ramp wizard (second).
+ Val_SPRampRoC
+ REAL
+ Calculated value of SP rate of change for ramping, from ramp wizard (PVEU/second
+). Val_SPRoCIncr
+ REAL
+ Current value of SP 
+rate of change limit increasing (PVEU/second). 0.0 = rate of change not limited.
+ Val_SPRoCDecr
+ REAL
+ Current value of SP rate of change limit decreasing (PVEU/second). 0.0 = rate of change not limited.
+ Val_E
+ REAL
+ Loop error, SP
+-PV for reverse action Cfg_C
+trlAction = 0, PV
+-SP for direct action Cfg_CtrlAction = 1 
+(PVEU).
+ Val_CVSet
+ REAL
+ Loop CV after clamping and before ramping (CVEU).
+ Val_CVOut
+ REAL
+ Loop CV after clamping and ramping (CVEU).
+ Val_PVPercent
+ REAL
+ Loop PV (percent of span).
+ Val_SPPercent
+ REAL
+ Loop SP (percent of span).
+ Val_EPercent
+ REAL
+ Loop error, SP
+-PV for reverse action Cfg_CtrlAction = 0, PV
+-SP for direct action Cfg_CtrlAction = 1 
+(percent of span).
+ Val_CVOutPercent
+ REAL
+ Loop CV after ramping a
+nd clamping 
+(percent of span).
+ Val_ExecTime
+ REAL
+ Actual PID algorithm execution period (second).
+ Out_Reset
+ BOOL
+ 1 = Reset command has been received and accepted.
+ Out_OwnerSts
+ DINT
+ Status of command source, owner command handshake and ready status: 
+ 0 = 
+None,
+ .10 = Operator Lock, 
+ .11 = Operator Unlock, 
+ .12 = Program Lock, 
+ .13 = Program Unlock, 
+ .14 = Acquire Maintenance, 
+ .15 = Release Maintenance, 
+ .16 = Acquire External, 
+ .17 = 
+Release External, 
+ .18 = Has Maintenance, 
+ .19 = External Override Lock, 
+ .20 = Has External, 
+ .21 = Has Operator, 
+ .22 = Has Operator Locked, 
+ .23 = Has Program, 
+ .24 = Has Program Locked, 
+ .29 = Echo, 
+ .30 = Not Ready.
+ Sts_Initialized
+ BOOL
+ 1 = Instruction is initialized. Use Inp_InitializeReq to reinitialize.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public output member
+ Data Type
+ Description
+ SrcQ_IO
+ SINT
+ Source and quality of primary I/O PV quality (enumerated): 
+ 0 = Good, live, confirmed good, 
+ 1 = Good, live, assumed good, 
+ 2 = Good, no feedback, assumed good, 
+ 8 = Test,
+ virtualized, 
+ 9 = Test, loopback, 
+ 10 = Test, manually entered, 
+ 16 = Uncertain, live
+, off
+-spec, 
+ 17 = Uncertain, substituted at device or bus, 
+ 18 = Uncertain, substituted at instruction, 
+ 19 = Uncertain, using last known good, 
+ 20 = Uncertain, using rep
+lacement value, 
+ 32 = Bad, signal failure, 
+ 33 = Bad, channel fault, 
+ 34 = Bad, module
+ or communication fault, 
+ 35 = Bad, invalid configuration.
+ SrcQ
+ SINT
+ Source and quality of primary PV and CV value or status (enumerated): 
+ 0 = Good, live, confirmed good 
+ 1 = Good, live, assumed good 
+ 2 = Good, no feedback, assumed good 
+ 8 = Test, virtua
+lized 
+ 9 = Test, loopback 
+ 10 = Test, manually entered 
+ 16 = Uncertain
+, live, off
+-spec 
+ 17 = Uncertain, substituted at device or bus 
+ 18 = Uncertain, substituted at instruction 
+ 19 = Uncertain, using last known good 
+ 20 = Uncertain, using replacement value
+  32 = Bad, signal failure 
+ 33 = Bad, channel fault 
+ 34 = Bad, module 
+or communication fault 
+ 35 = Bad, invalid configuration
+ Sts_eSts
+ SINT
+ Loop mode:
+ 0 = Unknown,
+ 1 = Manual,
+ 2 = Auto,
+ 3 = Cascade (no Ratio),
+ 4 = Ratio.
+ Sts_eFault
+ SINT
+ Loop fault:
+ 0 = n
+one,
+ 1 = PV uncertain,
+ 2 = Low PV deviation,
+ 3 = High PV 
+deviation,
+ 4 = Low
+-Low PV deviation,
+ 5 = High
+-High PV deviation,
+ 6 = PV substituted,
+ 7 = Interlock trip,
+ 8 = SP fail,
+ 9 = PV fail,
+ 10 = CV fail,
+ 11 = Configuration error.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 641
+  Public output member
+ Data Type
+ Description
+ Sts_eState
+ SINT
+ Internal lo
+gic state for animating state diagram on faceplate.
+ 0 = M
+anual,
+ 1 = PV deviation in deadband,
+ 2 = PV deviation not in deadband,
+ 3 = SP ramping,
+ 4 = CV ramping,
+ 5 = Ratio clamped,
+ 6 = SP clamped,
+ 7 = CV clamped,
+ 8 = Windup Lo,
+ 9 = Windup Hi,
+ 10 = SP held,
+ 11 = SP set to IntlkSP,
+ 12 = CV held,
+ 13 = CV set to Intlk
+CV,
+ 14 = Hand,
+ 15 = Initializing.
+ Sts_eNotify
+ SINT
+ Highest severity alarm status. All alarm status enumerated values:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset requir
+ed,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low 
+severity alarm, unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent
+ severity alarm, acknowledged,
+ 9 = Urgent severity
+ alarm, unacknowledged.
+ Sts_eNotifyAll
+ SINT
+ Highest severity alarm status. All alarm status enumerated values including related objects for CV, 
+PV, SP, CascSP:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in al
+arm, unacknowledged or reset required,
+ 2 = Low sev
+erity alarm, acknowledged,
+ 3 = Low severity alarm, unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severit
+y alarm, unacknowledged,
+ 8 = Urgent severity alarm
+, acknowledged,
+ 9 = Urgent severity alarm, unacknowledged.
+ Sts_eNotifyHiHiDev
+ SINT
+ High
+-High PV deviation alarm status enumerated values:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or
+ reset required,
+ 2 = Low severity alarm, acknowled
+ged,
+ 3 = Low severity alarm, unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledge
+d, 8 = Urgent severity alarm, acknowledged,
+ 9 = Ur
+gent severity alarm, unacknowledged.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public output member
+ Data Type
+ Description
+ Sts_eNotifyHiDev
+ SINT
+ High PV deviation alarm status enumerated values:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low seve
+rity alarm, acknowledged,
+ 3 = Low severity alarm, 
+unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm,
+ acknowledged,
+ 9 = Urgent severity alarm, unacknow
+ledged.
+ Sts_eNotifyLoDev
+ SINT
+ Low PV deviation alarm status enumerated values:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = 
+Low severity alarm, unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent seve
+rity alarm, unacknowledged.
+ Sts_eNotify
+LoLoDev
+ SINT
+ Low
+-Low PV deviation alarm status enumerated values:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, unac
+knowledged,
+ 4 = Medium severity alarm, a
+cknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity alarm, unacknowledg
+ed.
+ Sts_eNotifyFail
+ SINT
+ Fail alarm sta
+tus enumerated values:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, unacknowledged,
+ 4 = Medium severity alarm, ackn
+owledged,
+ 5 = Medium severity alarm, una
+cknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity alarm, unacknowledged.
+ Sts_eNotifyIntlkTrip
+ SINT
+ Interlock tr
+ip alarm status enumerated values:
+ 0 = N
+ot in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severit
+y alarm, unacknowledged,
+ 6 = High severi
+ty alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity alarm, unacknowledged.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 643
+  Public output member
+ Data Type
+ Description
+ Sts_UnackAlmCount
+ DINT
+ Count of unacknowledged alarms.
+ Sts_Casc
+ BOOL
+ 1 = Loop is in 
+Cascade/Ratio mode.
+ Sts_Auto
+ BOOL
+ 1 = Loop is in Auto mode.
+ Sts_Man
+ BOOL
+ 1 = Loop is in Manual mode.
+ Sts_NormLM
+ BOOL
+ 1 = Loop is in Normal loop mode configured in Cfg_NormLM.
+ Sts_Initializing
+ BOOL
+ 1 = CV is initializing because of re
+quest Inp_UseCVInitialVal or when Inp_InnerAvailable=0.
+ Sts_WindupHi
+ BOOL
+ 1 = This loop winding up High, usually connects to Inp_WindupHi of outer loop.
+ Sts_WindupLo
+ BOOL
+ 1 = This loop winding up Low, usually connects to Inp_WindupLo of outer loop.
+ Sts_
+RatioClamped
+ BOOL
+ 1 = Selected Ratio (PSet/OSet_Ratio or Inp_OvrdRatio) has been clamped.
+ Sts_IntlkSP
+ BOOL
+ 1 = SP value is being set by shed to Interlock SP.
+ Sts_SPHeld
+ BOOL 1 = SP value is being set by shed to hold last good SP.
+ Sts_SPShedPV
+ BOOL
+ 1 = S
+P value is being set by shed to current PV.
+ Sts_SPShed
+ BOOL
+ 1 = SP value from Shed, 0 = SP from Program, Operator, Override (Auto), Casc SP Input (Cascade) or 
+PV Track (Manual).
+ Sts_SPTrackPV
+ BOOL
+ 1 = SP value is being set by PV tracking in Manual loop m
+ode.
+ Sts_SPHiClamped
+ BOOL
+ 1 = Selected SP is being 
+clamped at high limit.
+ Sts_SPLoClamped
+ BOOL
+ 1 = Selected SP is being clamped at low limit.
+ Sts_SPClamped
+ BOOL
+ 1 = Selected SP is being clamped, for faceplate animation.
+ Sts_SPRampingUp
+ BOOL
+ 1 = SP is r
+amping up toward Val_SPSet.
+ Sts_SPRampingDown
+ BOOL
+ 1 = SP is ramping down toward Val_SPSet.
+ Sts_SPRamping
+ BOOL
+ 1 = SP is ramping toward Val_SPSet, 0 = Ramp complete.
+ Sts_SPRampWizardInProgress
+ BOOL
+ 1 = SP is ramping toward SP target set by the owner in 
+ramp wizard, 0 = Ramp 
+complete.
+ Sts_SkipSPRoCLim
+ BOOL
+ 1 = SP rate limiting is being skipped, for faceplate animation.
+ Sts_DevDBAct
+ BOOL
+ 1 = PV deviation deadband active.
+ Sts_PVUncertain
+ BOOL
+ 1 = PV input value quality is uncertain.
+ Sts_PVBad
+ BOOL
+ 1 = P
+V input value, communications, quality or EU limit is bad.
+ Sts_SPBad
+ BOOL
+ 1 = Cascade SP input value quality is bad.
+ Sts_FFBad
+ BOOL
+ 1 = Feedforward term Inp_FF value is invalid.
+ Sts_FFPrevBad
+ BOOL
+ 1 = Feedforward term Inp_FFPrev
+ value is invalid.
+ Sts_C
+VInfNaN
+ BOOL
+ 1 = CV value equal to +/
+- infinity or NaN detected.
+ Sts_CVBad
+ BOOL
+ 1 = CV value quality is bad or invalid or CV comms fault.
+ Sts_CVPrevBad
+ BOOL
+ 1 = Inp_CVPrev value is invalid.
+ Sts_HandFdbkBad
+ BOOL
+ 1 = Hand FB 
+(Tieback) value quality is bad
+ or invalid or communication fault.
+ Sts_IntlkCV
+ BOOL
+ 1 = CV value is being set by shed to Interlock CV.
+ Sts_CVHeld
+ BOOL
+ 1 = CV value is being set by shed to hold last good CV.
+ Sts_CVShed
+ BOOL
+ 1 = CV from shed, 0 = CV from P
+rogram, Operator, Override (Ma
+nual), or PID (Auto, Cascade).
+ Sts_CVHiClamped
+ BOOL
+ 1 = CV is being clamped at high limit.
+ Sts_CVLoClamped
+ BOOL
+ 1 = CV is being clamped at low limit.
+ Sts_CVClamped
+ BOOL
+ 1 = Selected CV is being clamped, used in 
+faceplate animation.
+ Sts_CVRampingUp
+ BOOL
+ 1 = CV is ramping up toward Val_CVSet.
+ Sts_CVRampingDown
+ BOOL
+ 1 = CV is ramping down toward Val_CVSet.
+ Sts_CVRamping
+ BOOL
+ 1 = CV is ramping toward Val_CVSet, 0 = Ramp complete.
+ Sts_Active
+ BOOL
+ 1 = CV is greater than Cfg_MaxInactiveCV, show graphic symb
+ol as active.
+ Sts_Available
+ BOOL
+ 1 = PID loop can be acquired by Program and is available for control.
+ Sts_CascAvailable
+ BOOL
+ 1 = PID inner loop is available for cascade control with an outer loo
+p. 0 = PID inner loop is not 
+available, initialize outer lo
+op to Val_SP.
+ Sts_ExtAvailable
+ BOOL
+ 1 = PID is available for external control. 0 = PID is not available, initialize outer loop to Val_SP.
+ Sts_IntlkAvailable
+ BOOL
+ 1 = Interlock availability OK. Device can be acquired by program and is available for contro
+l when 
+interlocks are OK.
+ Sts_Bypass
+ BOOL
+ 1 = Bypassable interlocks are bypassed.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public output member
+ Data Type
+ Description
+ Sts_BypActive
+ BOOL
+ 1 = Interlock bypassing is active (bypassed or Maintenance).
+ Sts_NotRdy
+ BOOL
+ 1 = PPID is not ready, see detail bits for reason.
+ Sts_NrdyCfgErr
+ BOOL
+ 1 = PPID is not ready: 
+Configuration error.
+ Sts_NrdyInit
+ BOOL
+ 1 = PPID is not ready while CV is initialized (Inp_UseCVInitVal = 1).
+ Sts_NrdyIntlk
+ BOOL
+ 1 = PPID is not ready: Interlock Not OK (Shed requires reset).
+ Sts_NrdyFail
+ BOOL
+ 1 = PPID is not ready: F
+ail status is on (Sh
+ed requires reset).
+ Sts_NrdyCVFail
+ BOOL
+ 1 = PPID is not ready: CV Fail (Shed requires reset).
+ Sts_NrdyPVFail
+ BOOL
+ 1 = PPID is not ready: PV Fail (Shed requires reset).
+ Sts_NrdySPFail
+ BOOL
+ 1 = PPID is not ready: SP Fail (Shed requires
+ reset).
+ Sts_NrdyOoS
+ BOOL
+ 1 = PPID is not ready: Out of Service.
+ Sts_MaintByp
+ BOOL
+ 1 = Device has a Maintenance bypass function active.
+ Sts_NrdyInner
+ BOOL
+ 1 = Inner loop object is not available (Inp_InnerAvailable = 0) for this PPID.
+ Sts_Err
+ BOOL
+ 1 = E
+rror in 
+PPID configuration: see detail Err bits for reason.
+ Sts_ErrRatioLim
+ BOOL
+ 1 = Error in PPID configuration: Ratio clamping limits invalid.
+ Cfg_RatioLoLim > Cfg_RatioHiLim.
+ Sts_ErrSPLim
+ BOOL
+ 1 = Error in PPID configuration: SP clamping limits 
+invali
+d. Cfg_SPLoLim < Cfg_PVEUMin or
+ Cfg_SPHiLim > Cfg_PVEUMax or
+ Cfg_SPLoLim > Cfg_SPHiLim.
+ Sts_ErrCVLim
+ BOOL
+ 1 = Error in PPID configuration: CV clamping limits invalid. 
+ Cfg_CVLoLim < Cfg_CVEUMin or 
+ Cfg_CVHiLim > Cfg_CVEUMax or 
+ Cfg_CVLoLim > Cfg_CVH
+iLim.
+ Sts_ErrPVEU
+ BOOL
+ 1 = Error in PPID configuration: PV scaling limits invalid. Cfg_PVEUMin >= Cfg_PVEUMax or 
+Cfg_PVEUMin is +
+-Inf.
+ Sts_ErrCVEU
+ BOOL
+ 1 = Error in PPID configuration: CV scaling limits invalid. Cfg_CVEUMin >= Cfg_CVEUMax or 
+Cfg_CVEUMin is +
+-Inf. Sts_ErrDevDB
+ BOOL
+ 1 = Error in PPID configuration: PV deviation deadband invalid. Cfg_DevDBEnter > Cfg_DevDB, or 
+Cfg_DevDB < 0, or Cfg_DevDBEnt
+er < 0.
+ Sts_ErrExecTime
+ BOOL
+ 1 = Error in PPID configuration: Execution time invalid, Cfg_ExecTime < 0.0 or
+ Cfg_ExecTime > 
+2147483.0 seconds.
+ Sts_ErrPGain
+ BOOL
+ 1 = Error in PPID configuration: PGain invalid, Cfg_PGain < 0.
+ Sts_ErrIGain
+ BOOL
+ 1 = Error in PPID configuration: IGain invalid, Cfg_IGain < 0.
+ Sts_ErrDGain
+ BOOL
+ 1 = Error in PPID configuration: DGain
+ invalid, Cfg_DGain < 0.
+ Sts_ErrCVTrackGain
+ BOOL
+ 1 = Error in PPID configuration: CV TrackGain invalid, Cfg_CVTrackGain < 0.
+ Sts_ErrPS
+PWeight
+ BOOL
+ 1 = Error in PPID configuration: SP weight in proportional term invalid,  Cfg_PSPWeight <  0 or 
+Cfg_PSPWeig
+ht > 1.5.
+ Sts_ErrDSPWeight
+ BOOL
+ 1 = Error in PPID configuration: SP weight in derivative term invalid,  Cfg_DSPWeight <  0 or 
+Cfg_DSPWeight > 1.5.
+ Sts_ErrSPRoCIncrLim
+ BOOL
+ 1 = Error in PPID configuration: Maximum allowed SP rate of change increasing valu
+e invalid, 
+Cfg_SPRoCIncrLim < 0.
+ Sts_ErrSPRoCDecrLim
+ BOOL
+ 1 = Error in PPID configuration: Maximum allowed SP rate of change decreasing value invalid, 
+Cfg_SPRoCDecrLim < 0.
+ Sts_ErrCVRoCIncrLim
+ BOOL
+ 1 = Error in PPID configuration: Maximum allowed CV rate
+ of change increasing value invalid, 
+Cfg_CVRoCIncrLim < 0.
+ Sts_ErrCVRoCDecrLim
+ BOOL
+ 1 = Error in PPID configuration: Maximum allowed CV rate of change decreasing value invalid, 
+Cfg_CVRoCDecrLim < 0.
+ Sts_ErrSPIntlk
+ BOOL
+ 1 = Error in PPID configuration: SP
+ value to use with Interlock or bad value SP action invalid, value 
+out of scale, Cfg_SPIntlk > Cfg_PVEUMax or < Cfg_PVEUMin.
+ Sts_ErrCVIntlk
+ BOOL
+ 1 = Error in PPID configuration: CV value to use with Interlock or bad value CV action invalid, value 
+out of s
+cale, Cfg_CVIntlk > Cfg_CVEUMax or < Cfg_CVEUMin.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 645
+  Public output member
+ Data Type
+ Description
+ Sts_ErrSPPwrUp
+ BOOL
+ 1 = Error in PPID configuration: SP value to use in Powerup invalid, value 
+out of scale, Cfg_SPPwrUp 
+> Cfg_PVEUMax or < Cfg_PVEUMin.
+ Sts_ErrCVPwrUp
+ BOOL
+ 1 = Error in PPID configuration
+: CV value to use in Powerup invalid, value out of scale, Cfg_CVIntlk > 
+Cfg_CVEUMax or < Cfg_CVEUMin.
+ Sts_ErrAlm
+ BOOL
+ 1 = Error in PPID configuration: At least one Logix tag
+-based alarm has invalid settings.
+ Sts_ErrHiHiDevLim
+ BOOL
+ 1 = Error in PPID confi
+guration: High
+-High PV deviation threshold invalid, Cfg_HiHiDevLim < 0.
+ Sts_ErrHiHiDevGateDly
+ BOOL
+ 1 = Error in PPID configuration: Invalid High
+-High PV deviation gate delay timer preset (use 0.0 to 
+2147483.0)
+. Sts_ErrHiHiDevDB
+ BOOL
+ 1 = Error in PPID con
+figuration: High
+-High PV deviation deadband invalid, Cfg_HiHiDevDB < 0 or 
+Cfg_HiHiDevDB > Cfg_HiHiDevLim.
+ Sts_ErrHiDevLim
+ BOOL
+ 1 = Error in PPID configuration: High PV deviation threshold invalid, Cfg_HiDevLim < 0.0.
+ Sts_ErrHiDevGateDly
+ BOOL
+ 1 = Error in
+ PPID configuration: Invalid High PV deviation gate delay timer preset (use 0.0 to 
+2147483.0).
+ Sts_ErrHiDevDB
+ BOOL
+ 1 = Error in
+ PPID configuration: High PV deviation deadband invalid, Cfg_HiDevDB < 0 or 
+Cfg_HiDevDB > Cfg_HiDevLim.
+ Sts_ErrLoDevLim
+ BOOL
+ 1 = Error in PPID configuration: Low PV deviation threshold invalid, Cfg_LoDevLim > 0.
+ Sts_ErrLoDevGateDly
+ BOOL
+ 1 = Error in 
+PPID configuration: Invalid Low PV deviation gate delay timer preset (use 0.0 to 
+2147483.0).
+ Sts_ErrLoDevDB
+ BOOL
+ 1 = Error in PPID 
+configuration: Low PV deviation deadband invalid, Cfg_LoDevDB < 0, or > 
+-Cfg_LoDevLim.
+ Sts_ErrLoLoDevLim
+ BOOL
+ 1 = Error in 
+PPID configuration: Low
+-Low PV deviation threshold invalid, Cfg_LoLoDevLim > 0.0.
+ Sts_ErrLoLoDevGateDly
+ BOOL
+ 1 = Error in PPID conf
+iguration: Invalid Low
+-Low PV deviation gate delay timer preset (use 0.0 to 
+2147483.0).
+ Sts_ErrLoLoDevDB
+ BOOL
+ 1 = Error in PPID configuration: Low
+-Low PV deviation deadband invalid, Cfg_LoLoDevDB < 0, or > 
+-Cfg_LoLoDevLim.
+ Sts_eSrc
+ INT
+ The current comman
+d source enumerated values: 
+ 0 = Logic not in use,
+ 4 = Hand,  
+ 8 = Maintenance, 
+ 16 = Override, 
+ 32 = Program,  
+ 33 = Program locked, 
+ 34 = Program by default (Normal),
+ 64 = Operator, 
+ 65 = Operator locked,
+ 66 = Operator by default (Normal),
+ 128 = Maintena
+nce Out of Service,
+ 129 = Programmed Out of Service (rung false),
+ 256 = External.
+ Sts_bSrc
+ INT
+ Active selection bitmap (for HMI totem pole with command source request selection): 
+ Sts_bSrc.0: Hand, 
+ Sts_bSrc.1: Programmed Out of Service (rung false), 
+ Sts
+_bSrc.2: Maintenance Out of Service, 
+ Sts_bSrc.3: Maintenance, 
+ Sts_bSrc.4: Override, 
+ Sts_bSrc.5
+: External, 
+ Sts_bSrc.6: Program locked, 
+ Sts_bSrc.7: Program, 
+ Sts_bSrc.8: Operator locked, 
+ Sts_bSrc.9: Operator.
+ Sts_Hand
+ BOOL
+ 1 = Hand is selected, supers
+edes OoS, Maint, Ovrd, Ext, Prog, Oper.
+ Sts_OoS
+ BOOL
+ 1 = Out of Service is selected, supersedes Maint, Ovrd, Ext, Prog, Oper.
+ Sts_Maint
+ BOOL
+ 1 = Maintenance is selected, supersedes Ovrd, Ext, Prog, Oper.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public output member
+ Data Type
+ Description
+ Sts_Ovrd
+ BOOL
+ 1 = Override is selected, supersede
+s Ext, Prog, Oper.
+ Sts_Ext
+ BOOL
+ 1 = External is selected, supersedes Prog, Oper.
+ Sts_Prog
+ BOOL
+ 1 = Program is selected.
+ Sts_ProgLocked
+ BOOL
+ 1 = Program is selected and locked.
+ Sts_Oper
+ BOOL
+ 1 = Operator is selected.
+ Sts_OperLocked
+ BOOL
+ 1 = Operator is
+ selected and locked.
+ Sts_ProgOperSel
+ BOOL
+ Program/Operator selection (latch) state: 1 = Program, 0 = Operator.
+ Sts_ProgOperLock
+ BOOL
+ Program/Operator lock (latch) state: 1 = Locked, 0 = Unlocked.
+ Sts_Normal
+ BOOL
+ 1 = Owner selection equals what is confi
+gured as Normal (Prog or Oper).
+ Sts_ExtReqInh
+ BOOL
+ 1 = External request inhibited.
+ Sts_ProgReqInh
+ BOOL
+ 1 = Program request inhibited, cannot get to Program from current owner.
+ Sts_MAcqRcvd
+ BOOL
+ 1 = Maintenance acq
+uire command received this scan.
+ Sts_Al
+m BOOL
+ 1 = An alarm is active.
+ Sts_AlmInh
+ BOOL
+ 1 = An alarm is shelved or disabled.
+ Sts_HiHiDevCmp
+ BOOL
+ 1 = PV deviation is above High
+-High limit, (Val_PV
+-Val_SP)>Cfg_HiHiDevLim.
+ Sts_HiHiDevGate
+ BOOL
+ 1 = PV 
+deviation High
+-High gate is open.
+ Sts_HiHiDev
+ BOOL
+ 1 = PV deviation is above High
+-High limit, (Val_PV
+-Val_SP)>Cfg_HiHiDevLim, for gate open.
+ There is a predefined default discrete tag
+-based alarm for the status. Set standard configuration 
+members of 
+the discrete tag
+-based alarm. Access alarm elements
+ using this format:
+ PPIDTag.@Alarms.Alm_HiHiDev.AlarmElement
+ Sts_HiDevCmp
+ BOOL
+ 1 = PV deviation is above High limit, (Val_PV
+-Val_SP)>Cfg_HiDevLim.
+ Sts_HiDevGate
+ BOOL
+ 1 = PV deviation High gate is 
+open.
+ Sts_HiDev
+ BOOL
+ 1 = PV deviation is above High limit
+, (Val_PV
+-Val_SP)>Cfg_HiDevLim, for gate open.
+ There is a predefined default discrete tag
+-based alarm for the status. Set standard configuration 
+
+members of the discrete tag
+-based alarm. Access alarm
+ elements using this format:
+ PPIDTag.@Alarms.Alm_HiDev.Ala
+rmElement
+ Sts_LoDevCmp
+ BOOL
+ 1 = PV deviation is below Low limit, (Val_PV
+-Val_SP)<Cfg_LoDevLim.
+ Sts_LoDevGate
+ BOOL
+ 1 = PV deviation Low gate is open.
+ Sts_LoDev
+ BOOL
+ 1 = PV deviation (loop 
+error) is below Low limit, (Val_PV
+-Val_SP)<Cfg_LoDevLim, for gate 
+open.
+ There is a predefined default discrete tag
+-based alarm for the status. Set standard configuration 
+members of the discrete tag
+-based alarm. Access alarm elements using this format:
+ PPIDTag.@Alarms.Alm_LoDev.AlarmElement
+ Sts_LoLoDevCmp
+ BOOL
+ 1 = PV dev
+iation is below Low
+-Low limit, (Val_PV
+-Val_SP)<Cfg_LoLoDevLim.
+ Sts_LoLoDevGate
+ BOOL
+ 1 = PV deviation Low
+-Low gate is open.
+ Sts_LoLoDev
+ BOOL
+ 1 = PV deviation (loop error) is below 
+Low
+-Low limit, (Val_PV
+-Val_SP)<Cfg_LoLoDevLim, for gate 
+open.
+ There is a pr
+edefined default discrete tag
+-based alarm for the status. Set standard configuration 
+members of the discrete tag
+-based alarm. Access alarm elements using this format:
+ PPIDTag.@Alarm
+s.Alm_LoLoDev.AlarmElement
+ Sts_Fail
+ BOOL
+ 1 = Loop failure: PV bad, SP bad,
+ CV bad or Hand feedback bad statuses are on or are latched on 
+without reset. There is a predefined default discrete tag
+-based alarm for the status. Set standard 
+configuration membe
+rs of the discrete tag
+-based alarm. Access alarm elements using this format
+: PPIDTag.@Alarms.Alm_Fail.AlarmElement
+ Sts_IntlkTrip
+ BOOL
+ 1 = Interlock Not OK caused loop output to hold or change. There is a predefined default discrete 
+
+tag-based alarm for the
+ status. Set standard configuration members of the discrete tag
+-based 
+alarm
+. Access alarm elements using this format:
+ PPIDTag.@Alarms.Alm_IntlkTrip.AlarmElement
+ Sts_RdyReset
+ BOOL
+ 1 = A latched alarm or shed condition is ready to be reset.
+ Sts_RdyAck
+ BOOL
+ 1 = An alarm is ready to be acknowledged.
+ XRdy_Acq
+ BOOL
+ 1 = Ready for XCm
+d_Acq, enable HMI button.
+ XRdy_Rel
+ BOOL
+ 1 = Ready for XCmd_Rel, enable HMI button.
+ XRdy_Casc
+ BOOL
+ 1 = Ready for XCmd_Casc, enable HMI button.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 647
+  Public output member
+ Data Type
+ Description
+ XRdy_Auto
+ BOOL
+ 1 = Ready for XCmd_Auto, enable HMI button.
+ XRdy_Man
+ BOOL
+ 1 = Ready for XCmd_Man, enable HMI bu
+tton.
+ XRdy_NormLM
+ BOOL
+ 1 = Ready for XCmd_NormLM, enable HMI button.
+ XRdy_SPRampStart
+ BOOL
+ 1 = Ready for XCmd_SPRampStart, enable HMI button.
+ XRdy_SPRampStop
+ BOOL
+ 1 = Ready for XCmd_SPRampStop, enable HMI button.
+ XRdy_Reset
+ BOOL
+ 1 = Ready for XCmd_Rese
+t, enable HMI button.
+ XRdy_ResetAckAll
+ BOOL
+ 1 = Ready for XCmd_ResetAckAll, enable HMI button.
+ Val_Owner
+ DINT
+ Current object owner ID, 0 = 
+Not owned.
+  Private input member
+ Data Type
+ Default 
+Value
+ Description
+ HMI_BusObjIndex
+ DINT
+ 0 HMI bus object index.
+ Default is 0.
+ OCmd_SPRampStart
+ BOOL
+ 0 Operator command to initiate SP ramping. The instruction clears this operand 
+automatically.
+ Default is 0.
+ OCmd_SPRampStop
+ BOOL
+ 0 Operator command to stop SP ramping. The instruction clears this operand 
+
+automatically
+. Default is 0.
+ OSet_Ratio
+ REAL
+ 1.0
+ Operator setting for Ratio, loop mode Cascade/Ratio and Ratio enabled (unitless).  
+ Valid = 0.0 to maximum positive float.
+ Default is 1.0.
+ OSet_SP
+ REAL
+ 0.0 Operator setting for Setpoint, loop mode Auto (PVEU). 
+ Valid a
+ny float.
+ Default is 0.0.
+ OSet_SPTar
+get REAL
+ 0.0 Operator setting for Setpoint ramp target, endpoint for ramp wizard (PVEU). 
+ Valid any float.
+ Default is 0.0.
+ OSet_SPRampTime
+ REAL
+ 0.0 Operator setting for Setpoint ramp time, time to reach target for ramp
+ wizard 
+(second). 
+ Valid = 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ OSet_CV
+ REAL
+ 0.0 Operator setting for CV, loop mode Manual (CVEU). 
+ Valid any float.
+ Default is 0.0.
+ MCmd_Bypass
+ BOOL 0 Maintenance command to bypass all bypassable interlocks. The inst
+ruction clears 
+this operand automatically.
+ Default is 0.
+ MCmd_Check
+ BOOL
+ 0 Maintenance command to check, not bypass, all interlocks. The instruction clears 
+this operand 
+automatically.
+ Default is 0.
+ MCmd_OoS
+ BOOL
+ 0 Maintenance command to select Out of Ser
+vice. The instruction clears this operand 
+automatically.
+ Default is 0.
+ MCmd_IS
+ BOOL
+ 0 Maintenance command to select In Service. The instruction clears this 
+operand 
+automatically.
+ Default is 0.
+ MCmd_Acq
+ BOOL
+ 0 Maintenance command to acquire ownership (Ope
+rator/Program/External/Override 
+to Maintenance). The instruction clears this operand automatically.
+ Default is 0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Private input member
+ Data Type
+ Default 
+Value
+ Description
+ MCmd_Rel
+ BOOL
+ 0 Maintenance command to 
+release ownership (Maintenance to 
+
+Operator/Program/External/Override). The instruction clears this ope
+rand 
+automatically.
+ Default is 0.
+ OCmd_Oper
+ BOOL
+ 0 Operator command to select Operator (Program to Operator). The instruction clears 
+this operand automat
+ically.
+ Default is 0.
+ OCmd_Prog
+ BOOL
+ 0 Operator command to select Program (Operator to Program). The 
+instruction clears 
+
+this operand automatically.
+ Default is 0.
+ OCmd_Lock
+ BOOL
+ 0 Operator command to lock Operator (disallow Program). The 
+instruction clears this 
+
+operand automatically.
+ Default is 0.
+ OCmd_Unlock
+ BOOL
+ 0 Operator command to unlock or release 
+(allow Program to acquire) ownership. The 
+
+instruction clears this operand automatically.
+ Default is 0.
+ OCmd_Normal
+ BOOL
+ 0 Operator command to select Normal (Operator or Program). The instruction clears 
+this operand automatically.
+ Default is 0.
+ OCmd_Auto
+ BOOL
+ 0 Operator command to select Automatic loop mode. The instruction clears this 
+operand automatically.
+ Default is 0.
+ OCmd_Casc
+ BOOL
+ 0 Operator command to select Cascade/Ratio loop mode. The instruction clears this 
+
+operand automatically.
+ Default is 0.
+ OCmd_Man
+ BOOL
+ 0 Operator command to select Manual loop mode. The instruction clears this operand 
+
+automatically.
+ Default is 0.
+ OCmd_NormLM
+ BOOL
+ 0 Operator command to select loop mode configured as Normal (see Cfg_NormLM). The 
+
+instruction clears this operan
+d automatically.
+ Default is 0.
+ OCmd_Reset
+ BOOL
+ 0 Operator command to reset all alarms and 
+latched shed conditions. The instruction 
+
+clears this operand automatically.
+ Default is 0.
+ OCmd_ResetAckAll
+ BOOL
+ 0 Operator command to acknowledge and reset all alar
+ms and latched shed 
+conditions. The use of OCmd_ResetAckAll is restricted to HMI. The instr
+uction clears 
+this operand automatically.
+ Default is 0.
+  Private output member
+ Data Type
+ Description
+ MRdy_Bypass
+ BOOL
+ 1 = Ready for MCmd_Bypass, enable HMI button.
+ MRdy_Check
+ BOOL
+ 1 = Ready for MCmd_Check, enable HMI button.
+ MRdy_OoS
+ BOOL
+ 1 = Ready for MCmd_OoS, enable HMI button.
+ MRdy_IS
+ BOOL
+ 1 = Ready for MCmd_IS, enable HMI button.
+ MRdy_Acq
+ BOOL
+ 1 = Ready for MCmd_Acq, enable HMI button.
+ MRdy_Rel
+ BOOL
+ 1 = Re
+ady for MCmd_Rel, enable HMI button.
+ ORdy_Oper
+ BOOL
+ 1 = Ready for OCmd_Oper, enable HMI button.
+ ORdy_Prog
+ BOOL
+ 1 = Ready for OCmd_Prog, enable HMI button.
+ ORdy_Lock
+ BOOL
+ 1 = Ready for OCmd_Lock, enable HMI button.
+ ORdy_Unlock
+ BOOL
+ 1 = Ready for OCmd_Un
+lock, enable HMI button.
+ 

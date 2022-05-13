@@ -1,0 +1,2356 @@
+Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 479
+  Public Input Members
+ Data Ty
+pe FBD Default 
+Visibility
+ FBD Wiring 
+required
+ Usage
+ Description
+ Inp_Reset
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Reset shed latches and cleared alar
+ms. Default is false.
+ Inp_eRatePVSrcQ
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Flow rate signal source and quality (enumerated): 
+ 0=Good, live, confirmed good 1=Good, live, 
+assumed good 
+ 2=Good, no feedback, assumed good 8=Test, 
+virtualized 
+ 9=Test, loopback 
+ 10=Test, manually entered 16=Uncertain, live, off
+-spec 17=Uncertain, substituted at device or bus 
+ 18=Uncertain, substituted at instruction 
+ 19=Uncertain, using last known good 
+20=Uncertain, using replacement value 32=Bad, 
+signal failure 
+ 33=Bad, channel f
+ault 
+ 34=Bad, module or communication fault 
+ 35=Bad, invalid configuration.
+ Default is 0.
+ Inp_eRatePVNotify
+     Rate PV object alarm priority and 
+acknowledgement status. 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+
+required,
+  2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged
+,  7 = High severity alarm, unacknowledged, 
+ 8 = Ur
+gent severity alarm, acknowledged, 
+ 9 = Urgent severity alarm, unacknowledged.
+ Default is 0.
+ Inp_eQtyPVSrcQ
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Quantity signal source and quality (enumerated): 
+ 0=Good, live, confirmed good 
+ 1=Good, live, assumed good 
+ 2=Good, no feedback, assumed good 
+ 8=Test, virtualized 
+ 9=Test, loopback 
+ 10=Test, manually entered 
+ 16=Uncertain, live, off
+-spec 
+ 17=Uncertain, substituted at device or bus 
+ 18=Uncertain, substituted at instruction 
+ 19=Uncertain, using last known good 
+ 20=Un
+certain, using replacement value 
+ 32=Bad, signal failure 
+ 33=Bad, channel fault 
+ 34=Bad, module or
+ communication fault 
+ 35=Bad, invalid configuration.
+ Default is 0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Input Members
+ Data Ty
+pe FBD Default 
+Visibility
+ FBD Wiring 
+required
+ Usage
+ Description
+ Inp_eQtyPVNotify
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Quantity PV object alarm priority and
+ acknowledgement status. 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity al
+arm, unacknowledged, 
+ 6 = High severity alarm, acknowledged
+,  7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = Urgent severity alarm, unacknowledged.
+ Default is 0.
+ Inp_Hand
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Acq
+uire hand (typically hardwired local), 0 = 
+Release 
+hand.
+ Default is false.
+ Inp_Ovrd
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Acquire Override (higher priority Program 
+logic), 0 = Release Override.
+ Default is false.
+ Inp_ExtInh
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Inhibit External 
+acquisition, 0 = Allow External 
+
+acquisition.
+ Default is false.
+ Cfg_AllowDisable
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Allow Operator alarm disable, 0 = Disallow 
+
+Operator alarm disable.
+ Default is false.
+ Cfg_AllowShelve
+ BOOL
+ Not Visible
+ Not 
+Required
+ Input
+ 1 = Allow Operator alarm shelve, 0 = Disallow 
+
+Operator alarm shelve.
+ Default is false.
+ Cfg_HasEqpFdbk
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Controlled equipment provides run (dribble if 
+
+used) and stop feedback.
+ Default is 
+false.
+ Cfg_UseEqpFdbk
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Use run / dribble / stop feedback, 0 = Assume 
+
+equipment state.
+ Default is false.
+ Cfg_HasDribble
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Slow to dribble before complete, 0 = Run full 
+
+flow until
+ complete.
+ Default is false.
+ Cfg_HasRatePVNav
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Tells HMI an analog object (pai, etc.) is used for 
+
+Inp_RatePV.
+ Default is false.
+ Cfg_HasMonitoring
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Allows continuous 
+monitoring 
+without setpoint 
+requirement.
+ Default is false.
+ Cfg_HasMoreObj
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Tells HMI an object with more info is available.
+ Default is false.
+ Cfg_HasQtyPVNav
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Tells HMI an 
+analog object (
+pai, etc.) is used for 
+Inp_QtyPV.
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 481
+  Public Input Members
+ Data Ty
+pe FBD Default 
+Visibility
+ FBD Wiring 
+required
+ Usage
+ Description
+ Cfg_AutoAdjPreact
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Enable automatic adjustment of preact after 
+each delivery.
+ Default is false.
+ Cfg_LossInQty
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Flow reduces 
+quantity (Transfer out), 0 = Flow 
+
+increases quantity (Transfer in).
+ Default is false.
+ Cfg_SetTrack
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = When the owner is Program the operator 
+
+settings track the program settings. When the 
+owner is Operator the program s
+ettings track the 
+operator settings; and the virtual inputs match 
+the output values (transitions are bumpless) 0 = 
+No tracking.
+ Default 
+is true.
+ Cfg_ShedOnEqpFault
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Stop delivery and alarm on equipment fault; 0 
+= Ala
+rm only on equipment fault.
+ Default is true.
+ Cfg_HasOper
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Operator (unlocked) exists, can be 
+selected.
+ Default is true.
+ Cfg_HasOperLocked
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Operator locked exists, can be select
+ed.
+ Default is true.
+ Cfg_HasProg
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Program (unlocked) exists, can be selected.
+ Default is 
+true.
+ Cfg_HasProgLocked
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Program locked exists, can be selected.
+ Default is true.
+ Cfg_
+HasExt
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = External exists, can be selected.
+ Default is false.
+ Cfg_HasMaint
+ BOOL
+ Not 
+Visible
+ Not Required
+ Input
+ 1 = Maintenance exists, can be selected.
+ Default is true.
+ Cfg_OvrdOverLock
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Override supersedes Program/Operator Lock, 
+
+0 = Don't Override lock.
+ Default is true.
+ Cfg_ExtOverLock
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = External supersedes Program/Operator Lock, 0 
+
+= Don't Override lock.
+ Default is false.
+ Cfg_ProgPwrUp
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = Power up to Program, 0 = Power up to 
+
+Operator.
+ Default is false.
+ Cfg_ProgNormal
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Normal source: 1 = Program if no requests; 0 = 
+
+Operator if no requests.
+ Default is false.
+ Cfg_PCmdPrio
+rity
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Command priority. 1 = Program 
+commands win, 0 
+
+= Operator commands win.
+ Default is false.
+ Cfg_PCmdProgAsLevel
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = PCmd_Prog used as a level.
+ Default is false.
+ Cfg_PCmdLockAsLevel
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = PCmd_Lock
+ used as a level (1 = Lock, 0 = 
+Unlock).
+ Default is false.
+ Cfg_ExtAcqAsLevel
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ 1 = XCmd_Acq used as level (1 = Acquire, 0 = 
+
+Release).
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Input Members
+ Data Ty
+pe FBD Default 
+Visibility
+ FBD Wiring 
+required
+ Usage
+ Description
+ Cfg_AutoAdjPercent
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Percentage of delivery error to auto
+-adjust 
+preact. Valid = 0.0 to 100.0 (%)
+ Default is 10.0.
+ Cfg_CountsPerEU
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Number of counts in Inp_QtyPV which equal 1.0 
+Engineering Units. Valid =
+ 0.0 to maximum 
+positive float.
+ Default is 1.0.
+ Cfg_EUQtyMult
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Rate to quantity Engineering Units multiplier (e.g., 
+
+gal to bbl.). Valid = 0.0 to maximum positive float.
+ Default is 1.0.
+ Cfg_BumpTime
+ REAL
+ Not Visible
+ Not 
+Required
+ Input
+ Bump 
+(manual top
+-off) time. Valid = 0.0 to 
+2147483.0 seconds.
+ Default is 0.0.
+ Cfg_ClearPulseTime
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Time to pulse Out_ClearTot to clear External 
+
+totalizer. Valid = 0.0 to 2147483.0 seconds.
+ Default is 1.0.
+ Cfg_FaultTime
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Time for equipment feedback to follow output 
+
+before fault. Valid = 0.0 to 2147483.0 seconds.
+ Default is 10.0.
+ Cfg_HiFlowRateLim
+ REAL
+ Not Visible
+ Not Required
+ Input
+ High flow rate alarm limit. Valid = 
+0.0 to maximum 
+positive float.
+ Default is 3.40E+38.
+ Cfg_LoFlowRateLim
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Low flow rate alarm limit. Valid = 0.0 to maximum 
+
+negative float.
+ Default is 
+-3.40E+38.
+ Cfg_LoRateCutoff
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Rate below w
+hich to report zero flow (Inp_RatePV  
+in engineering unit/time, see Cfg_RateTime). Valid 
+
+= 0.0 to maximum positive float.
+ Default is 0.0.
+ Cfg_MaxQty
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Maximum allowed quantity to deliver 
+
+(setpoint
+).Valid = 0.0 to maximum 
+positive float.
+ Default is 1.50E+38.
+ Cfg_RateFiltTimeConst
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Filter time constant (sec) for calculated rate. Valid 
+
+= 0.0 to 2147483.0 seconds.
+ Default is 0.1.
+ Cfg_RateTime
+ REAL
+ Not Visible
+ Not 
+Required
+ Input
+ Time factor 
+for rate (60 for /min, 3600 for /hr) 
+
+(sec). Valid = 0.0 to 2147483.0 seconds.
+ Default is 1.0.
+ Cfg_Rollover
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Quantity rollover (e.g., max count for pulse input). 
+
+Valid = 0.0 to maximum 
+positive float.
+ Default is 0.0.
+ Cfg
+_SettleTime
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Time to allow flow to stop before allowing 
+
+tolerance check.Valid = 0.0 to 2147483.0 seconds.
+ Default is 1.0.
+ Cfg_VirtualRate
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Rate at 
+which to deliver when running in virtu
+al 
+
+(Engineering Units/rate time). Valid = 0.0 to 
+
+maximum positive float.
+ Default is 1.0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 483
+  Public Input Members
+ Data Ty
+pe FBD Default 
+Visibility
+ FBD Wiring 
+required
+ Usage
+ Description
+ Cfg_VirtualDribbleRate
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Rate at which to dribble when running in virtual 
+(Engineering Units/rate time). Valid = 0.0 to 
+
+maximum posi
+tive float.
+ Default is 0.1.
+ Cfg_eKeepSP
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Ownership of Setpoint (enumeration): 0 = follows 
+
+CmdSrc, 1 = Operator, 2 = Program, 3 = External.
+ Default is 0.
+ Cfg_eKeepStart
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Ownership of St
+art commands (enumeration): 0 = 
+follows CmdSrc, 1 = Operator, 2 = Program, 3 = 
+
+External.
+ Default is 0.
+ Cfg_eKeepTol
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Ownership of Tolerance commands 
+
+(enumeration): 0 = follows CmdSrc, 1 = Operator, 3 
+
+= External.
+ Default 
+is 0.
+ Cfg_eKeepDribblePreact
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Ownership of Dribble
+\Preact (enumeration): 0 = 
+follows CmdSrc, 1 = Operator, 2 = Progra
+m, 3 = 
+External.
+ Default is 0.
+ Cfg_HasHistTrend
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Has Historical Tre
+nd. This enables navigation to 
+the Device Historical Trend Faceplate from the 
+
+HMI. Value of 0 = No External historical trend, 1 = 
+Datalog historical trend, 2 = Historian histrical 
+trend.
+ Default is 0.
+ Cfg_QtyDecPlcs
+ SINT
+ Not Visible
+ Not 
+Required
+ Input
+ Num
+ber of decimal places for quantity display. 
+Valid = 0,1,2,3,4,5,6.
+ Default is 2.
+ Cfg_RateDecPlcs
+ SINT
+ Not Visible
+ Not Required
+ Input
+ Number of decimal places for rate display. Valid = 
+0,1,2,3,4,5,6.
+ Default is 2.
+ Cfg_CnfrmReqd
+ SINT
+ Not Visible
+ Not Requir
+ed Input
+ Operator Command Confirmation Required. 
+
+Represents the type of command confirmation 
+
+required. 
+ 0 = None, 
+ 1 = Command confirmation required, 
+ 2 = Performer e
+-signature required, 
+ 3 = Performer and approver e
+-signature required.
+ Default is 0.
+ PCmd
+_Bump
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to bump delivery for under 
+
+tolerance. The instruction clears this operand 
+
+automatically.
+ Default is false.
+ PCmd_ClearTot
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to clear totalizer quant
+ity. The 
+
+instruction clears this operand automatically.
+ Default is false.
+ PCmd_StartTot
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to start totalizer. The 
+
+instruction clears this operand automatically.
+ Default is false.
+ PCmd_StopTot
+ BOOL
+ Not Vis
+ible
+ Not Required
+ Input
+ Program command to stop totalizer. The 
+
+instruction clears this operand automatically.
+ Default is fals
+e. Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Input Members
+ Data Ty
+pe FBD Default 
+Visibility
+ FBD Wiring 
+required
+ Usage
+ Description
+ PCmd_StartFlow
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to start delivery. The 
+instruction clears this operand autom
+atically.
+ Default is false.
+ PCmd_StopFlow
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to stop/pause 
+delivery. The 
+
+instruction clears this operand automatically.
+ Default is false.
+ PCmd_CheckTol
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command t
+o check tolerances. The 
+instruction clears this operand automatically.
+ Default is false.
+ PCmd_Lock
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to lock Program (disallow 
+
+Operator). The instruction clears this operand 
+
+automatically if Cfg_PCmdLockAs
+Level = 0.
+ Default is false.
+ PCmd_Normal
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to 
+select normal command 
+
+source (Operator or Program). The instruction 
+
+clears this operand automatically.
+ Default is false.
+ PCmd_Oper
+ BOOL
+ Not Visible
+ Not Requir
+ed Input
+ Program command to select Operator (Program to 
+
+Operator). The instruction clears 
+this operand 
+
+automatically.
+ Default is false.
+ PCmd_Prog
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to select Program (Operator to 
+
+Program). The instruction 
+clears this operand 
+
+automatically.
+ Default is false.
+ PCmd_Unlock
+ BOOL
+ Not Visible
+ Not 
+Required
+ Input
+ Program command to unlock Program (allow 
+
+Operator to acquire). The instruction clears this 
+operand automatically.
+ Default is false.
+ PCmd_Reset
+ BOOL
+ Not V
+isible
+ Not Required
+ Input
+ Program command to reset all alarms requiring 
+reset. The 
+instruction clears this operand 
+automatically.
+ Default is false.
+ PCmd_Virtual
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to select Virtual (virtualized) 
+device ope
+ration. The instruction clears this 
+operand automatically.
+ Default is false.
+ PCmd_Physical
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ Program command to select Physical device 
+
+operation (not virtualized). The instruction clears 
+this operand automatically.
+ Defaul
+t is false.
+ PSet_Owner
+ DINT
+ Not Visible
+ Not Required
+ Input
+ Program owner 
+request ID (non
+-zero) or release 
+(zero).
+ Default is 0.
+ PSet_DribbleQty
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Program setting of quantity to dribble 
+(Engineering Units). Valid = 0.0 to
+ maximum 
+positive float.
+ Default is 0.0.
+ PSet_Preact
+ REAL
+ Not 
+Visible
+ Not Required
+ Input
+ Program setting of amount before total to stop 
+
+flow (Engineering Units). Valid = 0.0 to maximum 
+positive float.
+ Default is 0.0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 485
+  Public Input Members
+ Data Ty
+pe FBD Default 
+Visibility
+ FBD Wiring 
+required
+ Usage
+ Description
+ PSet_SP
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Program setting of total quantity to deliver  in 
+Engineering Units. Valid = 0.0 to maximum 
+
+positive float.
+ Default is 0.0.
+ PSet_TolHi
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Program setting of high tolerance limit (ok 
+
+amount > SP). Valid = 0.0 to maxim
+um posi
+tive 
+float.
+ Default is 0.0.
+ PSet_TolLo
+ REAL
+ Not Visible
+ Not Required
+ Input
+ Program setting of low tolerance limit (ok amount 
+
+< SP). Valid = 0.0 to maximum positive float.
+ Default is 0.0.
+ XCmd_Bump
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External comma
+nd to bump delivery for under 
+tolerance.The instruction clears this operand 
+
+automatically.
+ Default is false.
+ XCmd_ClearTot
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command to clear totalizer Quantity. The 
+
+instruction clears this operand 
+automatically.
+ Default is false.
+ XCmd_StartTot
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command to start totalizer.The 
+
+instruction clears this operand automatically.
+ Default is false.
+ XCmd_StopTot
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command to stop totali
+zer.The 
+instruction clears this operand automatically.
+ Default is false.
+ XCmd_StartFlow
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command to start deliver.The instruction 
+
+clears this operand automatically.
+ Default is fals
+e. XCmd_StopFlow
+ BOOL
+ Not Visi
+ble
+ Not Required
+ Input
+ External command to stop/pause delivery.The 
+
+instruction clears this operand automatically.
+ Default is false.
+ XCmd_CheckTol
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command to check tolerances.The 
+
+instruction clears this operand 
+automatically.
+ Default is false.
+ XCmd_Reset
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command to clear shed latches and 
+
+cleared alarms.
+ Default is false.
+ XCmd_Acq
+ BOOL
+ Not 
+Visible
+ Not Required
+ Input
+ External command to Acquire ownership 
+(Operator/Prog
+ram/Override/Maintenance to 
+External). The instruction clears this operand 
+automatically if Cfg_ExtAcqAsLevel = 0.
+ Default is false.
+ XCmd_Rel
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command to relea
+se ownership if 
+
+Cfg_ExtAcqAsLevel = 0 (External to 
+Operator/Program/Override/Maintenance). The 
+instruction clears this operand automatically.
+ Default is false.
+ XCmd_ResetAckAll
+ BOOL
+ Not Visible
+ Not Required
+ Input
+ External command to acknowledge and 
+reset all 
+alarms and latched shed conditions. The 
+
+instruct
+ion clears this operand automatically.
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Input Members
+ Data Ty
+pe FBD Default 
+Visibility
+ FBD Wiring 
+required
+ Usage
+ Description
+ XSet_DribbleQty
+ REAL
+ Not Visible
+ Not Required
+ Input
+ External setting of quantity to dribble 
+(Engineering Units).
+ Default is 0.0.
+ XSet_Preact
+ REAL
+ Not Visible
+ Not Required
+ Input
+ External setting of 
+amount before total to stop 
+
+flow (Engineering Units).
+ Default is 0.0.
+ XSet_SP
+ REAL
+ Not Visible
+ Not Required
+ Input
+ External setting of total quantity to deliver 
+
+(Engineering Units).
+ Default is 0.0.
+ XSet_TolHi
+ REAL
+ Not Visible
+ Not Required
+ Input
+ External s
+etting of high tolerance limit (ok 
+amount > SP).
+ Default is 0.0.
+ XSet_TolLo
+ REAL
+ Not Visible
+ Not Required
+ Input
+ External setting of low tolerance limit (ok amount 
+
+< SP).
+ Default is 0.0.
+  Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+required
+ Usage
+ Description
+ EnableOut
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ Enable Output 
+- System Defined Parameter
+ Out_ClearTot
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = 
+Reset external totalizer (e.g. onboard 
+flowmeter).
+ Out_RunTot
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Run External totalizer (e.g. onboard 
+flowmeter).
+ Out_RunFlow
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Deliver at full (fast) flow.
+ Out_StopFlow
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Stop delivery equipment.
+ Out_DribbleFlow
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Deliver at dribble (slow) flow.
+ Out_Reset
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Reset command has been received and 
+
+accepted.
+ Out_OwnerSts
+ DINT
+ Not Visible
+ Not Required
+ Output
+ Status of command source, owner command 
+
+handshake and ready sta
+tus. 
+ 0 = None,
+ .10 = Operator lock,
+ .11 = Operator unlock,
+ .12 = Program lock,
+ .13 = Program unlock,
+ .14 = Acquire Maintenance,
+ .15 = 
+Release Maintenance,
+ .16 = Acquire External,
+ .17 = Release External,
+ .18 = Has Maintenance,
+ .19 = External Override lock,
+ .20 = Has External,
+ .21 = Has Operator,
+ .22 = Has Program,
+ .30 = Not ready.
+ Sts_Initialized
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Instruction is initialized. use Inp_InitializeReq 
+to reinitialize.
+ Sts_CalcQty
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = 
+Integrate Inp_RatePV to get quantity, 0 = Use 
+Inp_QtyPV.
+ Sts_CalcRate
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Differentiate Inp_QtyPV to get rate, 0 = Use 
+Inp_RatePV.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 487
+  Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Sts_Cleared
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Totalizer clear completed.
+ Sts_TotRu
+nning
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Totalizer running, 0 = Totalizer stopped.
+ Sts_FlowStarting
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Flow is starting (Out_Run is on, feedback not 
+
+showing run).
+ Sts_FlowRunning
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Flow is running (Out_Run
+ is on, feedback 
+
+shows running).
+ Sts_FlowStopping
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Flow is stopping (Out_Stop is on, feedback not 
+showing stopped).
+ Sts_FlowStopped
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Flow is stopped (Ou
+t_Stop
+ is on, feedback 
+shows stopped).
+ Sts_DribbleStarting
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Dribble starting (Out_Dribble is on, feedback 
+not showing dribble).
+ Sts_FlowDribble
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Flow is dribbling (
+Out_Dribble is
+ on, feedback 
+shows dribble).
+ Sts_Bumping
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Bump flow is active.
+ Sts_InTol
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Total delivered is within tolerances.
+ Sts_Complete
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = Total  del
+ivered > (setpoint 
+- preact).
+ Sts_Virtual
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = The instruction treats the device as virtual. 
+
+The instruction acts as normal
+ but the output is 
+kept de
+-energized (Out_(x)=0). 0 = The 
+
+instruction operates the device normal
+ly. 
+Sts_Virtual is a copy of Inp_Virtual.
+ Sts_bSrc
+ INT
+ Not Visible
+ Not Required
+ Output
+ Active selection bitmap (for HMI totem pole with 
+
+command source request selection): 
+ Sts_bSrc.0: Hand, 
+ Sts_bSrc.1: Programmed out of service (rung 
+false), 
+ Sts_bSrc.2:
+ Maintenance out of service, 
+ Sts_bSrc.3: Maintenance, 
+ Sts_bSrc.4: Override, 
+ Sts_bSrc.
+5: External, 
+ Sts_bSrc.6: Program locked, 
+ Sts_bSrc.7: Program, 
+ Sts_bSrc.8: Operator locked, 
+ Sts_bSrc.9: Operator.
+ Sts_eCmd
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Dosi
+ng command 
+ 0 = None, 
+ 1 = Clear Totalizer, 
+ 2 = Start Totalizer, 
+ 3 = Start Flow, 
+ 4 = Start Dribble, 
+ 5 = Bump, 
+ 6 = Stop Flow, 
+ 7 = Stop Totalizer.
+ Sts_eFdbk
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Equipment feedback 
+ 0 = None/transition, 
+ 1 = Flow stoppe
+d, 
+ 2 = Flow running, 
+ 3 = Flow dribbling, 
+ 4 = Virtualized.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Sts_eFault
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Object fault status 0 = None, 1 = Error: bad 
+
+configuration, 15 = Equipment fault.
+ Sts_eNotifyAll
+ SINT
+ Not Visible
+ Not Required
+ Output
+ All alarm s
+tatus enumerated values including 
+
+related objects: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, 
+acknowledge
+d, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = Urgent severity alarm, unacknowledged.
+ Sts_eNotify
+ SINT
+ Not 
+Visible
+ Not Require
+d Output
+ All alarm status enumerated values: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm
+, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = Urgent severity alarm, unacknowledged.
+ Sts_eNotifyEqpFault
+ SINT
+ Not Visible
+ Not Requi
+red
+ Output
+ Equipment Fault alarm status enumerated 
+
+values: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, ack
+nowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknowledged, 
+ 8 = Urge
+nt severity alarm, acknowledged, 
+ 9 = Urgent severity alarm, unacknowledged.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 489
+  Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Sts_eNotifyHiFlowRate
+ SINT
+ Not V
+isible
+ Not Required
+ Output
+ Hi Flow Rate alarm status enumerated values: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severi
+ty alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged
+,  7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = Urgent severity alarm, unacknowledged.
+ Sts_eNotifyLoFlowRa
+te SINT
+ Not Visible
+ Not Required
+ Output
+ Lo Flow Rate alarm status enumerated values: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = Urgent severity alarm, unacknowledged.
+ Sts_eN
+otifyOverTol
+ SINT
+ Not Visible
+ Not 
+Required
+ Output
+ Over Tolerance alarm status enumerated values: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowl
+edged, 
+ 4 = Medium severity alarm,
+ acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = Urgent severity alarm, unacknowled
+ged.
+ Sts_eNotifyUnderTol
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Under Tolerance alarm status enumerated 
+
+values: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity al
+arm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged, 
+ 7 = High severity alarm, unacknowledged, 
+ 8 = Urge
+nt severity alarm, acknowledged, 
+ 9 = Urgent severity alar
+m, unacknowledged.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Sts_eNotifyZeroFault
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Zero Fault alarm status enumerated values: 
+ 0 = Not in alarm, acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset 
+
+required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low s
+everity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alarm, acknowledged
+,  7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = Urgent sev
+erity alarm, unacknowledged.
+ Sts_eSrc
+ INT
+ Not Visible
+ Not Required
+ Output
+ The current command source enumerated 
+
+values: 
+ 0 = Logic not in use, 
+ 4 = Hand, 
+ 8 = Maintenance, 
+ 16 = Override, 
+ 32 = Program, 
+ 33 = Program locked, 
+ 34 = Program by default (Norm
+al), 
+ 64 = Operator, 
+ 65 = Operator locked, 
+ 66 = Operator by default (Norm
+al), 
+ 128 = Maintenance Out of Service, 
+ 129 = Programmed Out of Service (rung false), 
+ 256 = External.
+ Sts_eSts
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Dosing confirmed Status 
+ 0 = ?
+  1 = Stop, 
+ 2 = Totalizer run, 
+ 3 = Flow run, 
+ 4 = Dribble, 
+ 5 = Bump 
+ 6 = Start flow, 
+ 7 = Start dribble, 
+ 8 = Stopping, 
+ 15 = Out of Service.
+ Sts_UnackAlmCount
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Count of unacknowledged alarms.
+ Sts_Available
+ BOOL
+ Not
+ Visible
+ Not Required
+ Output
+ 1 = Dosing available for 
+control by automation 
+(Program).
+ Sts_MaintByp
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = A Maintenance bypass is active, display icon.
+ Sts_NotRdy
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Object not read
+y, see detail bits for reason.
+ Sts_NrdyCfgErr
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Object not ready: configuration error.
+ Sts_NrdyEqpFault
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Object not ready: External equipment fault 
+
+(fault or shed requires res
+et).
+ Sts_NrdyOoS
+ BOOL
+ Not 
+Visible
+ Not Required
+ Output
+ 1 = Object not ready:  out of service.
+ Sts_NrdyPVBad
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Object not ready: PV bad quality or comm 
+failure.
+ Sts_Err
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error 
+in 
+configuration: See detail bits 
+(Sts_Errxxx) for reason.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 491
+  Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Sts_ErrAlm
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error in config: alarm minimum on time, shelf 
+
+time, severity.
+ Sts_ErrBumpTime
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error: 
+Cfg_BumpTime inva
+lid.
+ Sts_ErrClearPulseTime
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error: Cfg_ClearPulseTime invalid.
+ Sts_ErrCountsPerEU
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error: Cfg_CountsPerEU invalid.
+ Sts_ErrCutoff
+ BOOL
+ Not Visible
+ Not 
+Required
+ Output
+ 1 = Err
+or: Cfg_Cutoff invalid.
+ Sts_ErrEUQtyMult
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error: Cfg_EUQtyMult invalid.
+ Sts_ErrFaultTime
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error: Cfg_FaultTime invalid.
+ Sts_ErrRateTime
+ BOOL
+ Not 
+Visible
+ Not Required
+ Output
+ 1 = Error: Cfg_RateTime invalid.
+ Sts_ErrLim
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error: Cfg_MaxQty invalid.
+ Sts_ErrRollover
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error: Cfg_Rollover invalid.
+ Sts_ErrRateFiltTimeConst
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error: Cfg_RateFiltTimeConst invalid.
+ Sts_ErrSettleTime
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error: Cfg_SettleTime invalid.
+ Sts_ErrVirtual
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Error: Cfg_VirtualDribbleRate or 
+Cfg_VirtualRate invalid.
+ Sts_Hand
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Hand is selected (supersedes Out of Service, 
+
+Maintenance, Override, External, Program, 
+Operator).
+ Sts_OoS
+ BOOL
+ Not Visible
+ Not 
+Required
+ Output
+ 1 = Out of service is selected (supersedes 
+
+Maintenance, Overri
+de, External, Program, 
+Operator).
+ Sts_Maint
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Maintenance is selected (supersedes 
+Override, External, Program, Operator).
+ Sts_Ovrd
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Override is selected (supersedes External, 
+
+Program, Operator).
+ Sts_Ext
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = External is selected (supersedes Program and 
+
+Operator).
+ Sts_Prog
+ BOOL
+ Not Visible
+ Not 
+Required
+ Output
+ 1 = Program is selected.
+ Sts_ProgLocked
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = P
+rogram is selected and locked.
+ Sts_Oper
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Operator is selected.
+ Sts_OperLocked
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Operator is selected and locked.
+ Sts_ProgOperSel
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ Program/
+Operator selection (latch) state: 1 = 
+Program, 0 = Operator.
+ Sts_ProgOperLock
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ Program/Operator lock 
+(latch) state, 1 = Locked, 0 
+
+= Unlocked.
+ Sts_Normal
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Selection equals the nor
+mal (Program or 
+Operator).
+ Sts_ExtReqInh
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = External request inhibited, cannot get to 
+External from current state.
+ Sts_ProgReqInh
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Program request inhibited, cannot get to 
+Prog
+ram from current state.
+ Sts_MAcqRcvd
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Maintenance acquire command received this 
+
+scan.
+ Sts_Alm
+ BOOL
+ Visible
+ Not Required
+ Output
+ 1 = An alarm is active.
+ Sts_AlmInh
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = One or mor
+e alarms shelved, disabled or 
+suppressed.
+ Sts_EqpFault
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Equipment fault 
+detected.
+ Sts_HiFlowRate
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Hi flow rate alarm.
+ Sts_LoFlowRate
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Lo flow rate alarm.
+ Sts_LoRateCutoff
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Rate PV below low rate 
+cutoff, flow assumed 
+to be zero.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ Sts_OverTol
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Delivery out of tolerance high.
+ Sts_UnderTol
+ BOOL
+ Not Visible
+ Not
+ Required
+ Output
+ 1 = Delivery out of tolerance low.
+ Sts_ZeroFault
+ BOOL
+ Not Visible
+ Not 
+Required
+ Output
+ 1 = Totalizer did not clear or unexpected flow.
+ Sts_QtyBad
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Quantity value is Bad (PV Fail).
+ Sts_QtyUncertain
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Quantity value is Uncertain.
+ Sts_RateBad
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Rate value is Bad (PV Fail).
+ Sts_RateUncertain
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Rate value is Uncertain.
+ Sts_RdyAck
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = An alarm is ready to be 
+acknowledged.
+ Sts_RdyReset
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = A latched alarm or shed condition is ready to 
+
+be reset.
+ Val_SP
+ REAL
+ Visible
+ Not Required
+ Output
+ Amount to be delivered (setpoin
+t) (Engineering 
+Units). Valid = 0.0 to maximum 
+positive float.
+ Val_Remain
+ REAL
+ Visible
+ Not Required
+ Output
+ Amount yet to deliver to reach setpoint 
+
+(Engineering Units). Valid = 0.0 to maximum 
+positive float.
+ Val_PercentComplete
+ REAL
+ Visible
+ Not Required
+ Output
+ Percent complete (for progress bar on HMI)  
+Valid = 0.0 to 100.0.
+ Val_QtyPV
+ REAL
+ Not Visible
+ Not Required
+ Output
+ Quantity from weigh scale or flowmeter 
+
+(Engineering Units or pulse count).  Valid = 0.0 
+to maximum positive float.
+ Val_Qty
+ REAL
+ Visible
+ Not Required
+ Output
+ Quantity actually delivered (totalizer output) 
+
+(Engineering Units). Valid = 0.0 to maximum 
+positive float.
+ Val_RatePV
+ REAL
+ Not Visible
+ Not Required
+ Output
+ Flow rate from flowmeter (Engineering 
+
+Units/time, see Cfg_RateTime).  Valid = 0
+.0 to 
+maximum positive float.
+ Val_Rate
+ REAL
+ Visible
+ Not Required
+ Output
+ Current delivery rate (Engineering Units/time) 
+
+(see Cfg_RateTime). Valid = 0.0 to maximum 
+
+positive float
+. Val_DribbleQty
+ REAL
+ Visible
+ Not Required
+ Output
+ Amount to be delivered at sl
+ow rate (Engineering 
+Units). Valid = 0.0 to maximum positive float.
+ Val_Preact
+ REAL
+ Visible
+ Not Required
+ Output
+ Amount before setpoit
+ at which flow will be 
+
+stopped (Engineering Units). Valid = 0.0 to 
+
+maximum positive float.
+ Val_TolHi
+ REAL
+ Visible
+ Not Req
+uired
+ Output
+ Allowed amount > Setpoint (Engineering Units). 
+Valid = 0.0 to maximum positive float.
+ Val_TolLo
+ REAL
+ Visible
+ Not 
+Required
+ Output
+ Allowed amount < Setpoint (Engineering Units). 
+Valid = 0.0 to maximum positive float.
+ Val_Owner
+ DINT
+ Not Visible
+ Not Required
+ Output
+ Current object owner ID (0 = Not owned).
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 493
+  Public Output Members
+ Data Type
+ FBD Default 
+Visibility
+ FBD Wiring 
+
+required
+ Usage
+ Description
+ SrcQ
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Source and quality of primary value or status 
+
+(enumerated): 
+ 0=Good, live, confirmed good 
+ 1=Good, live, assumed good 
+ 2=Good, no feedback, assumed goo
+d  8=Test, virtualized 
+ 9=Test, loopback 
+ 10=Test, manually entered 
+ 16=Uncertain, live, off
+-spec 
+ 17=Unc
+ertain, substituted at device or bus 
+ 18=Uncertain, substituted at instruction 
+ 19=Uncertain, using last known good 
+ 20=Uncertain, using replacement va
+lue 
+ 32=Bad, signal failure 
+ 33=Bad, channel fault 
+ 34=Bad, module or communication fault 
+ 35=Bad, invali
+d configuration
+ SrcQ_IO
+ SINT
+ Not Visible
+ Not Required
+ Output
+ Source and quality of primary input or output 
+
+(enumerated): 
+ 0=Good, live, confirmed good
+  1=Good, live, assumed good 
+ 2=Good, no feedback, assumed good 
+ 8=Test, virtualized 
+ 9=Test, loopback 
+ 10=Test, manually entered 
+ 16=Uncertain, live, off
+-spec 
+ 17=Uncertain, substituted at device or bus 
+ 18=Uncertain, substituted at instruction 
+ 19=Uncert
+ain, using last known good 
+ 20=Uncertain, using replacement value 
+ 32=Bad, signal failure 
+ 33=Bad, channel fault 
+ 34=Bad, module or communication fault 
+ 35=Bad, invalid configuration
+ XRdy_Acq
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Ready for XCmd_Acq, en
+able HMI button.
+ XRdy_Rel
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Ready for XCmd_Rel, enable HMI button.
+ XRdy_Reset
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Ready for XCmd_Reset, enable HMI button.
+ XRdy_ResetAckAll
+ BOOL
+ Not Visible
+ Not Required
+ Output
+ 1 = Ready for XCmd_ResetAckAll, enable HMI 
+button.
+  Private Input Members
+ Data Type
+ Description
+ HMI_BusObjIndex
+ DINT
+ HMI bus object index
+ Default is 0.
+ MCmd_Acq
+ BOOL
+ Maintenance command to acquire ownership 
+(Operator/Program/External/Override to 
+Mainten
+ance). The instruction clears this operand automatically.
+ Default is false.
+ MCmd_IS
+ BOOL
+ Maintenance command to select in service. The instruction clears this operand 
+
+automatically.
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Private Input Members
+ Data Type
+ Description
+ MCmd_OoS
+ BOOL
+ Maintenance command to select out of ser
+vice. The instruction clears this operand 
+automatically.
+ Default is false.
+ MCmd_Physical
+ BOOL
+ Maintenance command to select Physical device operation (not virtualized)
+ Default is false.
+ MCmd_Rel
+ BOOL
+ Maintenance command to release ownership (Maintenance 
+to 
+Operator/Program/External/Override). The instruction clears this operand 
+automatically.
+ Default is false.
+ MCmd_Virtual
+ BOOL
+ Maintenance command to select Virtual (virtualized) device operation
+ Defau
+lt is false.
+ OCmd_Bump
+ BOOL
+ Operator command to bump 
+delivery for under tolerance. The instruction clears this 
+operand automatically.
+ Default is false.
+ OCmd_CheckTol
+ BOOL
+ Operator command to check tolerances. The instruction clears this operand 
+
+automatically.
+ Default is false.
+ OCmd_ClearTot
+ BOOL
+ Operator c
+ommand to clear totalizer quantity. The instruction clears this operand 
+automatically.
+ Default is false.
+ OCmd_Lock
+ BOOL
+ Operator command to lock Operator (disallow Program). The 
+instruction clears this 
+
+operand automatically.
+ Default is false.
+ OCmd_Normal
+ BOOL
+ Operator command to select normal (Operator or Program). The instruction clears this 
+operand automatically.
+ Default is false.
+ OCmd_Oper
+ BOOL
+ Operator command to select Oper
+ator (Program to Operator). The instruction clears this 
+operand automatically
+. Default is false.
+ OCmd_Prog
+ BOOL
+ Operator command to select Program (Operator to Program). The instruction clears this 
+operand automatically.
+ Default is false.
+ OCmd_Reset
+ BOOL
+ Operator command to reset all alarms requiring reset. The instruction clears
+ this 
+operand automatically.
+ Default is false.
+ OCmd_ResetAckAll
+ BOOL
+ Operator command to reset all alarms and latched shed conditions. The instruction 
+
+clears this 
+operand automatically.
+ Default is false.
+ OCmd_StartFlow
+ BOOL
+ Operator command to start deli
+ver. The instruction clears this operand automatically.
+ Default is false.
+ OCmd_StartTot
+ BOOL
+ Operator command to start totalizer. The instruction clears this 
+operand automatically.
+ Default is false.
+ OCmd_StopFlow
+ BOOL
+ Operator command to stop/pause deliv
+ery. The instruction clears this operand 
+automatically.
+ Default is false.
+ OCmd_StopTot
+ BOOL
+ Operator command to stop totalizer. The instruction clears 
+this operand automatically.
+ Default is false.
+ OCmd_Unlock
+ BOOL
+ Operator command to unlock / release (al
+low Program to acquire) ownership. The 
+instruction clears this operand automatically.
+ Default is false.
+ 

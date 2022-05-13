@@ -1,0 +1,64 @@
+<Structure DataType="P_DISCRETE_INPUT">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_InitializeReq" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_PVData" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_ModFault" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_ChanFault" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_PVUncertain" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_PVNotify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Inp_Target" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Inp_Gate" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Inp_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_AllowDisable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_AllowShelve" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_NoSubstPV" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_SubstTracksTarget" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_NormTextVis" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Cfg_HasMoreObj" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Cfg_Debounce" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Cfg_GateDly" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Cfg_TgtDisagreeOffDly" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Cfg_TgtDisagreeOnDly" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Cfg_CnfrmReqd" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Set_VirtualPV" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Virtual" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Physical" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PCmd_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XCmd_ResetAckAll" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_InpPV" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Out_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Initialized" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_PVUncertain" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_SubstPV" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_InpPV" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_Virtual" DataType="BOOL" Value="0"/>
+<DataValueMember Name="SrcQ_IO" DataType="SINT" Radix="Decimal" Value="34"/>
+<DataValueMember Name="SrcQ" DataType="SINT" Radix="Decimal" Value="34"/>
+<DataValueMember Name="Sts_eSts" DataType="SINT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="Sts_eFault" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_eNotify" DataType="SINT" Radix="Decimal" Value="9"/>
+<DataValueMember Name="Sts_eNotifyAll" DataType="SINT" Radix="Decimal" Value="9"/>
+<DataValueMember Name="Sts_eNotifyIOFault" DataType="SINT" Radix="Decimal" Value="9"/>
+<DataValueMember Name="Sts_eNotifyTgtDisagree" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Sts_UnackAlmCount" DataType="DINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Sts_MaintByp" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Err" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrGateDly" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrTgtDisagreeOffDly" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrTgtDisagreeOnDly" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrDebounce" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_ErrAlm" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_Alm" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_AlmInh" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_IOFault" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_TgtDisagreeCmp" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_TgtDisagreeGate" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_TgtDisagree" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Sts_RdyAck" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Sts_RdyReset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XRdy_Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="XRdy_ResetAckAll" DataType="BOOL" Value="1"/>
+</Structure>

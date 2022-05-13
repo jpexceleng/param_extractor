@@ -1,0 +1,240 @@
+Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public I
+nput Members
+ Data Type
+ Description
+ Inp_Perm16
+ BOOL
+ Permissive condition 16, OK to 
+energize if in configured OK state.
+ Default is true.
+ Inp_Perm17
+ BOOL
+ Permissive condition 17, OK to energize if in configured OK state.
+ Default is true.
+ Inp_Perm18
+ BOOL
+ Permissive condition 18, OK to energi
+ze if in configured OK state.
+ Default is 
+true.
+ Inp_Perm19
+ BOOL
+ Permissive condition 19, OK to energize if in configured OK state.
+ Default is true.
+ Inp_Perm20
+ BOOL
+ Permissive condition 20, OK to energize if in configured OK state.
+ Default is true.
+ Inp_Pe
+rm21
+ BOOL
+ Permissive condition 21, OK 
+to energize if in configured OK state.
+ Default is true.
+ Inp_Perm22
+ BOOL
+ Permissive condition 22, OK to energize if in configured OK state.
+ Default is true.
+ Inp_Perm23
+ BOOL
+ Permissive condition 23, OK to energize if i
+n configured OK state.
+ Default is 
+true.
+ Inp_Perm24
+ BOOL
+ Permissive condition 24, OK to energize if in configured OK state.
+ Default is true.
+ Inp_Perm25
+ BOOL
+ Permissive condition 25, OK to energize if in configured OK state.
+ Default is true.
+ Inp_Perm26
+ BOOL Permissive condition 26, OK 
+to energize if in configured OK state.
+ Default is true.
+ Inp_Perm27
+ BOOL
+ Permissive condition 27, OK to energize if in configured OK state.
+ Default is true.
+ Inp_Perm28
+ BOOL
+ Permissive condition 28, OK to energize if in confi
+gured OK state.
+ Default is 
+true.
+ Inp_Perm29
+ BOOL
+ Permissive condition 29, OK to energize if in configured OK state.
+ Default is true.
+ Inp_Perm30
+ BOOL
+ Permissive condition 30, OK to energize if in configured OK state.
+ Default is true.
+ Inp_Perm31
+ BOOL
+ Perm
+issive condition 31, OK 
+to energize if in configured OK state.
+ Default is true.
+ Inp_BypassActive
+ BOOL
+ 1 = Permissive bypassing is currently active.
+ Default is false.
+ Cfg_OKState
+ DINT
+ Bits indicate which state (0 or 1) of each input is OK to energize.
+ Def
+ault is 
+2#1111_1111_1111_1111_1111_1111_1111_1111.
+ Cfg_Bypassable
+ DINT
+ Set bits indicate which conditions can be bypassed.
+ Default is 2#0000_0000_0000_0000_0000_0000_0000_0000.
+ Cfg_HasMoreObj
+ BOOL
+ 1 = Tells HMI an object with more information is 
+availabl
+e. Default is false.
+ Cfg_HasNav
+ DINT
+ Set bits indicate which navigation buttons are enabled.
+ Default is 2#0000_0000_0000_0000_0000_0000_0000_0000.
+  Public Output Members
+ Data Type
+ Description
+ EnableOut
+ BOOL
+ Enable Output 
+- System Defined 
+Parameter
+ Sts_
+Initialized
+ BOOL
+ 1 = Instruction is initialized. Use Inp_InitializeReq to reinitialize.
+ Sts_PermOK
+ BOOL
+ Overall permissive status (1 = OK to energize).
+ Sts_NBPermOK
+ BOOL
+ Non
+-Bypassable
+ permissive status (1 = all non
+-bypassable permissives OK to energize)
+. Sts_BypActive
+ BOOL
+ 1 = Permissive bypassing is active (ignore bypassable permissives).
+ Chapte
+r 2  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 615
+  Public Output Members
+ Data Type
+ Description
+ Sts_Perm
+ DINT
+ Individual permissive status (1 = OK, 0 = don't energize).
+  Private Input Members
+ Data Type
+ Description
+ MSet_Bypass
+ DINT
+ Individual condition mainten
+ance bypass toggles.
+ Default is 
+2#0000_0000_0000_0000_0000_0000_0000_0000.
+  Private Output Members
+ Data Type
+ Description
+ N/A
+ N/A
+ N/A
+ Operation
+ This diagram illustrates the functionality of the PPERM instruction:
+  Configuration of Strings for HMI
+ Config
+ure strings for HMI 
+faceplates (FT View) and for the Logix Designer 
+configuration dialog box. The strings are set to extended properties of tag 
+items. Configure the strings in Logix Designer only.
+  Description 
+  Label for graphic symbol 
+  Display Library for 
+HMI Faceplate call
+-up   Instruction name 
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+    Area name 
+  URL link 
+  Input Conditional Text 
+  Navigation Path 
+  More Information 
+ Monitor the PPERM Instruction
+ Use the operator faceplate from the PlantPAx library of Process objects for 
+monitoring.
+ Affects Math Stat
+us Flags
+ No.
+ Major/Minor Faults
+ None specific to this instruction. See Index Through Arrays for array
+-
+indexing faults.
+ Execution
+ Ladder Diagram
+ Condition/State
+ Action Taken
+ Prescan
+ Rung
+-condition
+-out is cleared to false.
+ Instruction first run
+ The 
+instruc
+tion executes normally.
+ Rung
+-condition
+-in is false
+ Rung
+-condition
+-out is cleared to false.
+ If this instruction is off
+-scan, then set the summary Permissive OK status 
+bits to false.
+ Only set individual permissive bypasses for conditions that are con
+figured
+ for bypassing. All the MSets for inputs that are NOT bypassable will be 
+cleared.
+ Rung
+-condition
+-in is true
+ Set rung
+-condition
+-out to rung
+-condition
+-in.
+ The instruction executes.
+ Postscan
+ Rung
+-condition
+-out is cleared to false.
+ Function Block Dia
+gram
+ Condition/State
+ Action Taken
+ Prescan
+ EnableOut is cleared to false.
+ Instruction first run
+ The instruction executes normally.
+ Instruction first scan
+ See Instruction first run in the Function Block Diagram table.
+ 

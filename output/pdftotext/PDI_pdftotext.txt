@@ -1,0 +1,511 @@
+Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Input Members
+ Data 
+Type
+ Description
+ Cfg_NoSubstPV
+ BOOL
+ Disables the maintenance substitution feature.
+ 0 = The Substitute PV Maintenance function is enabled, 
+ 1 = The Substitute PV M
+aintenance function is disabled.
+ When Cfg_NoSubstPV is 0, the commands MCmd_SubstPV and MCmd_InpPV are used to select the 
+
+input PV or the substitute PV. Sts_SubstPV is set to 1 
+when the substitute PV is selected.
+ Default is false.
+ Cfg_SubstTracksTarget
+ BOOL 1 = The substitute PV tracks Inp_Target, 0 = The substitute PV is set by MSet_SubstPV.
+ Default is false.
+ Cfg_NormTextVis
+ BOOL
+ 1 = The state text is displayed in Normal state
+, 0 = The state text is hidden in Normal state.
+ Default is true.
+ Cfg_HasMoreOb
+j BOOL
+ 1 = Tells HMI an object with more info is available.
+ Default is false.
+ Cfg_Debounce
+ REAL
+ Minimum time status must maintain state (seconds). Debounces the input PV, 
+ensuring that the status 
+
+stays in each state a minimum time.
+ Valid = 0.0 to 2147483.
+0 seconds.
+ Default = 0.0.
+ Cfg_GateDly
+ REAL
+ Target Disagree Gate delay (seconds). Time Inp_Gate
+ must be 1 before Target Disagree condition is 
+
+checked.
+ Valid = 0.0 to 2147483.0 seconds.
+ Default = 0.0.
+ Cfg_TgtDisagreeOffDly
+ REAL
+ Minimum time for input to ag
+ree with target to clear status (seconds).
+ Valid = 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Cfg_TgtDisagreeOnDly
+ REAL
+ Minimum time for input to disagree with target to raise status (seconds).
+ Valid = 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Cfg_CnfrmRe
+qd SINT
+ Operator command confirmation required. Represents the type of command 
+confirmation required.
+ 0 = None,
+ 1 = Command confirmation required,
+ 2 = Performer e
+-signature required,
+ 3 = Performer and approver e
+-signature required.
+ Default is 0.
+ Set_Virtu
+alPV
+ BOOL
+ PV used in Virtual (Sts_Virtual
+ is 1). If the instruction is not in Virtual (Inp_Virtual is 0), the 
+
+Set_VirtualPV input tracks the input PV (Inp_PVData) for bumpless transfer into Virtual.
+ Default is false.
+ PCmd_Virtual
+ BOOL
+ Program command to s
+elect Virtual (simulated) device operatio
+n. The instruction clears this operand 
+automatically.
+ Default is false.
+ PCmd_Physical
+ BOOL
+ Program command to select Physical device operation (not simulated). The instruction clears this 
+
+operand automatically.
+ Def
+ault is false.
+ PCmd_Reset
+ BOOL
+ Program command to reset all alarms and latched shed conditions requiring reset. The instruction 
+
+clears this operand automatically.
+ Default is false.
+ XCmd_Reset
+ BOOL
+ External command to reset all alarms and latched shed con
+ditions. The instruction clears 
+this operand 
+automatically.
+ Default is false.
+ XCmd_ResetAckAll
+ BOOL
+ External command to acknowledge and reset all alarms and latched shed conditions. The instruction 
+
+clears this operand automatically.
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 437    Public Output Members
+ Data 
+Type
+ Description
+ EnableOut
+ BOOL
+ Enable output. This output state always reflects EnableIn input state.
+ Out
+ BOOL
+ Discrete input status (including de
+-bounce and manual override, if used). 
+ 0 = The discrete input is Off, 
+ 1 = The d
+iscrete input is On.
+ Out_InpPV
+ BOOL
+ Echo of Inp_PVData (actual raw or virtual input).
+ Out_Reset
+ BOOL
+ 1 = Reset command has been received a
+nd accepted.
+ Sts_Initialized
+ BOOL
+ 1 = Instruction is initialized. Use Inp_InitializeReq to reinitialize.
+ Sts_PVUnc
+ertain
+ BOOL
+ Indicates the channel data accuracy is undetermined. 1 = The channel data is uncertain. This output is 
+set by Inp_PVUncertain (if not in Virtual).
+ Sts_SubstPV
+ BOOL
+ 1 = Using substitute PV (Override).
+ Sts_InpPV
+ BOOL
+ 1 = Using input PV (Normal)
+. Sts_Virtual
+ BOOL
+ 1 = Using virtual PV instead of the input from the device (Inp_PVData) to calculate output.
+ 0 = The instruction uses input operand Inp_PVData to calculate output.
+ SrcQ_IO
+ SINT
+ Source and quality of primary input or output (enumerated):
+ 0 = Good, live, confirmed good,
+ 1 = Good, live, assumed good,
+ 2 = Good, no feedback, assumed good,
+ 8 = Test, virtualized,
+ 9 = Test, loopback,
+ 10 = Test, manually entered,
+ 16 = Uncertain, live, off
+-spec,
+ 17 = Uncertain, substituted at device or bus,
+ 18 = 
+Uncertain, substituted at instruction,
+ 19 = Uncertain, using last known good,
+ 20 = Uncertain, using replacement value,
+ 32 = Bad, signal failure,
+ 33 = Bad, channel fault,
+ 34 = Bad, module or communication fault,
+ 35 = Bad, invalid 
+configuration.
+ SrcQ
+ SINT
+ Source and quality of primary value or status (enumerated):
+ 0 = Good, live, confirmed good,
+ 1 = Good, live, assumed good,
+ 2 = Good, no feedback, assumed good,
+ 8 = Test, virtualized,
+ 9 = Test, loopback,
+ 10 = Test, manually 
+entered,
+ 16 = Uncertain, live, off
+-spec,
+ 17 = Uncertain, substituted at device or bus,
+ 18 = Uncertain, substituted at instruction,
+ 19 = Uncertain, using last known good,
+ 20 = Uncertain, using replacement value,
+ 32 = Bad, signal failure,
+ 33 = Bad, channel f
+ault,
+ 34 = Bad, module or communicat
+ion fault,
+ 35 = Bad, invalid configuration.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Output Members
+ Data 
+Type
+ Description
+ Sts_eSts
+ SINT
+ Device confirmed status values:
+ 0 = PV Good,
+ 1 = PV uncertain,
+ 2 = PV bad,
+ 3 = PV substituted.
+ Sts_eFault
+ SINT
+ Device fault status values:
+ 0 = None,
+ 1 = 
+Target disagree,
+ 2 = Configuration error.
+ Sts_eNotify
+ SINT
+ All alarm status enumerated values:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, 
+unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity alarm, unacknow
+ledged.
+ Sts_eNotifyAll
+ SINT
+ All alarm status enumerated 
+values including related objects:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, 
+unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severity
+ alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity alarm, unacknow
+ledged.
+ Sts_eNotifyIOFault
+ SINT
+ IOFault alarm status enumerated values.
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, unacknowledged,
+ 4 = Medium 
+severity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High seve
+rity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity alarm, unacknowledged.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 439  Public Output Members
+ Data 
+Type
+ Description
+ Sts_eNotifyTgtDisa
+gree
+ SINT
+ TgtDisagree alarm status enumerated values.
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, unacknowledged,
+ 4 = Medium severity alarm, 
+acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity alarm, unacknowledged.
+ Sts_UnackAlmCount
+ DINT
+ Count of un
+acknowledged alarms.
+ Sts_MaintByp
+ BOOL
+ 1 = The device has a Maintenance Bypass function active.
+ Sts_Err
+ BOOL
+ 1 = Error in configuration: See detail bits (Sts_Errxxx) for reason.
+ Sts_ErrGateDly
+ BOOL
+ 1 = Error in configuration: Cfg_GateDly value is invalid.
+ Sts_ErrTgtDisagreeOffDly
+ BOOL
+ 1 = Error in configuration: Cfg_TgtDisagreeOffDly value is invali
+d. Sts_ErrTgtDisagreeOnDly
+ BOOL
+ 1 = Error in configuration: Cfg_TgtDisagreeOnDly
+ value is invalid.
+ Sts_ErrDebounce
+ BOOL
+ 1 = Error in configuration: Cfg_Debounce value is invalid.
+ Sts_ErrAlm
+ BOOL
+ 1 = Error in tag
+-based alarm settings.
+ Sts_Alm
+ BOOL
+ 1 = A
+n alarm is active.
+ Sts_AlmInh
+ BOOL
+ 1 = An alarm is shelved or disabled.
+ Sts_IOFault
+ BOOL
+ IO Fault Status (0 = OK, 1 = Bad). 1 = Channel data is inaccurate. This output is set by Inp_IOFault if not 
+
+in Virtual.
+ There is a predefined default discrete tag
+-based alarm for the status. Set standard configuration 
+members of the discre
+te tag-based alarm. Access alarm elements using this format:
+ PDITag.@Alarms.Alm_IOFault.AlarmElement
+ Sts_TgtDisagreeCmp
+ BOOL
+ Input versus Target comparison result before gating. 1 =
+ The input does not match its target.
+ Sts_TgtDisagreeGate
+ BOOL
+ Target Disagree Gate Delay Status. 1 = The target disagree gate is open.
+ Sts_TgtDisagree
+ BOOL
+ Gated input versus target comparison result. 1 = Input is not in target state.
+ There is a predefi
+ned default discrete tag
+-based alarm fo
+r the status. Set standard configuration 
+members of the discrete tag
+-based alarm. Access alarm elements using this format:
+ PDITag.@Alarms.Alm_TgtDisagree.AlarmElement
+ Sts_RdyAck
+ BOOL
+ 1 = An alarm is ready to be ackno
+wledged.
+ Sts_RdyReset
+ BOOL
+ 1 = A 
+latched alarm or shed condition is ready to be reset.
+ XRdy_Reset
+ BOOL
+ 1 = Ready for XCmd_Reset, enable HMI button.
+ XRdy_ResetAckAll
+ BOOL
+ 1 = Ready for XCmd_ResetAckAll, enable HMI button.
+  Private Input Members
+ Data 
+Typ
+e Description
+ HMI_BusObjIndex
+ DINT
+ This object's index in the bus array, for use by HMI display.
+ Default is 0.
+ MSet_SubstPV
+ BOOL
+ Maintenance
+-entered substitute PV that overrides input PV when Sts_SubstPV
+ is 1. If not using the 
+substitute (Sts_SubstPV is 
+false), the MSet_SubstPV setting tracks the Out value for bumpless transfer 
+from input PV to substitute PV.
+ Default is false.
+ MCmd_SubstPV
+ BOOL
+ Maintenance command to use Substitute PV (Override input). T
+he instruction clears this operand 
+automatically.
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Private Input Members
+ Data 
+Typ
+e Description
+ MCmd_InpPV
+ BOOL
+ Maintenance command to use Input PV (Normal). The instruction clears this operand automatically.
+ Default is false.
+ MCmd_Physical
+ BOOL
+ Maintenance command to select 
+Physical device operation (not simulated). The instructio
+n clears this 
+operand automatically.
+ Default is false.
+ MCmd_Virtual
+ BOOL
+ Maintenance command to select Virtual (simulated) device operation. The instruction clears this 
+
+operand automatically.
+ Defaul
+t is false.
+ OCmd_Reset
+ BOOL
+ Operator command to reset al
+l alarms and latched shed conditions. The instruction clears this 
+operand automatically.
+ Default is false.
+ OCmd_ResetAckAll
+ BOOL
+ Operator command to acknowledge and reset all alarms and latched shed conditions. The use of 
+OCmd_ResetAckAll is restricted to
+ HMI. The instruction clears this operand automatically.
+ Default is false.
+  Private Output Members
+ Data 
+Type
+ Description
+ MRdy_SubstPV
+ BOOL
+ 1 = The instruction is ready for SubstPV command.
+ MRdy_InpPV
+ BOOL
+ 1 = The instruction is ready for InpPV command.
+ MRdy_Physical
+ BOOL
+ 1 = Ready for MCmd_Physical, enable HMI button.
+ MRdy_Virtual
+ BOOL
+ 1 = Ready for 
+MCmd_Virtual, enable HMI button.
+ ORdy_Reset
+ BOOL
+ 1 = A latched alarm or shed condition is ready to be reset.
+ ORdy_ResetAckAll
+ BOOL
+ 1 = A latched alarm or
+ shed condition is ready to be reset or acknowledged.
+  Public InOut Members
+ Data Type
+ Description
+ BusObj
+ BUS_OBJ
+ Bus component
+  Alarms
+ Discrete tag
+-based alarms are defined for these members.
+ Member
+ Alarm Name
+ Description
+ Sts_TgtDisagree
+ Alm_TgtDisagre
+e Target Disagree status.
+ Sts_IOFault
+ Alm_IOFault
+ I/O Fault status (not generated when PV Substitution is 
+active). 
+ Mark the alarm as used or unused and set standard configuration members of 
+the discrete Logix Tag based alarm. Access alarm elements using
+ this format:
+ PDITag.@Alarms.AlarmName.AlarmElement
+ There are Program, Operator, and External commands that enable the Reset 
+and Reset & Acknowledge of all alarms of the instruction (Alarm Set) at the 
+same time. This diagram shows how the commands interact
+ with the 
+inst
+ruction.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 441   Operation
+ The Gate function provides the ability to raise an abnormal condition (alarm 
+condition) when another condition is true. For example, a high vibration 
+switch should only generate an alarm when the associated motor is runni
+ng 
+long enough
+ to stabilize. The Inp_Gate input must be set to 1 (its default value) 
+and the tag
+-based alarm for Sts_TgtDisagree enabled for alarm to occur. The 
+alarm will not occur until the Inp_Gate input has been set for the Gate Delay 
+(Cfg_GateDly) tim
+e. The alarm i
+s generated when the Inp_PVData (process variable) input is 
+different from the Inp_Target (target) input. The Target indicates the normal 
+condition. For example, a flow switch should indicate flow when a pump is 
+running and should not indicat
+e flow when a 
+pump is stopped. The pump run 
+status is used as the Target input, and when the switch does not match the 
+
+target (within the allotted time), the Alarm (Flow Loss / Switch Failure) is 
+generated.
+ 

@@ -1,0 +1,1687 @@
+Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Operands
+ IMPORTANT
+ Unexpected operation may occur 
+if:
+  Output tag operands are overwritten.
+  Members of a structure operand are overwritten.
+  Except when specified, structure operands are 
+shared by multiple instructions.
+ There are data conversion rules for mixing numeric data types within an 
+instruction. See 
+Data Conversions
+. Configuration Operands
+ Operand
+ Type
+ Format 
+ Description
+ PlantPAx Control
+ P_ANALOG_INPUT
+ tag Data structure require
+d for proper 
+operation of the 
+instruction.
+ P_ANALOG_INPUT Structure
+ Public members are standard, visible tag members that are programmatically 
+
+accessible. Private, or hidden, members are used in HMI faceplates and are 
+not programmatically accessible. Priv
+ate members are listed in separate tables 
+after public members.
+ Publi
+c Input Members
+ Data Type
+ Description
+ EnableIn
+ BOOL
+ Enable input. Ladder Diagram: Corresponds to the rung condition. 
+ Default is true.
+ Inp_InitializeReq
+ BOOL
+ 1 = Request to initialize t
+he instruction. The instruction is normally initialized in instruction first 
+run. Use this request to re
+-initialize. The instruction clears this operand automatically. 
+ Default is true.
+ Inp_PVData
+ REAL
+ PV signal from sensor or i
+nput (PV units). Valid = an
+y float.
+ Default is 4.0.
+ Inp_SmartDvcSts
+ DINT
+ Current code provided by SMART device on Inp_PVData. The code is copied to Out_SmartDvcSts 
+allowing a user to monitor the device status on HMI for diagnostic lookup purposes. Valid =
+ 0 to 
+maximum positive numb
+er.
+ Default is 0.
+ Inp_SmartDvcDiagAvailable
+ BOOL
+ 1 = SMART Device diagnostics is available. Typically used to indicate device requires action to 
+keep operating as expected.
+ Default is false.
+ Inp_ModFault
+ BOOL
+ 1 = I/O module failure or module communicatio
+n status bad, 
+ 0 = OK.
+ Default is false.
+ Inp_ChanFault
+ BOOL
+ 1 = I/O channel fault or failure, 
+ 0 = OK.
+ Default is false.
+ Inp_OutOfSpec
+ BOOL
+ 1 = PV out of specification (PV uncertain, from device).
+ Default is false.
+ Inp_FuncCheck
+ BOOL
+ 1 = Function check 
+(PV substituted, from device).
+ Default is false.
+ Inp_MaintReqd
+ BOOL
+ 1 = Maintenance required (from device).
+ Default is false.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 277
+  Publi
+c Input Members
+ Data Type
+ Description
+ Inp_PVUncertain
+ BOOL
+ Indicates the channel data accuracy is undetermined. 1 = The channel data is uncertain. This 
+input sets Sts
+_PVUncertain if not in Virtual.
+ Default is false.
+ Inp_PVNotify
+ SINT
+ Related PV object alarm priority and acknowledgement status. 
+ 0 = Not in alarm, 
+acknowledged, 
+ 1 = Not in alarm, unacknowledged or reset required, 
+ 2 = Low severity alarm, acknowledged, 
+ 3 = Low severity alarm, unacknowledged, 
+ 4 = Medium severity alarm, acknowledged, 
+ 5 = Medium severity alarm, unacknowledged, 
+ 6 = High severity alar
+m, acknowledged, 
+ 7 = High severity alarm, unacknowledged, 
+ 8 = Urgent severity alarm, acknowledged, 
+ 9 = U
+rgent severity alarm, unacknowledged.
+ Default is 0.
+ Inp_HiHiGate
+ BOOL
+ The gate input used for status detection. 
+ 1 = The corresponding analog input 
+threshold monitoring is enabled, 
+ 0 = detection is disabled and the corresponding status output is forced o
+ff. Default is true.
+ Inp_HiGate
+ BOOL
+ The gate input used for status detection. 
+ 1 = The corresponding analog input threshold monitoring is enabled, 
+ 0 = detection is disabled and the corresponding status output is forced off.
+ Default is true.
+ Inp_LoGate
+ BOOL
+ The gate input used for status detection. 
+ 1 = The corresponding analog inpu
+t threshold monitoring is enabled, 
+ 0 = detection is disabled and the corresponding status output is forced off.
+ Default is true.
+ Inp_LoLoGate
+ BOOL
+ The gate input used for st
+atus detection. 
+ 1 = The corresponding analog input threshold monitoring is enabl
+ed, 
+ 0 = detection is disabled and the corresponding status output is forced off.
+ Default is true.
+ Inp_HiRoCGate
+ BOOL
+ The gate input used for status detection. 
+ 1 = The corre
+sponding analog input threshold monitoring is enabled, 
+ 0 = detection is disabled and the corresponding status output is forced off.
+ Default is true.
+ Inp_HiDevGate
+ BOOL
+ The gate input used for status detection. 
+ 1 = The corresponding analog i
+nput threshol
+d monitoring is enabled, 
+ 0 = detection is disabled and the corresponding status output is forced off.
+ Default is true.
+ Inp_LoDevGate
+ BOOL
+ The gate input used for status detection. 
+ 1 = The corresponding analog input threshold monitoring is e
+nabled, 
+ 0 = 
+detection is disabled and the corresponding status output is forced off.
+ Default is true.
+ Inp_OoRGate
+ BOOL
+ The gate input used for status detection. 
+ 1 = The corresponding analog input threshold monitoring is enabled, 
+ 0 = detection is disabled and the co
+rresponding status output is forced off.
+ Default is true.
+ Inp_Reset
+ BOOL
+ 1 = Reset shed latches and cleared alarms.
+ Default is false.
+ Cfg_AllowDisable
+ BOOL
+ 1 = Allow maintenance to disable alarms.
+ Default is true.
+ Cfg_AllowShelve
+ BOOL
+ 1 = Allow operator
+ to shelve alarms.
+ Default is true.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Publi
+c Input Members
+ Data Type
+ Description
+ Cfg_ClampSB
+ REAL
+ Clamping snap
+-to band, to clamp when PV gets near to limit (% of PV span). 
+Valid = 0.0 to 100.0 
+percent of span.
+ Default is 0.0.
+ Cfg_InpRawMin
+ REAL
+ Input (unscaled) minimum for scaling. Must be set to 
+the range of the signal connected to the 
+Inp_PVData (raw PV) input. The input is then scaled to the values set by Cfg_PVEUMin and
+ Cfg_PVEUMax. Valid = any float not equal to Cfg_InpRawMax
+ Default is 4.0.
+ Cfg_InpRawMax
+ REAL
+ Input (unscaled) maximum for sca
+ling. Must be set to the range of the signal connected to the 
+Inp_PVData (raw PV) input. The input is then scaled to the values set by Cfg_PVEUMin and 
+Cfg_PVEUMax. Valid = any float not equal to Cfg_InpRawMin
+ Default is 20.0
+. Cfg_PVEUMin
+ REAL
+ PV (output) 
+minimum for scaling to engineering units. Valid = any float not equal to Cfg_PVEUMax
+ Default is 0.0.
+ Cfg_PVEUMax
+ REAL
+ PV (output) maximum for scaling to engineering units. Valid = any float not equal to Cfg_PVEUMin. 
+Tip: Th
+e analog input instruction suppo
+rts reverse scaling. Either the raw (Input) or engineering 
+(Scaled) range can be reversed (maximum less than minimum).
+ Default is 100.0.
+ Cfg_Ref
+ REAL
+ Reference setting for deviation alarms (engineering units). Valid = 
+any float.
+ Default is 0.0.
+ Cfg_FiltW
+Lag
+ REAL
+ Filter cutoff frequency (radian/second). Valid = any float >= 0.0.
+ Default is 0.0.
+ Cfg_FiltOrder
+ DINT
+ Filter order: 0 = no filtering, 1 = 1st order low
+-pass filter, 2 = 2nd order low
+-pass filter.
+ Default is 0.
+ Cfg_RateTime
+ REAL
+ PV Rate of Change
+ time base (seconds), 1 = /second, 60 = /minute, 3600 = /hour, 86400 = /day.
+ Default is 1.0.
+ Cfg_PVHiLim
+ REAL
+ PV High clamping threshold (engineering units). Valid = any float between Cfg_PVEUMax and 
+Cfg_PVEUMin.
+ Default is 1.50E+38.
+ Cfg_PVLoLim
+ REAL
+ PV 
+Low clamping threshold (engineering units). Valid = any float between Cfg_PVEUMax and 
+Cfg_PVEUMin.
+ Default is 
+- 1.5E+38.
+ Cfg_PVReplaceVal
+ REAL
+ Value to use to replace PV when action = replace (engineering units). Valid = any float.
+ Default is 0.0.
+ Cfg_Hi
+HiLim
+ REAL
+ High
+-High status threshold (engineering units). Valid = any float.
+ Default is 1.50E+38.
+ Cfg_HiHiDB
+ REAL
+ The deadband that is applied to the alarm limit. This is used to prevent a noisy signal from 
+generating spurious alarms. Valid = any float >
+= 0.0. Tip: If the High
+-High alarm limit 
+(Cfg_HiHiLim) is 90 and the High
+-High alarm deadband (Cfg_H
+iHiDB) is 5, the High
+-High alarm is 
+generated when the output (PV filtered, Val) rises above 90 and is cleared once the output (Val) 
+falls below 85 (90 minu
+s 5).
+ Default is 1.0.
+ Cfg_HiHiGateDly
+ REAL
+ The time (seconds) after the gate input 
+activates before the threshold detection is enabled. Valid 
+= 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Cfg_HiLim
+ REAL
+ High status threshold (engineering units). Valid = an
+y float.
+ Default is 1.50E+38.
+ Cfg_HiDB
+ REAL
+ The deadband that is applied to the ala
+rm limit (engineering units).
+ Default is 1.0.
+ Cfg_HiGateDly
+ REAL
+ The time (seconds) after the gate input activates before the threshold detection is enabled. Valid 
+= 0.0 t
+o 2147483.0 seconds.
+ Default is 0.0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 279
+  Publi
+c Input Members
+ Data Type
+ Description
+ Cfg_LoLim
+ REAL
+ Low status threshold 
+(engineering units). Valid = any float.
+ Default is 
+-1.5E+38.
+ Cfg_LoDB
+ REAL
+ The deadband that is applied to the alarm limit (engineering units). Valid = any float >= 0.0.
+ Default is 
+1.0.
+ Cfg_LoGateDly
+ REAL
+ The time (seconds) after the gate input 
+activates before the threshold detection is enabled. Valid 
+= 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Cfg_LoLoLim
+ REAL
+ Low
+-Low status threshold (engineering units). Valid = any float.
+ Defau
+lt is 
+-1.5E+38.
+ Cfg_LoLoDB
+ REAL
+ The deadband that is applied to 
+the alarm limit (engineering units).
+ Default is 1.0.
+ Cfg_LoLoGateDly
+ REAL
+ The time (seconds) after the gate input activates before the threshold detection is enabled. Valid 
+= 0.0 to 2147483.
+0 seconds.
+ Default is 0.0.
+ Cfg_HiRoCLim
+ REAL
+ High rate of 
+change status threshold (engineering units). Valid = any float >= 0.0.
+ Default is 1.50E+38.
+ Cfg_HiRoCDB
+ REAL
+ The deadband that is applied to the alarm limit (engineering units). Valid any float >=
+ 0.0 and 
+<Cfg_HiRoCLim. If Cfg_HiRoCLim=0.0 then the only v
+alid setting is Cfg_HiRoCDB=0.0.
+ Default is 1.0.
+ Cfg_HiRoCGateDly
+ REAL
+ The time (seconds) after the gate input activates before the threshold detection is enabled. Valid 
+= 0.0 to 2147483.0 seconds
+. Default is 0.0.
+ Cfg_HiDevLim
+ REAL
+ High 
+deviation status threshold (engineering units). Valid = any float >= 0.0.
+ Default is 1.50E+38.
+ Cfg_HiDevDB
+ REAL
+ The deadband that is applied to the alarm limit (engineering units). Valid = any float >= 0.0.
+ Defaul
+t is 1.0.
+ Cfg_HiDevGateDly
+ REAL
+ The time (seconds) after the gate input activates before the threshold detection is enabled. Valid 
+= 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Cfg_LoDevLim
+ REAL
+ Low Deviation status threshold (engineering units). Valid = a
+ny float <=
+ 0.0.
+ Default is 
+-1.5E+38.
+ Cfg_LoDevDB
+ REAL
+ The deadband that is applied to the alarm limit (engineering units). Valid = any float >= 0.0.
+ Default is 1.0.
+ Cfg_LoDevGateDly
+ REAL
+ The time (seconds) after the gate input activates before the 
+thres
+hold detection is enabled. Valid 
+= 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Cfg_OoRHiLim
+ REAL
+ High out of range status threshold (raw units). Valid = any float.
+ Default is 20.733334.
+ Cfg_OoRLoLim
+ REAL
+ Low out of range status threshold (raw units). 
+Valid
+ = any float.
+ Default is 3.6666667.
+ Cfg_OoRDB
+ REAL
+ The deadband that is applied to the alarm limit (raw units). Valid = any float >= 0.0.
+ Default is 0.06666667.
+ Cfg_OoRGateDly
+ REAL
+ The time (seconds) after the gate input activates before the 
+threshold de
+tection is enabled. Valid 
+= 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Cfg_OoROnDly
+ REAL
+ The minimum time (seconds) the gated raw PV must remain above the upper (Cfg_OoRHiLim) or 
+below the lower (Cfg_OoRLoLim) limit for the status Sts_OoR to be
+ set. On
+-del
+ay time is used to 
+avoid unnecessary alarm when the raw PV only briefly overshoots Cfg_OoRHiLim or undershoots 
+Cfg_OoRLoLim. Valid = 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Publi
+c Input Members
+ Data Type
+ Description
+ Cfg_OoROffDly
+ REAL
+ The time (second) the gated raw PV must stay within each stat
+us threshold to clear the status. 
+Off
+-delay time is used to reduce chattering alarm. Tip: If Cfg_OoROffDly is five seconds, the gated 
+raw PV must be below the status limit (Cfg_OoRHiLim) minus de
+adband (Cfg_OoRDB) for five 
+seconds before the status is retu
+rned to normal. Valid = 0.0 to 2147483.0 seconds.
+ Default is 0.0.
+ Cfg_StuckTime
+ REAL
+ Time with no change in input to raise stuck status (second). Valid = 0.0 to 2147483.0 seconds.
+ Default is 60.
+0. Cfg_InpOoRAction
+ SINT
+ PV action on out of range: 
+ 1 = Pas
+s input PV through unchanged, 
+ 2 = Hold last good PV value, 
+ 3 = Replace PV value with Cfg_PVReplaceVal.
+ Default is 1.
+ Cfg_InpOoRQual
+ SINT
+ Out of range flag as: 
+ 1 = Good, 
+ 2 = Uncertain, 
+ 3 = Bad.
+ Default is 3.
+ Cfg_InpStuckAction
+ SINT
+ PV action on stuck
+ (unchanging): 
+ 1 = Pass input PV through unchanged, 
+ 2 = Hold last good PV value, 
+ 3 = Replace PV value with Cfg_PVReplaceVal.
+ Default is 1.
+ Cfg_InpStuckQual
+ SINT
+ Stuck (un
+changing) flag as: 
+ 1 = Good, 
+ 2 = Uncertain, 
+ 3 = Bad.
+ Default is 1.
+ Cfg_InpNaNA
+ction
+ SINT
+ PV action on not a number: 
+ 1 = Pass input PV through unchanged, 
+ 2 = Hold last good PV value, 
+ 3 = Replace PV value with Cfg_PVReplaceVal.
+ Default is 2.
+ Cfg_InpNaNQual
+ SINT
+ PV not a number flag as: 
+ 1 = Good, 
+ 2 = Uncertain, 
+ 3 = Bad.
+ Default 
+is 3. Cfg_ModFaultAction
+ SINT
+ PV action on I/O module fault: 
+ 1 = Pass input PV through unchanged, 
+ 2 = Hold last good PV value, 
+ 3 = Replace PV value with Cfg_PVReplaceVal.
+ Default is 2.
+ Cfg_ModFaultQual
+ SINT
+ I/O module fault Flag as: 
+ 1 = Good, 
+ 2= Unc
+ertain, 
+ 3 = Bad.
+ Default is 3.
+ Cfg_ChanFaultAction
+ SINT
+ PV action on channel fault: 
+ 1 = Pass input PV through unchanged, 
+ 2 = Hold last good PV value, 
+ 3 = Replace PV value with Cfg_PVReplaceVal.
+ Default is 2.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 281
+  Publi
+c Input Members
+ Data Type
+ Description
+ Cfg_ChanFaultQual
+ SINT
+ I/O channel fault f
+lag as: 
+ 1 = Good, 
+ 2 = Uncertain, 
+ 3 = Bad.
+ Default is 3.
+ Cfg_OutOfSpecAction
+ SINT
+ PV action on out of spec (from device): 
+ 1 = Pass input PV through unchanged, 
+ 2 = Hold last good PV value, 
+ 3 = Replace PV value with Cfg_PVReplaceVal.
+ Default is 1.
+ Cfg
+_OutOfSpecQual
+ SINT
+ Inp_PVUncertain flag as: 
+ 1 = Good, 
+ 2 = Uncertain, 
+ 3 = Bad.
+ Default is 2.
+ Cfg_FuncCheckAction
+ SINT
+ PV action on function check (from device): 
+ 1 = Pass input PV through unchanged, 
+ 2 = Hold last good PV value, 
+ 3 = Replace PV value w
+ith Cfg_PVReplaceVal.
+ Default is 3.
+ Cfg_FuncCheckQual
+ SINT
+ Function check flag as: 
+ 1 = Good, 
+ 2 = Uncertain, 
+ 3 = Bad.
+ Default is 3.
+ Cfg_MaintReqdAction
+ SINT
+ PV action on maintenance required (from device): 
+ 1 = Pass input PV through unchanged, 
+ 2 = Hol
+d last good PV value, 
+ 3 = Replace PV value with Cfg_PVReplaceVal.
+ Default is 3.
+ Cfg_MaintReqdQual
+ SINT
+ Maintenance required flag as: 
+ 1 = Good, 
+ 2 = Uncertain, 
+ 3 = Bad.
+ Default is 3.
+ Cfg_CfgErrAction
+ SINT
+ PV action on Instruction configuration error: 
+ 1 = Pass input PV through unchanged, 
+ 2 = Hold last good PV value, 
+ 3 = Replace PV value with Cfg_PVReplaceVal.
+ Default is 3.
+ Cfg_CfgErrQual
+ SINT
+ Instruction configuration error flag as: 
+ 1 = Good, 
+ 2 = Uncer
+tain, 
+ 3 = Bad.
+ Default is 3.
+ Cfg_CtrlHiHiLim
+ REAL
+ Current high
+-high control threshold (engineering units). Valid = any float.
+ Default is 1.50E+38.
+ Cfg_CtrlHiHiDB
+ REAL
+ High
+-High control deadband
+ (engineering units). Valid = any float >= 0.0.
+ Default is 1.0.
+ Cfg_CtrlHiLim
+ REAL
+ Current high control th
+reshold (engineering units). Valid = any float.
+ Default is 1.50E+38.
+ Cfg_CtrlHiDB
+ REAL
+ High control deadband (engineering units). Valid = any float 
+>= 0.0.
+ Default is 1.0.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Publi
+c Input Members
+ Data Type
+ Description
+ Cfg_CtrlLoLim
+ REAL
+ Current low control threshold (engineering units). Valid = any 
+float.
+ Default is 
+-1.5E+38.
+ Cfg_CtrlLoDB
+ REAL
+ Low control deadband
+ (engineering units). Valid = any float >= 0.0.
+ Default is 1.0.
+ Cfg_CtrlLoLoLim
+ REAL
+ Current low
+-low control threshold (engineering units). Valid = any float.
+ Default is 
+-1.5E+38.
+ Cfg_Ctr
+lLoLoDB
+ REAL
+ Low
+-Low control deadband
+ (engineering units). Valid = any float >= 0.0.
+ Default is 1.0.
+ Cfg_HasSmartDvc
+ BOOL
+ 1 = Enable a button on the HMI that could be used to call up a SMART Device faceplate 
+(diagnostics).
+ Default is false.
+ Cfg_HasRoC
+ BOOL 1 = PV rate of change made 
+visible in HMI.
+ Default is false.
+ Cfg_HasDev
+ BOOL
+ 1 = PV Deviation made visible in HMI.
+ Default is false.
+ Cfg_HasMoreObj
+ BOOL
+ 1 = Tells HMI an object with more info is available.
+ Default is false.
+ Cfg_HasOutNav
+ BOOL
+ 1 = Tel
+ls HMI to enable navigation to a connected output object, 
+ 0 = No connected output object.
+ Default is false.
+ Cfg_HasPVNav
+ BOOL
+ 1 = Tells HMI to enable navigation to a connected process variable object.
+ Default is false.
+ Cfg_HasHistTrend
+ SINT
+ Has Historic
+al Trend. This enables navigation to the Device Historical Trend Faceplate from the 
+HMI. 
+ 0 =  No external historical trend, 
+ 1 = Datalog historical trend, 
+ 2 = Historian historical trend.
+ Default is 0.
+ Cfg_FailOnUncertai
+n BOOL
+ 1 = Raise Sts_Fail (and fai
+l alarm) if PV quality is uncertain, 
+ 0 = Raise Sts_Fail (and fail alarm) only if PV quality is bad (scaling configuration error, PV is NaN 
+or Inf, I/O fault or raw PV is out of range.
+ Default is false.
+ Cfg_NoSubstPV
+ BOOL
+ Disables the maintenance substitu
+tion feature. 
+ 0 = The Substitute PV Maintenance function is enabled, 
+ 1 = The Substitute PV Maintenance function is disabled.
+ When Cfg_NoSubstPV is 0, the commands MCmd_SubstPV and MCmd_InpPV are used to
+ select the 
+input PV or the substitute PV. Sts_Subst
+PV is set to 1 when the substitute PV is selected.
+ Default is false.
+ Cfg_SetTrack
+ BOOL
+ 1 = Set_VirtualPV tracks Val_InpPV in virtual. MSet_SubstPV tracks Val_InpPV when substitution is 
+not active. 0 = No
+ tracking.
+ Default is true.
+ Cfg_SclngTyp
+ SINT
+ Scali
+ng Type 
+ 0 = none, 
+ 1 = Linear, 
+ 2 = Square Root.
+ Default is 1.
+ Cfg_PVDecPlcs
+ SINT
+ Number of decimal places for process variable display. Valid = 0 to 6.
+ Default is 2.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 283
+  Publi
+c Input Members
+ Data Type
+ Description
+ Cfg_CnfrmReqd
+ SINT
+ Operator command confirmation required. Represents the type of comm
+and confirmation 
+required. 
+ 0 = None, 
+ 1 = Command confirmation required, 
+ 2 = Performer e
+-signature required, 
+ 3 = Performer and approver e
+-signature required.
+ Default is 0.
+ PSet_Owner
+ DINT Program owner request ID (non
+-zero) or release (zero).
+ Default i
+s 0.
+ Set_VirtualPV
+ REAL
+ PV used in virtual (Sts_Virtual = 1) (engineering units).
+ Default is 0.0.
+ PCmd_ClearCapt
+ BOOL
+ Set PCmd_ClearCapt
+ to 1 to clear the captured minimum/maximum PV excursion values. The 
+instruction clears this operand automatically.
+ Default is false.
+ PCmd_Reset
+ BOOL
+ Program command to reset all alarms and latched shed conditions requiring reset. The 
+instruction clears this operand automatically.
+ Default is false.
+ PCmd_Physical
+ BOOL
+ Program command to select Physical device operation (
+not simulated). The instruction clears this 
+operand automatically.
+ Default is false.
+ PCmd_Virtual
+ BOOL
+ Program comman
+d to select Virtual (simulated) device operation. The instruction clears this 
+operand automatically.
+ Default is false.
+ XCmd_ClearCapt
+ BOO
+L External command to clear the captured minimum/maximum PV excursion values. The instruction 
+clears this 
+operand automatically.
+ Default is false.
+ XCmd_Reset
+ BOOL
+ External command to reset all alarms and latched shed conditions. The instruction clears thi
+s operand automatically.
+ Default is false.
+ XCmd_ResetAckAll
+ BOOL
+ External command to 
+acknowledge and reset all alarms and latched shed conditions. The 
+instruction clears this operand automatically.
+ Default is false.
+   Public Output Members
+ Data 
+Type
+ Desc
+ription
+ EnableOut
+ BOOL
+ This output state always reflects EnableIn input state.
+ Val
+ REAL
+ Analog input value in engineering units (after Substitute PV, if used).
+ Extended Properties of this member:
+ Units 
+- Engineering units (text) used for the analog input
+. Val_InpPV
+ REAL
+ Analog input value in engineering units (actual, before Substitute PV selection).
+ Val_RoC
+ REAL
+ Analog value Rate of Change (engineering units/rate time).
+ Val_Dev
+ REAL
+ Calculated deviation from reference (engineering units).
+ Val_PVMinCa
+pt REAL
+ Captured PV minimum (excursion) since last cleared (engineering units). Default is 1.5E+38.
+ Val_PVMaxCapt
+ REAL
+ Captured PV maximum (excursion) since last cleared (engineering units). Default is 
+-1.5E+38.
+ Val_PVEUMin
+ REAL
+ Minimum of scaled range =
+ MIN (Cf
+g_PVEUMin, Cfg_PVEUMax).
+ Val_PVEUMax
+ REAL
+ Maximum of scaled range = MAX (Cfg_PVEUMin, Cfg_PVEUMax).
+ Out_SmartDvcSts
+ DINT
+ Status code of a SMART Device provided by Inp_SmartDvcSts. Out_SmartDvcSts is a copy of 
+Inp_SmartDvcSts.
+ Sts_Initialized
+ BOO
+L 1 = Instruction is initialized. Use Inp_InitializeReq to reinitialize.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Output Members
+ Data 
+Type
+ Desc
+ription
+ Sts_SmartDvcDiagAvailable
+ BOOL
+ 1 = Diagnostics of a SMART Device is currently available. Typically used to indicate device 
+requires action to keep operating as expected. Sts_SmartDvc
+DiagAvailable is a copy of 
+Inp_SmartDvcDiagAvailable.
+ Sts_PVGood
+ BOOL
+ 1 = PV quality is Good (not flagge
+d as Bad or Uncertain).
+ Sts_PVUncertain
+ BOOL
+ Indicates the channel data accuracy is undetermined. 1 = The channel data is uncertain. 
+This output is se
+t by Inp_PVUncertain (if not in Virtual).
+ Sts_PVBad
+ BOOL
+ 1 = PV quality is flagged as Bad.
+ Sts_InpStuck
+ BOOL
+ 1 = Input is stuck (unchanging).
+ Sts_InpNaN
+ BOOL
+ 1 = Input is not a number (floating point exception).
+ Sts_OutOfSpec
+ BOOL
+ 1 = Working outside s
+pecifications (from device).
+ Sts_FuncCheck
+ BOOL
+ 1 = Function check (PV 
+simulated/replaced at device).
+ Sts_MaintReqd
+ BOOL
+ 1 = Maintenance is required (from device).
+ Sts_UseInp
+ BOOL
+ 1 = Using input to calculate PV (not replaced or held).
+ Sts_HoldLast
+ BOO
+L 1 = Analog PV being held at last good value.
+ Sts_Clamped
+ BOOL
+ 1 = 
+Analog PV being clamped at Low or High Limit.
+ Sts_Replaced
+ BOOL
+ 1 = Analog PV being replaced with configured value.
+ Sts_SubstPV
+ BOOL
+ 1 = Using substitute PV (Override).
+ Sts_InpPV
+ BOOL
+ 1 = Using input PV (Normal).
+ Sts_Virtual
+ BOOL
+ 1 = Using 
+virtual PV instead of the input from the device (Inp_PVData) to calculate output.
+ 0 = The instruction uses input operand Inp_PVData to calculate output.
+ Sts_Virtual is a copy of Inp_Virtual.
+ SrcQ_IO
+ SINT
+ Source and quality of primary input or output (enum
+erated):
+ 0 = Good, live, confirmed good,
+ 1 = Good, live, assumed good,
+ 2 = Good, no feedback, assumed good,
+ 8 = Test, virtualized,
+ 9 = Test, loopback,
+ 10 = Test, manually entered,
+ 16 = Uncertain, liv
+e, off
+-spec,
+ 17 = Uncertain, substituted at device or bus
+, 18 = Uncertain, substituted at instruction,
+ 19 = Uncertain, using last known good,
+ 20 = Uncertain, using replacement value,
+ 32 = Bad, signal failure,
+ 33 = Bad, channel fault,
+ 34 = Bad, module or co
+mmunication fault,
+ 35 = Bad, invalid 
+configuration.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 285
+  Public Output Members
+ Data 
+Type
+ Desc
+ription
+ SrcQ
+ SINT
+ Source and quality of primary value or status (enumerated):
+ 0 = Good, live, confirmed good,
+ 1 = Good, live, assumed good,
+ 2 = Good, no feedback, assumed good,
+ 8 = Test, virtualized,
+ 9 = Test, l
+oopback,
+ 10 = Test, manually 
+entered,
+ 16 = Uncertain, live, off
+-spec,
+ 17 = Uncertain, substituted at device or bus,
+ 18 = Uncertain, substituted at instruction,
+ 19 = Uncertain, using last known good,
+ 20 = Uncertain, using replacement value,
+ 32 = Bad, signal
+ failure,
+ 33 = Bad, channel f
+ault,
+ 34 = Bad, module or communication fault,
+ 35 = Bad, invalid configuration.
+ Sts_bSts
+ SINT
+ Device confirmed status:
+ 0 = PV Good,
+ Sts_bSts.0: PV Uncertain,
+ Sts_bSts.1: PV Bad,
+ Sts_bSts.2: PV Substituted.
+ PV is Good if Sts_PV
+Uncertain = 0 and 
+Sts_PVBad = 0,
+ PV is Uncertain if Sts_PVUncertain = 1,
+ PV is Bad if Sts_PVBad = 1,
+ PV is Substituted if Sts_SubstPV or Sts_Virtual = 1.
+ Sts_bFault
+ INT
+ Device fault status:
+ 0 = None,
+ Sts_bFault.0: Low,
+ Sts_bFault.1: High,
+ Sts_bFault.2: Lo
+w Deviation,
+ Sts_bFault.3: High Deviation,
+ Sts_bFault.4: Low Low,
+ Sts_bFault.5: High High,
+ Sts_bFault.6: High Rate of Change,
+ Sts_bFault.7: Fail,
+ Sts_bFault.8: Configuration Error.
+ Sts_eNotify
+ SINT
+ All alarm status enumerated values:
+ 0 = Not in alarm, ack
+nowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity alarm, 
+acknow
+ledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity alarm, unacknowledged.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Output Members
+ Data 
+Type
+ Desc
+ription
+ Sts_eNotifyAll
+ SINT
+ All alarm status enumerated values including related objects:
+ 0 = Not in alarm, 
+acknowledged,
+ 1 = Not 
+in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity 
+alarm, acknowledged,
+ 7 = High se
+verity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity alarm, unacknowledged.
+ Sts_eNotifyHiHi
+ SINT
+ HiHi alarm status enumerated values:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, u
+nacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High 
+severity alarm, unacknowledged,
+ 8 = Urgent se
+verity alarm, acknowledged,
+ 9 = Urgent severity alarm, unacknowledged.
+ Sts_eNotifyHi
+ SINT
+ Hi alarm status enumerated values:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low 
+severity alarm, unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity
+ alarm, unacknowledged.
+ Sts_eNotifyLo
+ SINT
+ Lo alarm status enumerated values:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, unacknowledged,
+ 4 = Medium seve
+rity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, 
+acknowledged,
+ 9 = Urgent severity alarm, unacknowledged.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 287
+  Public Output Members
+ Data 
+Type
+ Desc
+ription
+ Sts_eNotifyLoLo
+ SINT
+ LoLo alarm status enumerated values:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity a
+larm, unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severi
+ty alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity 
+alarm, unacknowledged.
+ Sts_eNotifyHiRoC
+ SINT
+ HiRoC alarm status enumerated values:
+ 0 = N
+ot in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, unacknowledged,
+ 4 = Medium
+ severity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severi
+ty alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity alarm, unacknowledged.
+ Sts_eNotifyHiDev
+ SINT
+ HiDev alarm status enumerated values:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in ala
+rm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, unacknowledged,
+ 4 = Medium severity alarm, acknowl
+edged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity
+ alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity alarm, unacknowledged.
+ Sts_eNotifyLoDev
+ SINT
+ LoDev
+ alarm status enumerated values:
+ 0 = Not in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low severity alarm, unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severity 
+alarm, unacknowledged,
+ 6 = High severity alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severi
+ty alarm, acknowledged,
+ 9 = Urgent severity alarm, unacknowledged.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Output Members
+ Data 
+Type
+ Desc
+ription
+ Sts_eNotifyFail
+ SINT
+ Fail alarm status enumerated values:
+ 0 = Not 
+in alarm, acknowledged,
+ 1 = Not in alarm, unacknowledged or reset required,
+ 2 = Low severity alarm, acknowledged,
+ 3 = Low 
+severity alarm, unacknowledged,
+ 4 = Medium severity alarm, acknowledged,
+ 5 = Medium severity alarm, unacknowledged,
+ 6 = High severity 
+alarm, acknowledged,
+ 7 = High severity alarm, unacknowledged,
+ 8 = Urgent severity alarm, acknowledged,
+ 9 = Urgent severity
+ alarm, unacknowledged.
+ Sts_UnackAlmCount
+ DINT
+ Count of unacknowledged alarms.
+ Sts_MaintByp
+ BOOL
+ 1 = The Device has a 
+maintenance bypass function active.
+ Sts_Err
+ BOOL
+ 1 = Error in configuration: See detail bits (Sts_Errxxx) for reason.
+ Sts_ErrRaw
+ BOOL
+ 1 = Error in configuration: Raw input scaling Min = Max.
+ Sts_ErrEU
+ BOOL
+ 1 = Error in configuration: Scaled EU Min = 
+Max.
+ Sts_ErrFiltWLag
+ BOOL
+ 1 = Error in configuration: Filter cutoff frequency.
+ Sts_ErrFiltOrder
+ BOOL
+ 1 = Error in configuration: Filter o
+rder.
+ Sts_ErrRateTime
+ BOOL
+ 1 = Error in configuration: PV Rate of Change time base.
+ Sts_ErrHiHiDB
+ BOOL
+ 1 = Error in configuration: Cfg_HiHiDB deadband is < 0.0.
+ Sts_ErrHiHiGateDly
+ BOOL
+ 1 = Invalid timer preset (use 0.0 to 2147483.0).
+ Sts_ErrHiDB
+ BOOL
+ 1 = Error in configuration: Cfg_HiDB deadband is < 0.0.
+ Sts_ErrHiGateDly
+ BOOL
+ 1 = Invalid timer 
+preset (use 0.0 to 2147483.0).
+ Sts_ErrLoDB
+ BOOL
+ 1 = Error in configuration: Cfg_LoDB deadband is < 0.0.
+ Sts_ErrLoGateDly
+ BOOL
+ 1 = Invalid timer preset (use 0.
+0 to 2147483.0).
+ Sts_ErrLoLoDB
+ BOOL
+ 1 = Error in configuration: Cfg_LoLoDB deadband is < 0.0.
+ Sts_ErrLoLoGateDly
+ BOOL
+ 1 = Invalid timer preset (use 0.0 to 2147483.0).
+ Sts_ErrHiRoCDB
+ BOOL
+ 1 = Error in configuration: Cfg_HiRoCDB deadband is invalid.
+ Sts_
+ErrHiRoCGateDly
+ BOOL
+ 1 = Invalid timer preset (use 0.0 to 2147483.0).
+ Sts_ErrHiDevDB
+ BOOL
+ 1 = Error in configuration: Cfg_HiDevDB deadband is < 0.0.
+ Sts_ErrHiDevGateDly
+ BOOL
+ 1 = Invalid timer preset (use 0.0 to 2147483.0).
+ Sts_ErrLoDevDB
+ BOOL
+ 1 = Error 
+in configuration: Cfg_LoDevDB deadband is < 0.0.
+ Sts_ErrLoDevGateDly
+ BOOL
+ 1 = Invalid timer preset (use 0.0 to 2147483.0).
+ Sts_ErrOoRDB
+ BOOL
+ 1 = Error in configuration: Cfg_OoRDB deadband is < 0.0.
+ Sts_ErrOoRGateDly
+ BOOL
+ 1 = Invalid timer preset (use 0.
+0 to 2147483.0).
+ Sts_ErrOoROnDly
+ BOOL
+ 1 = 
+Invalid timer preset (use 0.0 to 2147483.0).
+ Sts_ErrOoROffDly
+ BOOL
+ 1 = Invalid timer preset (use 0.0 to 2147483.0).
+ Sts_ErrStuckTime
+ BOOL
+ 1 = Invalid timer preset (use 0.0 to 2147483.0).
+ Sts_ErrCmdCnfrmTimeOutT
+ime BOOL
+ 1 = Error in 
+configuration: Command confirmation timer preset (use 0.0 to 2147483.0).
+ Sts_ErrAlm
+ BOOL
+ 1 = Error in tag
+-based alarm settings.
+ Sts_Alm
+ BOOL
+ 1 = An alarm is active.
+ Sts_AlmInh
+ BOOL
+ 1 = An alarm is shelved or disabled.
+ Sts_IOFault
+ BOOL
+ IO Fault 
+status is set to 1 if there is a Module fault (Inp_ModFault = 1) or Channel fault 
+(Inp_ChanFault = 1) and PV is not virtual. 
+ Sts_HiHiCmp
+ BOOL
+ PV comparison result, 1 = High
+-High.
+ Sts_HiHiGate
+ BOOL
+ PV High
+-High gate delay status, 1 = done.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 289
+  Public Output Members
+ Data 
+Type
+ Desc
+ription
+ Sts_HiHi
+ BOOL
+ 1 = Analog input is above High
+-High limit.
+ There is a predefined default discrete tag
+-based alarm for the status. Set standard 
+
+configuration members of the discrete tag
+-based alarm. Access alarm elements using this 
+format:
+ PAITag.@Alarms.Alm
+_HiHi.AlarmElement
+ Sts_HiCmp
+ BOOL
+ PV comparison result 1 = High.
+ Sts_HiGate
+ BOOL
+ PV High gate delay status, 1 = done.
+ Sts_Hi
+ BOOL
+ 1 = Analog input is above High limit.
+ There is a predefined default discrete tag
+-based alarm for the status. Set 
+standard 
+configuration members of the discrete tag
+-based alarm. Access alarm elements using this 
+format:
+ PAITag.@Alarms.Alm_Hi.AlarmElement
+ Sts_LoCmp
+ BOOL
+ PV comparison result 1 = Low.
+ Sts_LoGate
+ BOOL
+ PV Low gate delay status, 1 = done.
+ Sts_Lo
+ BOOL
+ 1 = Analog inp
+ut is below Low limit.
+ There is a predefined default discrete tag
+-based alarm for the status. Set standard 
+
+configuration members of the discrete tag
+-based alarm. Access alarm elements using this 
+format:
+ PAITag.@Alarms.Alm_Lo.AlarmElement
+ Sts_Lo
+LoCmp
+ BOOL
+ PV comparison result 1 = Low
+-Low.
+ Sts_LoLoGate
+ BOOL
+ PV Low
+-Low gate delay, status 1 = done.
+ Sts_LoLo
+ BOOL
+ 1 = Analog input is below Low
+-Low limit.
+ There is a predefined default discrete tag
+-based alarm for the status. Set standard 
+configuration members o
+f the discrete tag
+-based alarm. Access alarm elements using this 
+format:
+ PAITag.@Alarms.Alm_LoLo.AlarmElement
+ Sts_HiRoCCmp
+ BOOL
+ PV comparison result 1 = High Rate of Change.
+ Sts_HiRoCGate
+ BOOL
+ PV High Rate of Change gate delay 
+status, 1 = done.
+ Sts_HiRo
+C BOOL
+ 1 = Analog input Rate of Change is above High limit.
+ There is a predefined default discrete tag
+-based alarm for the status. Set standard 
+
+configuration members of the discrete tag
+-based alarm. Access alarm elements 
+using this 
+format:
+ PAITag.@Alarms.A
+lm_HiRoC.AlarmElement
+ Sts_HiDevCmp
+ BOOL
+ PV comparison result 1 = High Deviation.
+ Sts_HiDevGate
+ BOOL
+ PV High Deviation gate delay, status 1 = done.
+ Sts_HiDev
+ BOOL
+ 1 = Analog input Deviation is above High limit.
+ There is
+ a predefined default discrete tag
+-based alarm for the status. Set standard 
+configuration members of the discrete tag
+-based alarm. Access alarm elements using this 
+
+format:
+ PAITag.@Alarms.Alm_HiDev.AlarmElement
+ Sts_LoDevCmp
+ BOOL
+ PV comparison 
+result, 1 = Low Deviation.
+ Sts_LoDevGate
+ BOOL
+ PV Low Deviation delay status, 1 = done.
+ Sts_LoDev
+ BOOL
+ 1 = Analog input Deviation is below Low limit.
+ There is a predefined default discrete tag
+-based alarm for the status. Set standard 
+
+configuration members
+ of the discrete tag
+-based alarm. Access alarm e
+lements using this 
+format:
+ PAITag.@Alarms.Alm_LoDev.AlarmElement
+ Sts_OoRHiCmp
+ BOOL
+ PV comparison result, 1 = High Out of Range.
+ Sts_OoRLoCmp
+ BOOL
+ PV comparison result, 1 = Low Out of Range.
+ Sts_OoRCmp
+ BOOL
+ PV comparison result, 1 = Out of Range.
+ Sts_Oo
+RGate
+ BOOL
+ PV Out of Range gate delay status, 1 = done.
+ Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+   Public Output Members
+ Data 
+Type
+ Desc
+ription
+ Sts_OoR
+ BOOL
+ 1 = Analog raw input is above High raw limit or below Low raw limit.
+ Sts_Fail
+ BOOL
+ 1 = Analog input failed. At least 
+one of the following conditions holds: PV scaling 
+configuration erro
+r, raw PV is out of range or not a number, input module or input channel 
+fault, device reports PV uncertain (if configured for).
+ There is a predefined default discrete tag
+-based alarm for 
+the status. Set standard 
+
+configuration members of the discrete tag
+-based alarm. Access alarm elements using this 
+format:
+ PAITag.@Alarms.Alm_Fail.AlarmElement
+ Sts_CnfrmOperCmdReq
+ BOOL
+ 1 = Operator command request is awaiting confirmation.
+ Sts_RdyAck
+ BOOL
+ 1 = An alarm is ready to be acknowledged.
+ Sts_RdyReset
+ BOOL
+ 1 = A l
+atched alarm or shed condition is ready to be reset.
+ XRdy_ClearCapt
+ BOOL
+ 1 = Ready for XCmd_ClearCapt, enable HMI button.
+ XRdy_Reset
+ BOOL
+ 1 = Ready for XCmd_Reset, enable HMI 
+button.
+ XRdy_ResetAckAll
+ BOOL
+ 1 = Ready for XCmd_ResetAckAll, enable HMI butto
+n. Val_Owner
+ DINT
+ Current object owner ID (0 = not owned).
+  Private Input Members
+ Data Type
+ Description
+ MSet_SubstPV
+ REAL
+ Maintenance
+-entered substitute PV in engineering units 
+
+that overrides input PV when MCmd_SubstPV is 1. If not 
+using the substitute 
+(MCmd_SubstPV is false), the 
+MSet_SubstPV setting tracks the Out value for bumpless 
+
+transfer from input PV to substitute PV.
+ Default = 0.0.
+ MCmd_SubstPV
+ BOOL
+ Maintenance command to use Substitute PV. The 
+instruction clears this operand automatically.
+ Defa
+ult is false.
+ MCmd_InpPV
+ BOOL
+ Maintenance command to use Input PV (normal). The 
+
+instruction clears this operand 
+automatically.
+ Default is false.
+ OCmd_ClearCapt
+ BOOL
+ Operator command to clear the captured 
+
+minimum/maximum PV excursion values. The instructi
+on 
+clears this operand automatically.
+ Default is false.
+ OCmd_Reset
+ BOOL
+ Operator command to reset all 
+alarms and latched shed 
+conditions. The instruction clears this operand 
+automatically.
+ Default is false.
+ OCmd_ResetAckAll
+ BOOL
+ Operator command to ackno
+wledge and reset all alarms 
+and latched shed conditions. The use of OCmd_ResetAckAll 
+
+is restricted to HMI. The instruction clears this operand 
+automatically.
+ Default is false.
+ OCmd_CmdCncl
+ BOOL
+ Operator command to cancel 
+command request. The 
+instruction c
+lears this operand automatically.
+ Default is false.
+ OCmd_CmdCnfrm
+ BOOL
+ Operator command to confirm command request. The 
+
+instruction clears this operand automatically.
+ Default is false.
+  Chapter 2
+  PlantPAx
+   Publication 1756
+-RM006L
+-EN-P - September 2020
+ 291
+  Private Output Members
+ Data Type
+ Description
+ MRdy_SubstPV
+ BOOL
+ 1 = 
+Ready for MCmd_SubstPV.
+ MRdy_InpPV
+ BOOL
+ 1 = The instruction is ready for MCmd_InpPV command.
+ ORdy_ClearCapt
+ BOOL
+ 1 = Ready for OCmd_ClearCapt, enable HMI button.
+ ORdy_Reset
+ BOOL
+ 1 = A latched alarm or shed 
+condition is ready to be reset.
+ ORdy_ResetAckA
+ll BOOL
+ 1 = A latched alarm or shed condition is ready to be reset or 
+acknowledged.
+ Alarms
+ Discrete tag
+-based alarms are defined for these members.
+ Member
+ Alarm Name
+ Description
+ Sts_Fail
+ Alm_Fail
+ Raised when any of the following is true:
+  The PV quality i
+s bad. The PV quality is bad if either 
+Inp_ChanFault or Inp_ModFault input is 1. The PV bad quality 
+check is skipped in Virtual.
+  The Inp_PVUncertain input is true and the instruction is 
+configured f
+or PV uncertain status taking effect on failure. 
+The PV un
+certain check is skipped in Virtual.
+  The PV is outside the configured failure limits.
+  The PV is infinite or not a number (floating
+-point exception).
+  The raw or engineering unit range configuration u
+sed in 
+scaling is invalid.
+ Sts_HiHi
+ Alm_HiHi
+ Raised when 
+the PV is above the High
+-High threshold and the 
+associated gate is opened (Inp_HiHiGate = 1). The threshold, 
+deadband, and gate delay are set in alarm configuration.
+ Sts_Hi
+ Alm_Hi
+ Raised when 
+the PV is above the High threshold and the 
+associated gate is o
+pened (Inp_HiGate = 1). The threshold, 
+deadband, and gate delay are set in alarm configuration.
+ Sts_Lo
+ Alm_Lo
+ Raised when the PV is below the Low threshold and the 
+associated gate is 
+opened (Inp_LoGate = 1). The threshold, 
+deadband, and gate delay are set
+ in alarm configuration.
+ Sts_LoLo
+ Alm_LoLo
+ Raised when the PV is below the Low
+-Low threshold and the 
+associated gate is opened (Inp_LoLoGate
+ = 1). The threshold, 
+deadband, and gate delay are set in alarm configuration.
+ Sts_HiDev
+ Alm_HiDev
+ Raised when the
+ amount by which the PV exceeds the setpoint 
+
+or reference is above the High Deviation threshold while the 
+associated gate is opened (
+Inp_HiDevGate = 1). The threshold, 
+deadband, and gate delay are set in alarm configuration.
+ Sts_LoDev
+ Alm_LoDev
+ Raised whe
+n the amount by which the PV exceeds the setpoint 
+or reference is below the Low Deviation threshold while the 
+associated gate is open
+ed (Inp_LoDevGate = 1). Since the 
+threshold is a negative number, this is the amount the PV falls 
+below the setpoint or ref
+erence. The threshold, deadband, and 
+gate delay are set in alarm configuration.
+ Sts_HiRoC
+ Alm_HiRoC
+ Raised when the amount by which 
+the absolute value of PV rate 
+
+of change exceeds High Rate of Change limit while the 
+associated gate is opened (Inp_HiRoCGat
+e = 1). The threshold, 
+deadband, and gate delay are set in alarm configuration.
+ 
