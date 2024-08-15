@@ -137,7 +137,7 @@ Sts_eNotifyOnFail;SINT;OnFail alarm status enumerated values: 0 = Not in alarm, 
 Sts_eSrc;INT;The current command source enumerated values: 0 = Logic not in use, 4 = Hand, 8 = Maintenance, 16 = Override, 32 = Program, 33 = Program locked, 34 = Program by default (Normal), 64 = Operator, 65 = Operator locked, 66 = Operator by default (Normal), 128 = Maintenance Out of Service, 129 = Programmed Out of Service (rung false), 256 = External.;
 Sts_eState;SINT;Internal Logic State (for animating STD on faceplate). ;
 Sts_eSts;SINT;Device status: 0 = Off, 1= On, 2 = Pulse off, 3 = Pulse on, 4 = Pulse continuously, 5 = Turning off, 6 = Turning on, 7 = Horn 8 = Out of Service. ;
-Val_Owner;DINT;Current object owner ID (0 = not owned). Private Input Members Data Type Description HMI_BusObjIndex DINT This object's index in the bus array, for use by HMI display. Default is 0. MCmd_Bypass BOOL Maintenance command to bypass all bypassable interlocks and permissives. The instruction clears this operand automatically. Default is false. MCmd_Check BOOL Maintenance command to check (not bypass) all interlocks. The instruction clears this operand automatically. Default is false. MCmd_OoS BOOL Maintenance command to select Out of Service. The instruction clears this operand automatically. Default is false. MCmd_IS BOOL Maintenance command to select In Service. The instruction clears this operand automatically. Default is false.;
+Val_Owner;DINT;Current object owner ID (0 = not owned). ;
 XCmd_Acq;BOOL;External command to acquire ownership (Operator/Program/Override/Maintenance to External). The instruction clears this operand automatically if Cfg_ExtAcqAsLevel = 0. Default is false. ;
 XCmd_ContPulse;BOOL;External command to pulse device continuously (blink). The instruction clears this operand automatically. Default is false. ;
 XCmd_Off;BOOL;External command to turn device Off. The instruction clears this operand automatically. Default is false. ;
@@ -146,7 +146,7 @@ XCmd_On;BOOL;External command to turn device On. The instruction clears this ope
 XCmd_OnPulse;BOOL;External command to pulse device (which is Off) On once. The instruction clears this operand automatically. Default is false. ;
 XCmd_Rel;BOOL;External command to release ownership if Cfg_ExtAcqAsLevel = 0 (External to Operator/Program/Override/Maintenance). The instruction clears this operand automatically. Default is false. ;
 XCmd_Reset;BOOL;External command to reset all alarms and latched shed conditions. The instruction clears this operand automatically. Default is false. ;
-XCmd_ResetAckAll;BOOL;External command to acknowledge and reset all alarms and latched shed conditions. The instruction clears this operand automatically. Default is false. Public Output Members Data Type Description ;
+XCmd_ResetAckAll;BOOL;External command to acknowledge and reset all alarms and latched shed conditions. The instruction clears this operand automatically. Default is false. ;
 XRdy_Acq;BOOL;1 = Ready for XCmd_Acq, enable HMI button. ;
 XRdy_ContPulse;BOOL;1 = Ready for XCmd_ContPulse, enable HMI button. ;
 XRdy_Off;BOOL;1 = Ready for XCmd_Off, enable HMI button. ;

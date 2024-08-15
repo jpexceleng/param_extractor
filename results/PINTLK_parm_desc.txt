@@ -67,7 +67,7 @@ Inp_LatchDefeat;BOOL;Set when device is de-energized. 1 =Do not latch inputs, ev
 Inp_Reset;BOOL;1 = Reset latched interlocks and first-out. Default is false. ;
 Inp_Reset;BOOL;1 = Reset trip and first up. ;
 Out_Reset;BOOL;1 = Reset external devices. ;
-PCmd_Reset;BOOL;Program command to reset latched interlocks. Default is false. Public Output Members Data Type Description ;
+PCmd_Reset;BOOL;Program command to reset latched interlocks. Default is false. ;
 Sts_Available;BOOL;1 = Available. ;
 Sts_Available;BOOL;Availability status.(1 = Available). ;
 Sts_BankIDError;BOOL;1 = Duplicate or invalid bank ID. ;

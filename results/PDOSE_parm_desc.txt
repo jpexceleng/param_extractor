@@ -192,9 +192,9 @@ XCmd_StopTot;BOOL;Not Visible Not Required Input External command to stop totali
 XRdy_Acq;BOOL;Not Visible Not Required Output 1 = Ready for XCmd_Acq, enable HMI button. ;
 XRdy_Rel;BOOL;Not Visible Not Required Output 1 = Ready for XCmd_Rel, enable HMI button. ;
 XRdy_Reset;BOOL;Not Visible Not Required Output 1 = Ready for XCmd_Reset, enable HMI button. ;
-XRdy_ResetAckAll;BOOL;Not Visible Not Required Output 1 = Ready for XCmd_ResetAckAll, enable HMI button. Private Input Members Data Type Description HMI_BusObjIndex DINT HMI bus object index Default is 0. MCmd_Acq BOOL Maintenance command to acquire ownership (Operator/Program/External/Override to Maintenance). The instruction clears this operand automatically. Default is false. MCmd_IS BOOL Maintenance command to select in service. The instruction clears this operand automatically. Default is false.;
+XRdy_ResetAckAll;BOOL;Not Visible Not Required Output 1 = Ready for XCmd_ResetAckAll, enable HMI button. ;
 XSet_DribbleQty;REAL;Not Visible Not Required Input External setting of quantity to dribble (Engineering Units). Default is 0.0. ;
 XSet_Preact;REAL;Not Visible Not Required Input External setting of amount before total to stop flow (Engineering Units). Default is 0.0. ;
 XSet_SP;REAL;Not Visible Not Required Input External setting of total quantity to deliver (Engineering Units). Default is 0.0. ;
 XSet_TolHi;REAL;Not Visible Not Required Input External setting of high tolerance limit (ok amount > SP). Default is 0.0. ;
-XSet_TolLo;REAL;Not Visible Not Required Input External setting of low tolerance limit (ok amount < SP). Default is 0.0. Public Output Members Data Type FBD Default Visibility FBD Wiring required Usage Description ;
+XSet_TolLo;REAL;Not Visible Not Required Input External setting of low tolerance limit (ok amount < SP). Default is 0.0. ;

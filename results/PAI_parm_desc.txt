@@ -200,7 +200,7 @@ Sts_eNotifyLoLo;SINT;LoLo alarm status enumerated values: 0 = Not in alarm, ackn
 Val;REAL;Analog input value in engineering units (after Substitute PV, if used). Extended Properties of this member: Units - Engineering units (text) used for the analog input. ;
 Val_Dev;REAL;Calculated deviation from reference (engineering units). ;
 Val_InpPV;REAL;Analog input value in engineering units (actual, before Substitute PV selection). ;
-Val_Owner;DINT;Current object owner ID (0 = not owned). Private Input Members Data Type Description MSet_SubstPV REAL Maintenance-entered substitute PV in engineering units that overrides input PV when MCmd_SubstPV is 1. If not using the substitute (MCmd_SubstPV is false), the MSet_SubstPV setting tracks the Out value for bumpless transfer from input PV to substitute PV. Default = 0.0. MCmd_SubstPV BOOL Maintenance command to use Substitute PV. The instruction clears this operand automatically. Default is false. MCmd_InpPV BOOL Maintenance command to use Input PV (normal). The instruction clears this operand automatically. Default is false. OCmd_ClearCapt BOOL Operator command to clear the captured minimum/maximum PV excursion values. The instruction clears this operand automatically. Default is false. OCmd_Reset BOOL Operator command to reset all alarms and latched shed conditions. The instruction clears this operand automatically. Default is false. OCmd_ResetAckAll BOOL Operator command to acknowledge and reset all alarms and latched shed conditions. The use of OCmd_ResetAckAll is restricted to HMI. The instruction clears this operand automatically. Default is false. OCmd_CmdCncl BOOL Operator command to cancel command request. The instruction clears this operand automatically. Default is false. OCmd_CmdCnfrm BOOL Operator command to confirm command request. The instruction clears this operand automatically. Default is false.;
+Val_Owner;DINT;Current object owner ID (0 = not owned). ;
 Val_PVEUMax;REAL;Maximum of scaled range = MAX (Cfg_PVEUMin, Cfg_PVEUMax). ;
 Val_PVEUMin;REAL;Minimum of scaled range = MIN (Cfg_PVEUMin, Cfg_PVEUMax). ;
 Val_PVMaxCapt;REAL;Captured PV maximum (excursion) since last cleared (engineering units). Default is -1.5E+38. ;
@@ -208,7 +208,7 @@ Val_PVMinCapt;REAL;Captured PV minimum (excursion) since last cleared (engineeri
 Val_RoC;REAL;Analog value Rate of Change (engineering units/rate time). ;
 XCmd_ClearCapt;BOOL;External command to clear the captured minimum/maximum PV excursion values. The instruction clears this operand automatically. Default is false. ;
 XCmd_Reset;BOOL;External command to reset all alarms and latched shed conditions. The instruction clears this operand automatically. Default is false. ;
-XCmd_ResetAckAll;BOOL;External command to acknowledge and reset all alarms and latched shed conditions. The instruction clears this operand automatically. Default is false. Public Output Members Data Type Description ;
+XCmd_ResetAckAll;BOOL;External command to acknowledge and reset all alarms and latched shed conditions. The instruction clears this operand automatically. Default is false. ;
 XRdy_ClearCapt;BOOL;1 = Ready for XCmd_ClearCapt, enable HMI button. ;
 XRdy_Reset;BOOL;1 = Ready for XCmd_Reset, enable HMI button. ;
 XRdy_ResetAckAll;BOOL;1 = Ready for XCmd_ResetAckAll, enable HMI button. ;

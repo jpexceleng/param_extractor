@@ -196,7 +196,7 @@ XCmd_Pos1;BOOL;Not Visible Not Required Input External command to turn object Po
 XCmd_Pos1Pulse;BOOL;Not Visible Not Required Input External command to pulse valve that is in Position 2, to Position 1 once. The instruction clears this operand automatically. Default is false.;
 XCmd_Pos2;BOOL;Not Visible Not Required Input External command to turn object Position 2. The instruction clears this operand automatically. Default is false. ;
 XCmd_Pos2Pulse;BOOL;Not Visible Not Required Input External command to pulse valve that is in Position 1, to Position 2 once. The instruction clears this operand automatically. Default is false. ;
-XCmd_Rel;BOOL;Not Visible Not Required Input External command to release ownership if Cfg_ExtAcqAsLevel = 0 (External to Operator/Program/Override/Maintenance). The instruction clears this operand automatically. Default is false. Public Output Members Data Type FBD Default Visibility FBD Wiring required Usage Description ;
+XCmd_Rel;BOOL;Not Visible Not Required Input External command to release ownership if Cfg_ExtAcqAsLevel = 0 (External to Operator/Program/Override/Maintenance). The instruction clears this operand automatically. Default is false. ;
 XCmd_Reset;BOOL;Not Visible Not Required Input External command to clear shed latches and cleared alarms. Default is false. ;
 XCmd_ResetAckAll;BOOL;Not Visible Not Required Input External command to acknowledge and reset all alarms and latched shed conditions. The instruction clears this operand automatically. Default is false. ;
 XCmd_Stop;BOOL;Not Visible Not Required Input External command to stop valve motion.the instruction clears this operand automatically. Default is false. ;
@@ -204,4 +204,4 @@ XCmd_Trip;BOOL;Not Visible Not Required Input External command to trip valve. De
 XRdy_Acq;BOOL;Not Visible Not Required Output 1 = Ready for XCmd_Acq, enable HMI button. ;
 XRdy_Rel;BOOL;Not Visible Not Required Output 1 = Ready for XCmd_Rel, enable HMI button. ;
 XRdy_Reset;BOOL;Not Visible Not Required Output 1 = Ready for XCmd_Reset, enable HMI button. ;
-XRdy_ResetAckAll;BOOL;Not Visible Not Required Output 1 = Ready for XCmd_Resetackall, enable HMI button. Private Input Members Data Type Description HMI_BusObjIndex DINT HMI bus object index Default is 0.;
+XRdy_ResetAckAll;BOOL;Not Visible Not Required Output 1 = Ready for XCmd_Resetackall, enable HMI button. ;

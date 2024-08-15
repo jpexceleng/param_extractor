@@ -47,4 +47,4 @@ Sts_eSts;SINT;Device confirmed status values: 0 = PV Good, 1 = PV uncertain, 2 =
 XCmd_Reset;BOOL;External command to reset all alarms and latched shed conditions. The instruction clears this operand automatically. Default is false. ;
 XCmd_ResetAckAll;BOOL;External command to acknowledge and reset all alarms and latched shed conditions. The instruction clears this operand automatically. Default is false.;
 XRdy_Reset;BOOL;1 = Ready for XCmd_Reset, enable HMI button. ;
-XRdy_ResetAckAll;BOOL;1 = Ready for XCmd_ResetAckAll, enable HMI button. Private Input Members Data Type Description HMI_BusObjIndex DINT This object's index in the bus array, for use by HMI display. Default is 0. MSet_SubstPV BOOL Maintenance-entered substitute PV that overrides input PV when Sts_SubstPV is 1. If not using the substitute (Sts_SubstPV is false), the MSet_SubstPV setting tracks the Out value for bumpless transfer from input PV to substitute PV. Default is false. MCmd_SubstPV BOOL Maintenance command to use Substitute PV (Override input). The instruction clears this operand automatically. Default is false.;
+XRdy_ResetAckAll;BOOL;1 = Ready for XCmd_ResetAckAll, enable HMI button. ;

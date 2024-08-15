@@ -227,7 +227,7 @@ Sts_eSrc;INT;Not Visible Not Required Output The current command source is shown
 Sts_eSts;SINT;Not Visible Not Required Output Drive Status: 0 = Powerup / Unknown, 1 = Stopped, 2 = Running Forward, 3 = Running Reverse, 4 = Starting Forward, 5 = Starting Reverse, 6 = Jogging Forward, 7 = Jogging Reverse, 8 = Stopping, 14 = Horn, 15 = Out Of Service. ;
 Val_InpDatalink;REAL;Not Visible Not Required Output Input Datalink value from drive. ;
 Val_OutDatalink;REAL;Not Visible Not Required Output Output Datalink value to drive. ;
-Val_Owner;DINT;Not Visible Not Required Output Current object owner ID (0 = not owned). Private Input Members Data Type Description HMI_BusObjIndex DINT This object's index in the bus array, for use by HMI display. Default is 0. MCmd_Acq BOOL Maintenance command to acquire ownership (Operator/Program/External/Override to Maintenance). The instruction clears this operand automatically. Default is false. MCmd_Bypass BOOL Maintenance command to bypass all bypassable interlocks and permissives. The instruction clears this operand automatically. Default is false.;
+Val_Owner;DINT;Not Visible Not Required Output Current object owner ID (0 = not owned). ;
 Val_SpeedFdbk;REAL;Visible Not Required Output Speed Feedback (actual) from drive. ;
 Val_SpeedFdbkEUMax;REAL;Not Visible Not Required Output Maximum of Speed Feedback = MAX (Cfg_SpeedFdbkEUMin, Cfg_SpeedFdbkEUMax). ;
 Val_SpeedFdbkEUMin;REAL;Not Visible Not Required Output Minimum of Speed Feedback = MIN (Cfg_SpeedFdbkEUMin, Cfg_SpeedFdbkEUMax). ;
@@ -239,7 +239,7 @@ XCmd_JogFwd;BOOL;Not Visible Not Required Input External command to Jog Drive Fo
 XCmd_JogRev;BOOL;Not Visible Not Required Input External command to Jog Drive Reverse. The instruction clears this operand automatically if max jog time is reached.. Default is false. ;
 XCmd_Rel;BOOL;Not Visible Not Required Input External command to release ownership if Cfg_ExtAcqAsLevel = 0 (External to Operator/Program/Override/Maintenance). The instruction clears this operand automatically. Default is false. ;
 XCmd_Reset;BOOL;Not Visible Not Required Input External command to clear shed latches and cleared alarms. The instruction clears this operand automatically. Default is false. ;
-XCmd_ResetAckAll;BOOL;Not Visible Not Required Input External command to acknowledge and reset all alarms and latched shed conditions. The instruction clears this operand automatically. Default is false. Public Output Members Data Type FBD Default Visibility FBD Wiring required Usage Description ;
+XCmd_ResetAckAll;BOOL;Not Visible Not Required Input External command to acknowledge and reset all alarms and latched shed conditions. The instruction clears this operand automatically. Default is false. ;
 XCmd_StartFwd;BOOL;Not Visible Not Required Input External command to Start Drive Forward. The instruction clears this operand automatically. Default is false. ;
 XCmd_StartRev;BOOL;Not Visible Not Required Input External command to Start Drive Reverse. The instruction clears this operand automatically. Default is false. ;
 XCmd_Stop;BOOL;Not Visible Not Required Input External command to Stop Drive. The instruction clears this operand automatically. Default is false. ;

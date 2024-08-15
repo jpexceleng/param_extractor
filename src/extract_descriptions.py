@@ -1,14 +1,26 @@
+# import methods for working with regular expressions.
 import re
 
 def extract_descriptions(param_name_file, pdftotext_file, results_file):
-# output of this function is a file where each line is of the form:
-#   <param_name>;<data_type>;<param_description> 
+# output of this function is a file where each line is data row from the rockwell :
+# PAI:    <param_name>;<data_type>;<param_description> 
+# PAO:    <param_name>;<data_type>;<param_description> 
+# PDI:    <param_name>;<data_type>;<param_description> 
+# PDO:    <param_name>;<data_type>;<param_description> 
+# PDOSE:  <param_name>;<data_type>;<FBD_default_visibility>;<FBD_wiriing_required>;<usage>;<param_description> 
+# PMTR:   <param_name>;<data_type>;<FBD_default_visibility>;<FBD_wiriing_required>;<usage>;<param_description> 
+# PPID:   <param_name>;<data_type>;<default_value>;<param_description> 
+# PVLV:   <param_name>;<data_type>;<FBD_default_visibility>;<FBD_wiriing_required>;<usage>;<param_description>  
+# PVSD:   <param_name>;<data_type>;<FBD_default_visibility>;<FBD_wiriing_required>;<usage>;<param_description> 
+# PINTLK: <param_name>;<data_type>;<param_description> 
+# PPERM:  <param_name>;<data_type>;<param_description> 
+
 # args:
-#   param_name_file - file containing newline separated param name identifiers.
-#   pdftotext_file - file containing the extracted pdf pages converted to plain text;
-#                    contains information about the params of interest including 
-#                    name, data type, description, etc.
-#   results_file - file name to write results to.
+# param_name_file - file containing newline separated param name identifiers.
+# pdftotext_file - file containing the extracted pdf pages converted to plain text;
+#                 contains information about the params of interest including 
+#                 name, data type, description, etc.
+# results_file - file name to write results to.
 
     try:
         # get param names into list
@@ -63,7 +75,7 @@ def extract_descriptions(param_name_file, pdftotext_file, results_file):
 
         # Remove following pattern from description:
         # 'Chapter 2 PlantPAx Publication 1756-RM006L-EN-P - September 2020 <page_num> _'
-        # ' Public Input Members Data Type Description '
+        # 'Public Input Members Data Type Description '
         descs.sort()
         param_desc_list = []
         for desc in descs:
@@ -72,9 +84,23 @@ def extract_descriptions(param_name_file, pdftotext_file, results_file):
 
         for i in range(0, len(param_desc_list)):
             s = str(param_desc_list[i][2])
+
+            # search for and remove page header
             m = re.search(r" Chapter 2 PlantPAx.+?", s)
             if m:
                 s = re.sub(r" Chapter 2 PlantPAx.+$", '', s)
+                param_desc_list[i][2] = s
+
+            # search for and remove table headings
+            m = re.search(r"Public.+?", s)
+            if m:
+                s = re.sub(r"Public.+$", '', s)
+                param_desc_list[i][2] = s
+
+            # search for and remove table headings
+            m = re.search(r"Private.+?", s)
+            if m:
+                s = re.sub(r"Private.+$", '', s)
                 param_desc_list[i][2] = s
 
         # rebuild list with members of form: <param_name>;<data_type>;<description>
@@ -114,5 +140,5 @@ targets = [
 for target in targets:
     param_name_file = 'output/param_names/' + target + '_param_names.txt'
     pdftotext_file = 'output/pdftotext/' + target + '_pdftotext.txt'
-    results_file = 'results/' + target + '_descriptions.txt'
+    results_file = 'results/' + target + '_parm_desc.txt'
     extract_descriptions(param_name_file, pdftotext_file, results_file)

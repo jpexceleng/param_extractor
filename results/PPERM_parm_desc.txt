@@ -1,8 +1,9 @@
 Cfg_Bypassable;DINT;Set bits indicate which conditions can be bypassed. Default is 2#0000_0000_0000_0000_0000_0000_0000_0000. ;
 Cfg_HasMoreObj;BOOL;1 = Tells HMI an object with more information is available. Default is false. ;
-Cfg_HasNav;DINT;Set bits indicate which navigation buttons are enabled. Default is 2#0000_0000_0000_0000_0000_0000_0000_0000. Public Output Members Data Type Description ;
+Cfg_HasNav;DINT;Set bits indicate which navigation buttons are enabled. Default is 2#0000_0000_0000_0000_0000_0000_0000_0000. ;
 Cfg_OKState;DINT;Bits indicate which state (0 or 1) of each input is OK to energize. Default is 2#1111_1111_1111_1111_1111_1111_1111_1111. ;
 EnableOut;BOOL;Enable Output - System Defined Parameter ;
+Inp_BypassActive;BOOL;1 = Permissive bypassing is currently active. Default is false. ;
 Inp_Perm16;BOOL;Permissive condition 16, OK to energize if in configured OK state. Default is true. ;
 Inp_Perm17;BOOL;Permissive condition 17, OK to energize if in configured OK state. Default is true. ;
 Inp_Perm18;BOOL;Permissive condition 18, OK to energize if in configured OK state. Default is true. ;
@@ -18,9 +19,9 @@ Inp_Perm27;BOOL;Permissive condition 27, OK to energize if in configured OK stat
 Inp_Perm28;BOOL;Permissive condition 28, OK to energize if in configured OK state. Default is true. ;
 Inp_Perm29;BOOL;Permissive condition 29, OK to energize if in configured OK state. Default is true. ;
 Inp_Perm30;BOOL;Permissive condition 30, OK to energize if in configured OK state. Default is true. ;
-Inp_Perm31;BOOL;Permissive condition 31, OK to energize if in configured OK state. Default is true. Inp_BypassActive BOOL 1 = Permissive bypassing is currently active. Default is false. ;
+Inp_Perm31;BOOL;Permissive condition 31, OK to energize if in configured OK state. Default is true. ;
 Sts_BypActive;BOOL;1 = Permissive bypassing is active (ignore bypassable permissives).;
 Sts_Initialized;BOOL;1 = Instruction is initialized. Use Inp_InitializeReq to reinitialize. ;
 Sts_NBPermOK;BOOL;Non-Bypassable permissive status (1 = all non-bypassable permissives OK to energize). ;
-Sts_Perm;DINT;Individual permissive status (1 = OK, 0 = don't energize). Private Input Members Data Type Description MSet_Bypass DINT Individual condition maintenance bypass toggles. Default is 2#0000_0000_0000_0000_0000_0000_0000_0000. Private Output Members Data Type Description N/A N/A N/A Operation This diagram illustrates the functionality of the PPERM instruction: Configuration of Strings for HMI Configure strings for HMI faceplates (FT View) and for the Logix Designer configuration dialog box. The strings are set to extended properties of tag items. Configure the strings in Logix Designer only. Description Label for graphic symbol Display Library for HMI Faceplate call-up Instruction name;
+Sts_Perm;DINT;Individual permissive status (1 = OK, 0 = don't energize). ;
 Sts_PermOK;BOOL;Overall permissive status (1 = OK to energize). ;
