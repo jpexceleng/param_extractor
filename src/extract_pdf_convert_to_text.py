@@ -20,7 +20,7 @@ targets = [
 ]
 
 # open pdf file for reading.
-pdfFileObj = open ('data/1756-rm006_-en-p.pdf', 'rb')
+pdfFileObj = open ('res/1756-rm006_-en-p.pdf', 'rb')
 
 # create pdf reader object
 pdfReader = PyPDF2.PdfFileReader(pdfFileObj)

@@ -29,7 +29,7 @@ def extract_param_names_to_file(input_file, output_file):
 
 for target in targets:
     try:
-        f_input = 'data/' + target + '_params_raw.txt'
+        f_input = 'res/' + target + '_params_raw.txt'
         f_output = 'output/param_names/' + target + '_param_names.txt'
         extract_param_names_to_file(f_input, f_output)
     except:

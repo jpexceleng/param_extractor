@@ -85,21 +85,24 @@ def extract_descriptions(param_name_file, pdftotext_file, results_file):
         for i in range(0, len(param_desc_list)):
             s = str(param_desc_list[i][2])
 
-            # search for and remove page header
-            m = re.search(r" Chapter 2 PlantPAx.+?", s)
-            if m:
+            # search for match on page header
+            match_found = re.search(r" Chapter 2 PlantPAx.+?", s)
+            if match_found:
+                # sub match for empty string
                 s = re.sub(r" Chapter 2 PlantPAx.+$", '', s)
                 param_desc_list[i][2] = s
 
-            # search for and remove table headings
-            m = re.search(r"Public.+?", s)
-            if m:
+            # search for match on public member table headings
+            match_found = re.search(r"Public.+?", s)
+            if match_found:
+                # sub match for empty string
                 s = re.sub(r"Public.+$", '', s)
                 param_desc_list[i][2] = s
 
-            # search for and remove table headings
-            m = re.search(r"Private.+?", s)
-            if m:
+            # search for match on private member table headings
+            match_found = re.search(r"Private.+?", s)
+            if match_found:
+                # sub match for empty string
                 s = re.sub(r"Private.+$", '', s)
                 param_desc_list[i][2] = s
 
@@ -140,5 +143,5 @@ targets = [
 for target in targets:
     param_name_file = 'output/param_names/' + target + '_param_names.txt'
     pdftotext_file = 'output/pdftotext/' + target + '_pdftotext.txt'
-    results_file = 'results/' + target + '_parm_desc.txt'
+    results_file = 'results/' + target + '_param_desc.txt'
     extract_descriptions(param_name_file, pdftotext_file, results_file)
